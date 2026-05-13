@@ -3,14 +3,69 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ATS Total Service Pty. Ltd. — Sydney's Total Property Maintenance Partner</title>
-<meta name="description" content="ATS Total Service is a Sydney-based property maintenance company delivering cleaning, gardening, waste collection and painting services across residential, commercial and managed properties." />
-<meta property="og:title" content="ATS Total Service Pty. Ltd." />
-<meta property="og:description" content="One trusted partner for cleaning, gardening, waste collection and painting across Sydney." />
+<title>ATS Total Service Pty. Ltd. — Trusted Sub-Contractor for Asset Managers & B2B Operators · Sydney NSW</title>
+<meta name="description" content="ATS Total Service Pty. Ltd. operates 180+ ongoing maintenance sites across NSW. Cleaning, gardening, waste collection and painting — delivered for head contractors, asset managers and B2B clients. Sydney-based, fully insured, 5+ years experience. ABN 49 617 814 105." />
+<meta name="keywords" content="property maintenance Sydney, sub-contractor NSW, asset management contractor, head contractor sub, B2B grounds maintenance, commercial cleaning Sydney, lawn mowing contractor Sydney, strata maintenance" />
+<meta property="og:title" content="ATS Total Service — Trusted Maintenance Partner for Asset Managers & B2B Operators" />
+<meta property="og:description" content="180+ ongoing maintenance sites across NSW. In-house crew, own fleet, 5+ years of proven sub-contracting experience. Speak directly with Director Steven Shim." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://atstotal.com.au/" />
+<meta property="og:image" content="https://atstotal.com.au/images/truck.jpg" />
+<link rel="canonical" href="https://atstotal.com.au/" />
 <link rel="icon" type="image/png" href="./logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "ATS Total Service Pty. Ltd.",
+  "alternateName": "ATS Total Service",
+  "url": "https://atstotal.com.au/",
+  "logo": "https://atstotal.com.au/logo.png",
+  "image": "https://atstotal.com.au/images/truck.jpg",
+  "description": "Sydney-based property maintenance company operating 180+ ongoing sites across NSW. Cleaning, gardening, waste collection and painting — delivered for head contractors, asset managers and B2B clients.",
+  "telephone": "+61416492358",
+  "email": "admin@atstotal.com.au",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "addressCountry": "AU"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "New South Wales"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Steven Shim",
+    "jobTitle": "Director"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "ABN",
+    "value": "49 617 814 105"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  },
+  "subOrganization": [
+    {
+      "@type": "Organization",
+      "name": "First Cleaning Sydney",
+      "url": "https://firstcleaningsyd.com.au/"
+    },
+    {
+      "@type": "Organization",
+      "name": "First Maintenance",
+      "url": "https://firstmaint.com.au/"
+    }
+  ]
+}
+</script>
 <style>
 :root {
   --navy: #1B3A57;
@@ -249,6 +304,14 @@ section { padding: 100px 0; }
   margin-bottom: 8px;
 }
 .about-stat-num em { font-style: italic; color: var(--green); }
+.about-stat-num .stat-suffix {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--green);
+  font-size: 0.65em;
+  font-weight: 500;
+  margin-left: 2px;
+}
 .about-stat-label {
   font-size: 13px; color: var(--ink-soft); font-weight: 500;
   letter-spacing: 0.02em;
@@ -329,6 +392,35 @@ section { padding: 100px 0; }
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
+  overflow: hidden;
+}
+.process-step--featured {
+  padding: 0;
+  border-color: rgba(58, 133, 80, 0.35);
+  background: rgba(58, 133, 80, 0.08);
+}
+.process-photo {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+.process-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.process-photo-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 10px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.02em;
+  font-style: italic;
+  line-height: 1.4;
+}
+.process-step--featured .process-body {
+  padding: 28px 28px 32px;
+}
+.process-step--featured .process-num {
+  margin-bottom: 14px;
 }
 .process-num {
   font-family: 'Fraunces', serif;
@@ -624,6 +716,30 @@ section { padding: 100px 0; }
   margin-top: 8px;
 }
 .form-submit:hover { background: var(--navy-deep); transform: translateY(-1px); }
+.form-submit:disabled {
+  background: var(--ink-soft);
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+.form-result {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.form-result--success {
+  background: #E8F4EC;
+  color: var(--green-deep, #1f5230);
+  border: 1px solid rgba(45, 107, 63, 0.25);
+}
+.form-result--error {
+  background: #FCEDED;
+  color: #962525;
+  border: 1px solid rgba(150, 37, 37, 0.25);
+}
+.form-result strong { font-weight: 700; }
 .form-note {
   font-size: 12px; color: var(--ink-soft);
   margin-top: 12px; line-height: 1.5;
@@ -645,6 +761,7 @@ footer {
 .footer-brand img { height: 36px; }
 .footer-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: white; }
 .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 360px; }
+.footer-meta { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 14px; letter-spacing: 0.02em; }
 .footer-col h4 {
   font-size: 11px; font-weight: 700;
   letter-spacing: 0.18em; text-transform: uppercase;
@@ -766,33 +883,33 @@ footer {
     <div class="hero-content">
       <div class="hero-tag">
         <span class="dot"></span>
-        <span data-en="Operating in Sydney" data-ko="시드니 현장 운영">Operating in Sydney</span>
+        <span data-en="200+ Sites · Sydney NSW" data-ko="200+ 사이트 · 시드니 NSW">200+ Sites · Sydney NSW</span>
       </div>
-      <h1 data-en="One trusted partner for<br/><em>total property care.</em>" data-ko="모든 부동산 관리를<br/><em>한 곳에서.</em>">
-        One trusted partner for<br/><em>total property care.</em>
+      <h1 data-en="The trusted maintenance partner for <em>asset managers &amp; B2B operators.</em>" data-ko="자산 관리사·B2B 운영사를 위한 <em>신뢰받는 유지관리 파트너.</em>">
+        The trusted maintenance partner for <em>asset managers &amp; B2B operators.</em>
       </h1>
-      <p class="lead" data-en="ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney." data-ko="ATS Total Service는 시드니 전역의 주거·상업·관리 부동산에 청소, 정원관리, 쓰레기 수거, 페인팅까지 신뢰할 수 있는 통합 관리 서비스를 제공합니다.">
-        ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney.
+      <p class="lead" data-en="ATS Total Service Pty. Ltd. operates 180+ ongoing maintenance sites across NSW. Cleaning, gardening, waste collection and painting — delivered with our own crew, our own fleet, and 5+ years of proven sub-contracting experience." data-ko="ATS Total Service Pty. Ltd.는 NSW 전역 180여 개 정기 유지관리 사이트를 운영합니다. 청소·정원관리·쓰레기 수거·페인팅을 자체 인력과 자체 차량으로 수행하며, 5년 이상의 검증된 하청 운영 경험을 보유하고 있습니다.">
+        ATS Total Service Pty. Ltd. operates 180+ ongoing maintenance sites across NSW. Cleaning, gardening, waste collection and painting — delivered with our own crew, our own fleet, and 5+ years of proven sub-contracting experience.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn-primary">
-          <span data-en="Request a Quote" data-ko="견적 요청하기">Request a Quote</span>
+          <span data-en="Speak with Steven" data-ko="대표와 직접 상담">Speak with Steven</span>
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="#services" class="btn-secondary">
-          <span data-en="Explore Services" data-ko="서비스 보기">Explore Services</span>
+          <span data-en="Our Capabilities" data-ko="수행 가능 서비스">Our Capabilities</span>
         </a>
       </div>
     </div>
     <div class="hero-visual">
-      <img src="./images/hero-action.jpg" alt="ATS team in action — Sydney property maintenance" />
+      <img src="./images/hero-action.jpg" alt="ATS team on site — Sydney property maintenance" />
       <div class="hero-badge">
         <div class="hero-badge-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
         <div class="hero-badge-text">
-          <strong data-en="Fully owned fleet" data-ko="100% 자체 차량">Fully owned fleet</strong>
-          <span data-en="No subcontractors" data-ko="하도급 없음">No subcontractors</span>
+          <strong data-en="In-house crew" data-ko="100% 자체 인력">In-house crew</strong>
+          <span data-en="Own fleet, no outsourcing" data-ko="자체 차량, 하도급 없음">Own fleet, no outsourcing</span>
         </div>
       </div>
     </div>
@@ -802,7 +919,7 @@ footer {
     <div class="trust-inner">
       <div class="trust-item">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span data-en="Fully Insured · Registered Pty. Ltd." data-ko="보험 가입 · 정식 등록 법인">Fully Insured · Registered Pty. Ltd.</span>
+        <span data-en="Fully Insured · Public Liability" data-ko="보험 가입 · Public Liability">Fully Insured · Public Liability</span>
       </div>
       <div class="trust-item">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -826,32 +943,32 @@ footer {
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-eyebrow" data-en="About Us" data-ko="회사 소개">About Us</div>
-        <h2 class="section-title" data-en="Built for owners who need <em>one number to call.</em>" data-ko="건물주가 <em>전화 한 통</em>으로 끝낼 수 있는 파트너.">
-          Built for owners who need <em>one number to call.</em>
+        <h2 class="section-title" data-en="A sub-contractor head contractors <em>actually trust.</em>" data-ko="원청이 <em>실제로 신뢰하는</em> 하청 파트너.">
+          A sub-contractor head contractors <em>actually trust.</em>
         </h2>
-        <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company built to consolidate the everyday operations of owning and managing property. Cleaning, gardening, waste collection and painting — delivered by one team, on one invoice, with one accountable contact." data-ko="ATS Total Service Pty. Ltd.는 부동산 운영에 필요한 모든 일상 업무를 한 팀에서 처리하기 위해 설립된 시드니 기반 부동산 관리 회사입니다. 청소, 정원관리, 쓰레기 수거, 페인팅을 하나의 팀, 하나의 인보이스, 하나의 책임자로 통합 제공합니다.">
-          ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company built to consolidate the everyday operations of owning and managing property. Cleaning, gardening, waste collection and painting — delivered by one team, on one invoice, with one accountable contact.
+        <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based maintenance company operating 180+ ongoing sites across NSW and 20+ B2B properties. We work as a sub-contractor for established head contractors in asset and facility management — quietly delivering at the standard their clients expect." data-ko="ATS Total Service Pty. Ltd.는 NSW 전역에서 180여 개의 정기 유지관리 사이트와 20여 개의 B2B 부동산을 운영하는 시드니 기반 종합 유지관리 회사입니다. 자산·시설 관리 분야의 검증된 원청들과 하청 파트너로 협력하며, 클라이언트가 요구하는 수준을 변함없이 충족시킵니다.">
+          ATS Total Service Pty. Ltd. is a Sydney-based maintenance company operating 180+ ongoing sites across NSW and 20+ B2B properties. We work as a sub-contractor for established head contractors in asset and facility management — quietly delivering at the standard their clients expect.
         </p>
-        <p data-en="With our own fleet of trucks, vans and commercial-grade machinery, we operate without subcontractors. That means consistent quality, predictable scheduling, and direct accountability — the operating standard that property managers, strata committees and commercial landlords expect." data-ko="자체 보유한 트럭·밴·상업용 장비를 통해 하도급 없이 모든 작업을 직접 수행합니다. 일관된 품질, 예측 가능한 스케줄, 직접적인 책임 — 부동산 관리자, 스트라타 위원회, 상업용 임대인이 요구하는 기준입니다.">
-          With our own fleet of trucks, vans and commercial-grade machinery, we operate without subcontractors. That means consistent quality, predictable scheduling, and direct accountability — the operating standard that property managers, strata committees and commercial landlords expect.
+        <p data-en="Five years of operational experience. Our own crew. Our own vehicles. Our own commercial-grade equipment. No outsourcing, no scheduling conflicts, no surprises — just consistent delivery, day after day, site after site." data-ko="5년 이상의 현장 운영 경험. 자체 인력, 자체 차량, 자체 상업용 장비를 보유하고 있습니다. 하도급 없음, 스케줄 충돌 없음, 변수 없음 — 매일, 모든 사이트에서 일관된 수행을 보장합니다.">
+          Five years of operational experience. Our own crew. Our own vehicles. Our own commercial-grade equipment. No outsourcing, no scheduling conflicts, no surprises — just consistent delivery, day after day, site after site.
         </p>
       </div>
       <div class="about-stats reveal">
         <div class="about-stat">
-          <div class="about-stat-num">4<em>+</em></div>
-          <div class="about-stat-label" data-en="Service Categories" data-ko="서비스 카테고리">Service Categories</div>
+          <div class="about-stat-num">180<span class="stat-suffix">+</span></div>
+          <div class="about-stat-label" data-en="Ongoing Sites" data-ko="정기 운영 사이트">Ongoing Sites</div>
         </div>
         <div class="about-stat">
-          <div class="about-stat-num">100<em>%</em></div>
-          <div class="about-stat-label" data-en="In-House Operations" data-ko="자체 운영 비율">In-House Operations</div>
+          <div class="about-stat-num">20<span class="stat-suffix">+</span></div>
+          <div class="about-stat-label" data-en="B2B Properties" data-ko="B2B 부동산">B2B Properties</div>
         </div>
         <div class="about-stat">
-          <div class="about-stat-num">2.5<em>t</em></div>
-          <div class="about-stat-label" data-en="Truck Payload Capacity" data-ko="트럭 적재량">Truck Payload Capacity</div>
+          <div class="about-stat-num">5<span class="stat-suffix">+</span></div>
+          <div class="about-stat-label" data-en="Years Operating" data-ko="운영 연수">Years Operating</div>
         </div>
         <div class="about-stat">
-          <div class="about-stat-num">NSW</div>
-          <div class="about-stat-label" data-en="Service Region" data-ko="운영 지역">Service Region</div>
+          <div class="about-stat-num">100<span class="stat-suffix">%</span></div>
+          <div class="about-stat-label" data-en="In-House Crew" data-ko="자체 인력 비율">In-House Crew</div>
         </div>
       </div>
     </div>
@@ -863,18 +980,18 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Services" data-ko="서비스">Services</div>
-      <h2 class="section-title" data-en="Four service lines. <em>One operational team.</em>" data-ko="4개 서비스 라인, <em>하나의 운영 팀.</em>">
-        Four service lines.<br/><em>One operational team.</em>
+      <h2 class="section-title" data-en="One contractor. <em>All maintenance services.</em>" data-ko="하나의 업체로 <em>모든 유지관리 서비스.</em>">
+        One contractor. <em>All maintenance services.</em>
       </h2>
-      <p class="section-desc" data-en="Each service is delivered in-house — never outsourced. The same standards, the same crews, the same direct accountability across every job." data-ko="모든 서비스는 외주 없이 자체 인력으로 직접 수행합니다. 동일한 기준, 동일한 팀, 모든 작업에 일관된 책임감을 보장합니다.">
-        Each service is delivered in-house — never outsourced. The same standards, the same crews, the same direct accountability across every job.
+      <p class="section-desc" data-en="Every service delivered by our own crew with our own equipment. The same standards across cleaning, gardening, waste removal and painting — whether it's a single property or a 50-site contract." data-ko="모든 서비스는 자체 인력과 자체 장비로 직접 수행됩니다. 청소·정원관리·쓰레기 수거·페인팅까지 동일한 기준으로 — 단일 부동산이든 50개 사이트 계약이든 동일하게 적용됩니다.">
+        Every service delivered by our own crew with our own equipment. The same standards across cleaning, gardening, waste removal and painting — whether it's a single property or a 50-site contract.
       </p>
     </div>
 
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-photo">
-          <img src="./images/cleaning-city.jpg" alt="Sydney urban property cleaning" loading="lazy" />
+          <img src="./images/cleaning-city.jpg" alt="ATS cleaning service across Sydney metro" loading="lazy" />
         </div>
         <div class="service-body">
           <span class="service-num">01 / Cleaning</span>
@@ -939,35 +1056,41 @@ footer {
 <section id="process" class="process">
   <div class="container">
     <div class="reveal">
-      <div class="section-eyebrow" data-en="Process" data-ko="이용 절차">Process</div>
-      <h2 class="section-title" data-en="From enquiry to handover <em>in three steps.</em>" data-ko="문의에서 인수까지 <em>3단계로 완료.</em>">
-        From enquiry to handover<br/><em>in three steps.</em>
+      <div class="section-eyebrow" data-en="How We Work" data-ko="협업 방식">How We Work</div>
+      <h2 class="section-title" data-en="Direct contact, clear quotes, <em>consistent delivery.</em>" data-ko="직접 소통, 명확한 견적, <em>일관된 수행.</em>">
+        Direct contact, clear quotes, <em>consistent delivery.</em>
       </h2>
-      <p class="section-desc" data-en="A simple, transparent process designed for property managers and busy owners who need things done right the first time." data-ko="부동산 관리자와 바쁜 건물주를 위해 처음부터 정확하게 처리되도록 설계된 명확하고 투명한 프로세스입니다.">
-        A simple, transparent process designed for property managers and busy owners who need things done right the first time.
+      <p class="section-desc" data-en="No call centres, no junior account managers. Speak directly with Steven Shim, Director — and get a partner who already knows how head contractors operate." data-ko="콜센터 없음, 주니어 매니저 없음. ATS의 대표 Steven Shim과 직접 통화하시고, 원청 운영 방식을 이미 이해하는 파트너를 얻으십시오.">
+        No call centres, no junior account managers. Speak directly with Steven Shim, Director — and get a partner who already knows how head contractors operate.
       </p>
     </div>
 
     <div class="process-grid">
       <div class="process-step reveal">
         <div class="process-num">01</div>
-        <h3 data-en="Enquiry & Site Review" data-ko="문의 및 현장 검토">Enquiry &amp; Site Review</h3>
-        <p data-en="Tell us about your property and what needs attention. We respond within one business day with clarifying questions and arrange a site visit if needed." data-ko="부동산 정보와 필요한 작업을 알려주세요. 영업일 1일 이내에 확인 질문과 함께 회신드리며 필요 시 현장 방문 일정을 잡습니다.">
-          Tell us about your property and what needs attention. We respond within one business day with clarifying questions and arrange a site visit if needed.
+        <h3 data-en="Direct Call" data-ko="대표와 직접 통화">Direct Call</h3>
+        <p data-en="Reach Steven on 0416 492 358. We discuss the scope, sites, frequency and any specific contractor requirements. No gatekeepers." data-ko="대표 Steven에게 0416 492 358로 직접 연락하십시오. 작업 범위, 사이트, 주기, 원청 요구사항까지 명확히 논의합니다.">
+          Reach Steven on 0416 492 358. We discuss the scope, sites, frequency and any specific contractor requirements. No gatekeepers.
         </p>
       </div>
-      <div class="process-step reveal">
-        <div class="process-num">02</div>
-        <h3 data-en="Quote & Schedule" data-ko="견적 및 일정 확정">Quote &amp; Schedule</h3>
-        <p data-en="You receive a clear, itemized quote with no hidden fees and a confirmed schedule. For ongoing contracts, we propose a maintenance plan tailored to your property." data-ko="명확하고 항목별로 정리된 견적과 확정 일정을 받으십시오. 정기 계약은 부동산에 맞춘 유지관리 계획을 제안드립니다.">
-          You receive a clear, itemized quote with no hidden fees and a confirmed schedule. For ongoing contracts, we propose a maintenance plan tailored to your property.
-        </p>
+      <div class="process-step process-step--featured reveal">
+        <div class="process-photo">
+          <img src="./images/site-visit.jpg" alt="Director Steven Shim conducting an on-site assessment in Sydney" loading="lazy" />
+          <div class="process-photo-caption" data-en="Director Steven Shim · on-site assessment, Sydney" data-ko="Steven Shim 대표 · 현장 견적 검토, 시드니">Director Steven Shim · on-site assessment, Sydney</div>
+        </div>
+        <div class="process-body">
+          <div class="process-num">02</div>
+          <h3 data-en="Site Walk &amp; Quote" data-ko="현장 방문 및 견적">Site Walk &amp; Quote</h3>
+          <p data-en="For larger contracts we walk the site together. You receive an itemised quote — typically within 48 hours — that accounts for access, frequency and any compliance requirements." data-ko="대규모 계약은 현장을 함께 방문하여 검토합니다. 보통 48시간 내에 출입·주기·컴플라이언스 요건이 반영된 항목별 견적을 받으실 수 있습니다.">
+            For larger contracts we walk the site together. You receive an itemised quote — typically within 48 hours — that accounts for access, frequency and any compliance requirements.
+          </p>
+        </div>
       </div>
       <div class="process-step reveal">
         <div class="process-num">03</div>
-        <h3 data-en="Delivery & Handover" data-ko="작업 수행 및 인수">Delivery &amp; Handover</h3>
-        <p data-en="Our own crew arrives in our own vehicles with our own equipment. Work is completed to spec, the site is left tidy, and you receive a handover with before/after photos on request." data-ko="자체 차량과 자체 장비로 자체 인력이 출동합니다. 사양대로 작업을 완료하고 현장을 정리한 후, 요청 시 작업 전후 사진을 포함한 인수 보고를 드립니다.">
-          Our own crew arrives in our own vehicles with our own equipment. Work is completed to spec, the site is left tidy, and you receive a handover with before/after photos on request.
+        <h3 data-en="On-Site Delivery" data-ko="현장 수행">On-Site Delivery</h3>
+        <p data-en="Our own hi-vis crew arrives in branded vehicles with the right equipment. Work is delivered to scope, sites are left clean, and you receive photo evidence on request." data-ko="자체 hi-vis 인력이 브랜딩된 차량과 적합한 장비로 출동합니다. 범위대로 작업을 수행하고 현장을 정돈하며, 요청 시 작업 후 사진 증빙을 제공합니다.">
+          Our own hi-vis crew arrives in branded vehicles with the right equipment. Work is delivered to scope, sites are left clean, and you receive photo evidence on request.
         </p>
       </div>
     </div>
@@ -988,12 +1111,23 @@ footer {
       <div class="why-items">
         <div class="why-item reveal">
           <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <h3 data-en="Proven at scale — 180+ sites" data-ko="검증된 운영 규모 — 180+ 사이트">Proven at scale — 180+ sites</h3>
+            <p data-en="We run 180+ ongoing maintenance sites and 20+ B2B properties across NSW. Head contractors choose us because we've already done it — repeatedly, reliably, at volume." data-ko="NSW 전역 180여 개 정기 유지관리 사이트와 20여 개 B2B 부동산을 운영 중입니다. 원청들이 ATS를 선택하는 이유 — 이미 반복적으로, 안정적으로, 규모 있게 수행해왔기 때문입니다.">
+              We run 180+ ongoing maintenance sites and 20+ B2B properties across NSW. Head contractors choose us because we've already done it — repeatedly, reliably, at volume.
+            </p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
           <div>
-            <h3 data-en="Fully Owned Fleet & Equipment" data-ko="장비·차량 100% 자체 보유">Fully Owned Fleet &amp; Equipment</h3>
-            <p data-en="Isuzu 2.5t waste truck, service vans, ride-on mowers, brush cutters. No rental dependencies, no subcontractor scheduling conflicts." data-ko="이스즈 2.5톤 트럭, 서비스 밴, 라이드온 잔디깎이, 예초기까지 모두 자체 보유. 렌탈 의존도 없음, 하도급 스케줄 충돌 없음.">
-              Isuzu 2.5t waste truck, service vans, ride-on mowers, brush cutters. No rental dependencies, no subcontractor scheduling conflicts.
+            <h3 data-en="100% in-house crew &amp; fleet" data-ko="100% 자체 인력·차량">100% in-house crew &amp; fleet</h3>
+            <p data-en="Isuzu 2.5t truck, service vans, ride-on mowers, brush cutters — all owned. Hi-vis trained crew, no sub-sub-contractors. Schedule slips don't cascade through us." data-ko="Isuzu 2.5톤 트럭, 서비스 밴, 라이드온 잔디깎이, 예초기 — 모두 자체 보유. hi-vis 교육 인력만 투입, 재하청 없음. 스케줄 변동이 우리 단계에서 발생하지 않습니다.">
+              Isuzu 2.5t truck, service vans, ride-on mowers, brush cutters — all owned. Hi-vis trained crew, no sub-sub-contractors. Schedule slips don't cascade through us.
             </p>
           </div>
         </div>
@@ -1002,31 +1136,20 @@ footer {
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div>
-            <h3 data-en="One Vendor for Multiple Services" data-ko="복수 서비스를 한 업체로">One Vendor for Multiple Services</h3>
-            <p data-en="Stop coordinating multiple contractors. One invoice, one point of contact, one company accountable for the entire property." data-ko="여러 업체를 조율할 필요 없습니다. 하나의 인보이스, 하나의 담당자, 부동산 전체를 책임지는 하나의 회사.">
-              Stop coordinating multiple contractors. One invoice, one point of contact, one company accountable for the entire property.
+            <h3 data-en="Multi-service capability" data-ko="복합 서비스 수행 능력">Multi-service capability</h3>
+            <p data-en="Lawn mowing, hedge trimming, hard waste removal, end-of-lease cleaning, painting — one crew, one invoice, one accountable contact. Less coordination for your team." data-ko="잔디 깎기, 헷지 트리밍, 대형 폐기물 수거, 임대 종료 청소, 페인팅 — 하나의 팀, 하나의 인보이스, 하나의 담당자. 원청 팀의 조율 부담이 줄어듭니다.">
+              Lawn mowing, hedge trimming, hard waste removal, end-of-lease cleaning, painting — one crew, one invoice, one accountable contact. Less coordination for your team.
             </p>
           </div>
         </div>
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
           <div>
-            <h3 data-en="Built for Long-Term Contracts" data-ko="장기 계약에 최적화">Built for Long-Term Contracts</h3>
-            <p data-en="Property managers, strata committees and commercial landlords work with us on ongoing maintenance programs — not one-off jobs." data-ko="부동산 관리자, 스트라타 위원회, 상업용 임대인과 단발 작업이 아닌 정기 유지관리 프로그램으로 함께합니다.">
-              Property managers, strata committees and commercial landlords work with us on ongoing maintenance programs — not one-off jobs.
-            </p>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <div>
-            <h3 data-en="Registered Pty. Ltd. Company" data-ko="정식 등록 법인 (Pty. Ltd.)">Registered Pty. Ltd. Company</h3>
-            <p data-en="Operating as ATS Total Service Pty. Ltd. with proper insurance, tax invoicing and the operational structure expected for commercial contracts." data-ko="정식 등록 법인 ATS Total Service Pty. Ltd.로 운영하며, 적정 보험·세금계산서 발급·상업 계약에 필요한 운영 체계를 갖추고 있습니다.">
-              Operating as ATS Total Service Pty. Ltd. with proper insurance, tax invoicing and the operational structure expected for commercial contracts.
+            <h3 data-en="Compliant &amp; insured" data-ko="컴플라이언스 및 보험 완비">Compliant &amp; insured</h3>
+            <p data-en="Registered Pty. Ltd. (ABN 49 617 814 105). Public Liability Insurance and Workers Compensation in place. Documentation provided on request for head contractor compliance packs." data-ko="정식 등록 법인 (ABN 49 617 814 105). Public Liability 및 Workers Compensation 가입 완료. 원청의 컴플라이언스 패키지 작성에 필요한 서류는 요청 시 제공됩니다.">
+              Registered Pty. Ltd. (ABN 49 617 814 105). Public Liability Insurance and Workers Compensation in place. Documentation provided on request for head contractor compliance packs.
             </p>
           </div>
         </div>
@@ -1034,13 +1157,13 @@ footer {
 
       <div class="why-side reveal">
         <div class="why-side-img">
-          <img src="./images/site-premium.jpg" alt="Premium Sydney residential property managed by ATS" />
+          <img src="./images/site-premium.jpg" alt="Sydney property managed by ATS" />
         </div>
         <div class="why-side-body">
-          <div class="why-side-eyebrow" data-en="Business Focus" data-ko="비즈니스 포커스">Business Focus</div>
-          <h3 data-en="We work with operators, not consumers." data-ko="우리는 운영자와 일합니다, 소비자가 아닌.">We work with operators, not consumers.</h3>
-          <p data-en="Real estate offices, strata committees, commercial landlords and large residential properties. If you manage property as a business, we're built for you." data-ko="부동산 사무소, 스트라타 위원회, 상업용 임대인, 대형 주거 단지 — 부동산을 비즈니스로 운영하시는 분들을 위해 설계되었습니다.">
-            Real estate offices, strata committees, commercial landlords and large residential properties. If you manage property as a business, we're built for you.
+          <div class="why-side-eyebrow" data-en="Who We Work With" data-ko="협업 대상">Who We Work With</div>
+          <h3 data-en="Head contractors. Asset managers. B2B operators." data-ko="원청. 자산 관리사. B2B 운영사.">Head contractors. Asset managers. B2B operators.</h3>
+          <p data-en="We work behind the scenes for established head contractors managing government housing, strata portfolios and commercial properties. Now expanding to direct B2B clients who need the same reliability." data-ko="정부 주택, 스트라타 포트폴리오, 상업 부동산을 운영하는 검증된 원청들의 현장 파트너로 일해왔습니다. 동일한 수준의 안정성을 필요로 하는 B2B 클라이언트로 협업 영역을 확장 중입니다.">
+            We work behind the scenes for established head contractors managing government housing, strata portfolios and commercial properties. Now expanding to direct B2B clients who need the same reliability.
           </p>
         </div>
       </div>
@@ -1090,12 +1213,12 @@ footer {
 <section id="companies" class="companies">
   <div class="container">
     <div class="reveal">
-      <div class="section-eyebrow" data-en="Our Group" data-ko="계열사">Our Group</div>
-      <h2 class="section-title" data-en="Specialised partners <em>under one roof.</em>" data-ko="하나의 그룹 안에 <em>전문 파트너들.</em>">
-        Specialised partners <em>under one roof.</em>
+      <div class="section-eyebrow" data-en="Group Structure" data-ko="그룹 구조">Group Structure</div>
+      <h2 class="section-title" data-en="ATS Group — <em>parent company &amp; specialised subsidiaries.</em>" data-ko="ATS Group — <em>모회사와 전문 자회사.</em>">
+        ATS Group — <em>parent company &amp; specialised subsidiaries.</em>
       </h2>
-      <p class="section-desc" data-en="For deeper specialization, ATS works alongside two dedicated companies — each with their own focus, fleet and team." data-ko="더 깊은 전문성을 위해 ATS는 각자의 분야·차량·팀을 갖춘 두 개의 전문 회사와 함께 운영됩니다.">
-        For deeper specialization, ATS works alongside two dedicated companies — each with their own focus, fleet and team.
+      <p class="section-desc" data-en="ATS Total Service Pty. Ltd. is the parent company, with two wholly-owned subsidiaries focused on cleaning and maintenance. One ownership structure, shared compliance standards, dedicated specialist crews." data-ko="ATS Total Service Pty. Ltd.는 모회사이며, 청소 및 유지관리에 특화된 두 개의 자회사를 100% 소유하고 있습니다. 하나의 소유 구조, 공통의 컴플라이언스 기준, 분야별 전담 인력으로 운영됩니다.">
+        ATS Total Service Pty. Ltd. is the parent company, with two wholly-owned subsidiaries focused on cleaning and maintenance. One ownership structure, shared compliance standards, dedicated specialist crews.
       </p>
     </div>
 
@@ -1105,10 +1228,10 @@ footer {
           <img src="./images/logo-firstcleaning.png" alt="First Cleaning Sydney" />
         </div>
         <div class="company-body">
-          <span class="company-tag" data-en="Cleaning Specialist" data-ko="청소 전문">Cleaning Specialist</span>
+          <span class="company-tag" data-en="Subsidiary · Cleaning" data-ko="자회사 · 청소">Subsidiary · Cleaning</span>
           <h3 class="company-name">First Cleaning Sydney</h3>
-          <p class="company-desc" data-en="Sydney's residential and commercial cleaning specialist. Bond cleaning, regular service contracts, and post-construction cleaning across the metro area." data-ko="시드니 전역의 주거·상업 청소 전문. 본드 클리닝, 정기 청소, 건축 후 청소까지 폭넓게 수행합니다.">
-            Sydney's residential and commercial cleaning specialist. Bond cleaning, regular service contracts, and post-construction cleaning across the metro area.
+          <p class="company-desc" data-en="ATS subsidiary specialising in cleaning operations across Sydney. Bond cleaning, regular service contracts, and post-construction cleaning — dedicated crew, dedicated equipment." data-ko="ATS의 청소 전문 자회사. 시드니 전역의 본드 클리닝, 정기 청소 계약, 건축 후 청소를 전담 인력과 전담 장비로 수행합니다.">
+            ATS subsidiary specialising in cleaning operations across Sydney. Bond cleaning, regular service contracts, and post-construction cleaning — dedicated crew, dedicated equipment.
           </p>
           <a href="https://firstcleaningsyd.com.au" target="_blank" rel="noopener" class="company-link">
             <span data-en="Visit firstcleaningsyd.com.au" data-ko="firstcleaningsyd.com.au 방문">Visit firstcleaningsyd.com.au</span>
@@ -1122,10 +1245,10 @@ footer {
           <img src="./images/logo-firstmaint.png" alt="First Maintenance" />
         </div>
         <div class="company-body">
-          <span class="company-tag" data-en="Maintenance Specialist" data-ko="유지관리 전문">Maintenance Specialist</span>
+          <span class="company-tag" data-en="Subsidiary · Maintenance" data-ko="자회사 · 유지관리">Subsidiary · Maintenance</span>
           <h3 class="company-name">First Maintenance</h3>
-          <p class="company-desc" data-en="Comprehensive property maintenance: gardening, waste removal, turf care, and minor repairs — delivered as a single ongoing program." data-ko="종합 부동산 유지관리 전문. 정원관리, 폐기물 처리, 잔디 관리, 보수 작업까지 일괄 수행합니다.">
-            Comprehensive property maintenance: gardening, waste removal, turf care, and minor repairs — delivered as a single ongoing program.
+          <p class="company-desc" data-en="ATS subsidiary specialising in grounds maintenance — lawn mowing, gardening, waste removal and turf care. Branded fleet, dedicated maintenance crew." data-ko="ATS의 유지관리 전문 자회사. 잔디 깎기, 정원관리, 폐기물 처리, 잔디 관리를 전담 인력과 브랜딩된 차량으로 수행합니다.">
+            ATS subsidiary specialising in grounds maintenance — lawn mowing, gardening, waste removal and turf care. Branded fleet, dedicated maintenance crew.
           </p>
           <a href="https://firstmaint.com.au" target="_blank" rel="noopener" class="company-link">
             <span data-en="Visit firstmaint.com.au" data-ko="firstmaint.com.au 방문">Visit firstmaint.com.au</span>
@@ -1141,18 +1264,18 @@ footer {
 <section id="contact" class="contact">
   <div class="container">
     <div class="reveal">
-      <div class="section-eyebrow" data-en="Get in Touch" data-ko="연락하기">Get in Touch</div>
-      <h2 class="section-title" data-en="Let&apos;s talk about <em>your property.</em>" data-ko="<em>당신의 부동산</em>에 대해 이야기합시다.">
-        Let's talk about <em>your property.</em>
+      <div class="section-eyebrow" data-en="Direct Line" data-ko="직접 연결">Direct Line</div>
+      <h2 class="section-title" data-en="Speak directly with <em>Steven Shim, Director.</em>" data-ko="ATS 대표 <em>Steven Shim과 직접</em> 상담하십시오.">
+        Speak directly with <em>Steven Shim, Director.</em>
       </h2>
-      <p class="section-desc" data-en="Tell us about your project. We'll respond within one business day with a clear quote and timeline." data-ko="프로젝트 내용을 알려주세요. 영업일 1일 내 명확한 견적과 일정을 회신드립니다.">
-        Tell us about your project. We'll respond within one business day with a clear quote and timeline.
+      <p class="section-desc" data-en="Send a brief about your sites, contract type and timeline. Steven responds personally within one business day." data-ko="사이트, 계약 형태, 일정을 간단히 알려주십시오. 대표 Steven이 영업일 1일 이내 직접 회신드립니다.">
+        Send a brief about your sites, contract type and timeline. Steven responds personally within one business day.
       </p>
     </div>
 
     <div class="call-card reveal">
       <div class="call-card-text">
-        <div class="call-card-label" data-en="Call us directly" data-ko="바로 전화하기">Call us directly</div>
+        <div class="call-card-label" data-en="Steven Shim · Director" data-ko="Steven Shim · 대표">Steven Shim · Director</div>
         <a href="tel:+61416492358" class="call-card-number">0416 492 358</a>
         <div class="call-card-sub" data-en="Sydney, NSW · Mon–Sat" data-ko="시드니 NSW · 월–토">Sydney, NSW · Mon–Sat</div>
       </div>
@@ -1169,6 +1292,14 @@ footer {
           <div class="contact-value">ATS Total Service Pty. Ltd.</div>
         </div>
         <div class="contact-block">
+          <div class="contact-label" data-en="ABN" data-ko="ABN (호주 사업자번호)">ABN</div>
+          <div class="contact-value">49 617 814 105</div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-label" data-en="Director" data-ko="대표">Director</div>
+          <div class="contact-value">Steven Shim</div>
+        </div>
+        <div class="contact-block">
           <div class="contact-label" data-en="Location" data-ko="소재지">Location</div>
           <div class="contact-value">Sydney, NSW · Australia</div>
         </div>
@@ -1182,42 +1313,63 @@ footer {
         </div>
       </div>
 
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <form id="atsContactForm" class="contact-form reveal">
+        <input type="hidden" name="access_key" value="9a7449a8-9ec9-457b-9d8a-abb01ab632b6" />
+        <input type="hidden" name="subject" value="New B2B Enquiry — ATS Total Service" />
+        <input type="hidden" name="from_name" value="ATS Website (atstotal.com.au)" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
         <div class="form-row">
           <div class="form-field">
             <label data-en="Full Name" data-ko="이름">Full Name</label>
             <input type="text" name="name" required />
           </div>
           <div class="form-field">
-            <label data-en="Email" data-ko="이메일">Email</label>
-            <input type="email" name="email" required />
+            <label data-en="Company" data-ko="회사명">Company</label>
+            <input type="text" name="company" />
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
-            <label data-en="Phone (Optional)" data-ko="전화번호 (선택)">Phone (Optional)</label>
+            <label data-en="Email" data-ko="이메일">Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-field">
+            <label data-en="Phone" data-ko="전화번호">Phone</label>
             <input type="tel" name="phone" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label data-en="Enquiry Type" data-ko="문의 유형">Enquiry Type</label>
+            <select name="enquiryType">
+              <option data-en="Head contractor / Sub-contract opportunity" data-ko="원청 / 하청 협업 제안">Head contractor / Sub-contract opportunity</option>
+              <option data-en="B2B ongoing maintenance contract" data-ko="B2B 정기 유지관리 계약">B2B ongoing maintenance contract</option>
+              <option data-en="One-off job / Single property" data-ko="단일 건 / 1회성 작업">One-off job / Single property</option>
+              <option data-en="General enquiry" data-ko="일반 문의">General enquiry</option>
+            </select>
           </div>
           <div class="form-field">
             <label data-en="Service of Interest" data-ko="문의 서비스">Service of Interest</label>
             <select name="service">
-              <option data-en="Cleaning" data-ko="청소">Cleaning</option>
-              <option data-en="Gardening" data-ko="정원 관리">Gardening</option>
+              <option data-en="Gardening / Lawn Mowing" data-ko="정원관리 / 잔디">Gardening / Lawn Mowing</option>
               <option data-en="Waste Collection" data-ko="쓰레기 수거">Waste Collection</option>
+              <option data-en="Cleaning" data-ko="청소">Cleaning</option>
               <option data-en="Painting" data-ko="페인팅">Painting</option>
-              <option data-en="Multiple Services" data-ko="복수 서비스">Multiple Services</option>
+              <option data-en="Multiple Services" data-ko="복합 서비스">Multiple Services</option>
             </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-field full">
-            <label data-en="Message" data-ko="메시지">Message</label>
-            <textarea name="message" required></textarea>
+            <label data-en="Brief — sites, frequency, timeline" data-ko="브리프 — 사이트, 주기, 일정">Brief — sites, frequency, timeline</label>
+            <textarea name="message" placeholder="e.g. 12 properties across Western Sydney, fortnightly lawn maintenance, starting February" required></textarea>
           </div>
         </div>
-        <button type="submit" class="form-submit" data-en="Send Enquiry" data-ko="문의 보내기">Send Enquiry</button>
-        <p class="form-note" data-en="This form opens your email client with the message prefilled. You can also email us directly at admin@atstotal.com.au" data-ko="전송 시 메일 클라이언트가 열리며 내용이 자동 입력됩니다. admin@atstotal.com.au 로 직접 메일을 보내셔도 됩니다.">
-          This form opens your email client with the message prefilled. You can also email us directly at admin@atstotal.com.au
+        <button type="submit" class="form-submit" id="atsSubmitBtn" data-en="Send Brief to Steven" data-ko="대표에게 브리프 전송">Send Brief to Steven</button>
+        <div id="atsFormResult" class="form-result" style="display:none"></div>
+        <p class="form-note" data-en="Securely sent to admin@atstotal.com.au. Steven personally reviews every B2B enquiry and replies within one business day." data-ko="admin@atstotal.com.au 로 안전하게 전송됩니다. 모든 B2B 문의는 대표 Steven이 직접 검토하며 영업일 1일 이내 회신드립니다.">
+          Securely sent to admin@atstotal.com.au. Steven personally reviews every B2B enquiry and replies within one business day.
         </p>
       </form>
     </div>
@@ -1233,9 +1385,10 @@ footer {
           <img src="./logo.png" alt="ATS" />
           <div class="footer-brand-name">ATS Total Service</div>
         </div>
-        <p class="footer-tagline" data-en="Sydney's total property maintenance partner. Cleaning, gardening, waste collection, painting — one team, fully accountable." data-ko="시드니의 종합 부동산 관리 파트너. 청소·정원관리·쓰레기 수거·페인팅을 책임지는 하나의 팀.">
-          Sydney's total property maintenance partner. Cleaning, gardening, waste collection, painting — one team, fully accountable.
+        <p class="footer-tagline" data-en="The trusted maintenance partner for head contractors, asset managers and B2B operators across Sydney NSW." data-ko="시드니 NSW 전역의 원청·자산 관리사·B2B 운영사를 위한 신뢰받는 유지관리 파트너.">
+          The trusted maintenance partner for head contractors, asset managers and B2B operators across Sydney NSW.
         </p>
+        <p class="footer-meta" data-en="ATS Total Service Pty. Ltd. · ABN 49 617 814 105" data-ko="ATS Total Service Pty. Ltd. · ABN 49 617 814 105">ATS Total Service Pty. Ltd. · ABN 49 617 814 105</p>
       </div>
       <div class="footer-col">
         <h4 data-en="Services" data-ko="서비스">Services</h4>
@@ -1247,11 +1400,12 @@ footer {
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-en="Contact" data-ko="연락처">Contact</h4>
+        <h4 data-en="Direct Contact" data-ko="직접 연락">Direct Contact</h4>
         <ul>
+          <li><span data-en="Steven Shim · Director" data-ko="Steven Shim · 대표">Steven Shim · Director</span></li>
           <li><a href="tel:+61416492358">0416 492 358</a></li>
           <li><a href="mailto:admin@atstotal.com.au">admin@atstotal.com.au</a></li>
-          <li><span data-en="Sydney, NSW" data-ko="시드니 NSW">Sydney, NSW</span></li>
+          <li><span data-en="Sydney, NSW · Australia" data-ko="시드니 NSW · 호주">Sydney, NSW · Australia</span></li>
         </ul>
       </div>
     </div>
@@ -1301,28 +1455,66 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* ============ CONTACT FORM (mailto) ============ */
-function handleSubmit(e) {
-  e.preventDefault();
-  const f = e.target;
-  const name = f.name.value.trim();
-  const email = f.email.value.trim();
-  const phone = f.phone.value.trim();
-  const service = f.service.value;
-  const message = f.message.value.trim();
+/* ============ CONTACT FORM (Web3Forms - auto email send) ============ */
+(function() {
+  const form = document.getElementById('atsContactForm');
+  if (!form) return;
+  const btn = document.getElementById('atsSubmitBtn');
+  const result = document.getElementById('atsFormResult');
 
-  const subject = encodeURIComponent('[ATS Enquiry] ' + service + ' — ' + name);
-  const body = encodeURIComponent(
-    'Hello ATS Total Service,\n\n' +
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Phone: ' + (phone || '-') + '\n' +
-    'Service of Interest: ' + service + '\n\n' +
-    'Message:\n' + message + '\n\n' +
-    '—\nSent via atstotal.com.au'
-  );
-  window.location.href = 'mailto:admin@atstotal.com.au?subject=' + subject + '&body=' + body;
-}
+  function getLang() {
+    return document.documentElement.lang === 'ko' ? 'ko' : 'en';
+  }
+  function msg(en, ko) {
+    return getLang() === 'ko' ? ko : en;
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const originalBtnText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = msg('Sending...', '전송 중...');
+    result.style.display = 'none';
+    result.className = 'form-result';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        result.className = 'form-result form-result--success';
+        result.innerHTML = '<strong>' +
+          msg('✓ Brief sent to Steven.', '✓ 대표에게 전송 완료.') +
+          '</strong><br>' +
+          msg('Steven will review and reply within one business day. For urgent matters, call 0416 492 358 directly.',
+              'Steven 대표가 영업일 1일 이내 검토 후 회신드립니다. 급한 경우 0416 492 358로 직접 연락주세요.');
+        result.style.display = 'block';
+        form.reset();
+        btn.textContent = msg('Sent ✓', '전송 완료 ✓');
+        setTimeout(function() {
+          btn.disabled = false;
+          btn.textContent = originalBtnText;
+        }, 4000);
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      result.className = 'form-result form-result--error';
+      result.innerHTML = '<strong>' +
+        msg('Could not send right now.', '전송 실패.') +
+        '</strong><br>' +
+        msg('Please call Steven directly on 0416 492 358 or email admin@atstotal.com.au',
+            '0416 492 358로 직접 통화하시거나 admin@atstotal.com.au 로 이메일 부탁드립니다.');
+      result.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = originalBtnText;
+    }
+  });
+})();
 
 /* ============ MOBILE NAV CLOSE ON LINK CLICK ============ */
 document.querySelectorAll('#navLinks a').forEach(a => {
