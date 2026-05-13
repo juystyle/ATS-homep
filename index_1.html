@@ -392,6 +392,35 @@ section { padding: 100px 0; }
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
+  overflow: hidden;
+}
+.process-step--featured {
+  padding: 0;
+  border-color: rgba(58, 133, 80, 0.35);
+  background: rgba(58, 133, 80, 0.08);
+}
+.process-photo {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  position: relative;
+}
+.process-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.process-photo-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 10px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.02em;
+  font-style: italic;
+  line-height: 1.4;
+}
+.process-step--featured .process-body {
+  padding: 28px 28px 32px;
+}
+.process-step--featured .process-num {
+  margin-bottom: 14px;
 }
 .process-num {
   font-family: 'Fraunces', serif;
@@ -1020,12 +1049,18 @@ footer {
           Reach Steven on 0416 492 358. We discuss the scope, sites, frequency and any specific contractor requirements. No gatekeepers.
         </p>
       </div>
-      <div class="process-step reveal">
-        <div class="process-num">02</div>
-        <h3 data-en="Site Walk &amp; Quote" data-ko="현장 방문 및 견적">Site Walk &amp; Quote</h3>
-        <p data-en="For larger contracts we walk the site together. You receive an itemised quote — typically within 48 hours — that accounts for access, frequency and any compliance requirements." data-ko="대규모 계약은 현장을 함께 방문하여 검토합니다. 보통 48시간 내에 출입·주기·컴플라이언스 요건이 반영된 항목별 견적을 받으실 수 있습니다.">
-          For larger contracts we walk the site together. You receive an itemised quote — typically within 48 hours — that accounts for access, frequency and any compliance requirements.
-        </p>
+      <div class="process-step process-step--featured reveal">
+        <div class="process-photo">
+          <img src="./images/site-visit.jpg" alt="Director Steven Shim conducting an on-site assessment in Sydney" loading="lazy" />
+          <div class="process-photo-caption" data-en="Director Steven Shim · on-site assessment, Sydney" data-ko="Steven Shim 대표 · 현장 견적 검토, 시드니">Director Steven Shim · on-site assessment, Sydney</div>
+        </div>
+        <div class="process-body">
+          <div class="process-num">02</div>
+          <h3 data-en="Site Walk &amp; Quote" data-ko="현장 방문 및 견적">Site Walk &amp; Quote</h3>
+          <p data-en="For larger contracts we walk the site together. You receive an itemised quote — typically within 48 hours — that accounts for access, frequency and any compliance requirements." data-ko="대규모 계약은 현장을 함께 방문하여 검토합니다. 보통 48시간 내에 출입·주기·컴플라이언스 요건이 반영된 항목별 견적을 받으실 수 있습니다.">
+            For larger contracts we walk the site together. You receive an itemised quote — typically within 48 hours — that accounts for access, frequency and any compliance requirements.
+          </p>
+        </div>
       </div>
       <div class="process-step reveal">
         <div class="process-num">03</div>
