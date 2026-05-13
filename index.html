@@ -458,31 +458,45 @@ section { padding: 100px 0; }
   box-shadow: 0 30px 60px rgba(27, 58, 87, 0.12);
 }
 .company-logo-area {
-  padding: 56px 32px;
+  padding: 64px 32px;
   display: flex; align-items: center; justify-content: center;
   min-height: 280px;
   position: relative;
+  overflow: hidden;
 }
 .company-card.cleaning .company-logo-area {
-  background: linear-gradient(135deg, #DCE7FB 0%, #C5D6F5 100%);
+  background: linear-gradient(135deg, #E8F0FC 0%, #C5D6F5 100%);
 }
 .company-card.maint .company-logo-area {
-  background: linear-gradient(135deg, #DCEAE0 0%, #C2DBC9 100%);
+  background: linear-gradient(135deg, #E5F0E8 0%, #C2DBC9 100%);
 }
 .company-logo-area::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
   background-size: 24px 24px;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+.company-logo-area::after {
+  content: '';
+  position: absolute;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
 }
 .company-logo-area img {
-  max-height: 160px; max-width: 80%;
+  max-height: 170px; max-width: 75%;
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.10));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.company-card:hover .company-logo-area img {
+  transform: scale(1.05);
 }
 .company-body {
   padding: 28px 32px 32px;
@@ -762,7 +776,7 @@ footer {
         <span class="dot"></span>
         <span data-en="Operating in Sydney" data-ko="시드니 현장 운영">Operating in Sydney</span>
       </div>
-      <h1 data-en='One trusted partner for<br/><em>total property care.</em>' data-ko='모든 부동산 관리를<br/><em>한 곳에서.</em>'>
+      <h1 data-en="One trusted partner for<br/><em>total property care.</em>" data-ko="모든 부동산 관리를<br/><em>한 곳에서.</em>">
         One trusted partner for<br/><em>total property care.</em>
       </h1>
       <p class="lead" data-en="ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney." data-ko="ATS Total Service는 시드니 전역의 주거·상업·관리 부동산에 청소, 정원관리, 쓰레기 수거, 페인팅까지 신뢰할 수 있는 통합 관리 서비스를 제공합니다.">
@@ -779,7 +793,7 @@ footer {
       </div>
     </div>
     <div class="hero-visual">
-      <img src="./images/truck.jpg" alt="ATS Isuzu service truck on site in Sydney" />
+      <img src="./images/hero-action.jpg" alt="ATS team in action — Sydney property maintenance" />
       <div class="hero-badge">
         <div class="hero-badge-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
@@ -820,7 +834,7 @@ footer {
     <div class="about-grid">
       <div class="about-text reveal">
         <div class="section-eyebrow" data-en="About Us" data-ko="회사 소개">About Us</div>
-        <h2 class="section-title" data-en='Built for owners who need <em>one number to call.</em>' data-ko='건물주가 <em>전화 한 통</em>으로 끝낼 수 있는 파트너.'>
+        <h2 class="section-title" data-en="Built for owners who need <em>one number to call.</em>" data-ko="건물주가 <em>전화 한 통</em>으로 끝낼 수 있는 파트너.">
           Built for owners who need <em>one number to call.</em>
         </h2>
         <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company built to consolidate the everyday operations of owning and managing property. Cleaning, gardening, waste collection and painting — delivered by one team, on one invoice, with one accountable contact." data-ko="ATS Total Service Pty. Ltd.는 부동산 운영에 필요한 모든 일상 업무를 한 팀에서 처리하기 위해 설립된 시드니 기반 부동산 관리 회사입니다. 청소, 정원관리, 쓰레기 수거, 페인팅을 하나의 팀, 하나의 인보이스, 하나의 책임자로 통합 제공합니다.">
@@ -857,7 +871,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Services" data-ko="서비스">Services</div>
-      <h2 class="section-title" data-en='Four service lines.<br/><em>One operational team.</em>' data-ko='4개 서비스 라인,<br/><em>하나의 운영 팀.</em>'>
+      <h2 class="section-title" data-en="Four service lines.<br/><em>One operational team.</em>" data-ko="4개 서비스 라인,<br/><em>하나의 운영 팀.</em>">
         Four service lines.<br/><em>One operational team.</em>
       </h2>
       <p class="section-desc" data-en="Each service is delivered in-house — never outsourced. The same standards, the same crews, the same direct accountability across every job." data-ko="모든 서비스는 외주 없이 자체 인력으로 직접 수행합니다. 동일한 기준, 동일한 팀, 모든 작업에 일관된 책임감을 보장합니다.">
@@ -934,7 +948,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Process" data-ko="이용 절차">Process</div>
-      <h2 class="section-title" data-en='From enquiry to handover<br/><em>in three steps.</em>' data-ko='문의에서 인수까지<br/><em>3단계로 완료.</em>'>
+      <h2 class="section-title" data-en="From enquiry to handover<br/><em>in three steps.</em>" data-ko="문의에서 인수까지<br/><em>3단계로 완료.</em>">
         From enquiry to handover<br/><em>in three steps.</em>
       </h2>
       <p class="section-desc" data-en="A simple, transparent process designed for property managers and busy owners who need things done right the first time." data-ko="부동산 관리자와 바쁜 건물주를 위해 처음부터 정확하게 처리되도록 설계된 명확하고 투명한 프로세스입니다.">
@@ -973,7 +987,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Why Choose ATS" data-ko="ATS를 선택하는 이유">Why Choose ATS</div>
-      <h2 class="section-title" data-en='Reliability isn't a slogan.<br/><em>It's how we operate.</em>' data-ko='신뢰는 구호가 아니라<br/><em>운영 방식입니다.</em>'>
+      <h2 class="section-title" data-en="Reliability isn&apos;t a slogan.<br/><em>It&apos;s how we operate.</em>" data-ko="신뢰는 구호가 아니라<br/><em>운영 방식입니다.</em>">
         Reliability isn't a slogan.<br/><em>It's how we operate.</em>
       </h2>
     </div>
@@ -1047,7 +1061,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Fleet & Equipment" data-ko="자체 장비">Fleet &amp; Equipment</div>
-      <h2 class="section-title" data-en='Every job is delivered with <em>our own gear.</em>' data-ko='모든 작업은 <em>자체 장비</em>로 수행됩니다.'>
+      <h2 class="section-title" data-en="Every job is delivered with <em>our own gear.</em>" data-ko="모든 작업은 <em>자체 장비</em>로 수행됩니다.">
         Every job is delivered with <em>our own gear.</em>
       </h2>
       <p class="section-desc" data-en="Trucks, vans and commercial-grade machinery — owned, maintained and operated by ATS." data-ko="트럭, 밴, 상업용 장비 — 모두 ATS가 직접 보유·관리·운영합니다.">
@@ -1085,7 +1099,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Our Group" data-ko="계열사">Our Group</div>
-      <h2 class="section-title" data-en='Specialised partners <em>under one roof.</em>' data-ko='하나의 그룹 안에 <em>전문 파트너들.</em>'>
+      <h2 class="section-title" data-en="Specialised partners <em>under one roof.</em>" data-ko="하나의 그룹 안에 <em>전문 파트너들.</em>">
         Specialised partners <em>under one roof.</em>
       </h2>
       <p class="section-desc" data-en="For deeper specialization, ATS works alongside two dedicated companies — each with their own focus, fleet and team." data-ko="더 깊은 전문성을 위해 ATS는 각자의 분야·차량·팀을 갖춘 두 개의 전문 회사와 함께 운영됩니다.">
@@ -1136,7 +1150,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Get in Touch" data-ko="연락하기">Get in Touch</div>
-      <h2 class="section-title" data-en='Let's talk about <em>your property.</em>' data-ko='<em>당신의 부동산</em>에 대해 이야기합시다.'>
+      <h2 class="section-title" data-en="Let&apos;s talk about <em>your property.</em>" data-ko="<em>당신의 부동산</em>에 대해 이야기합시다.">
         Let's talk about <em>your property.</em>
       </h2>
       <p class="section-desc" data-en="Tell us about your project. We'll respond within one business day with a clear quote and timeline." data-ko="프로젝트 내용을 알려주세요. 영업일 1일 내 명확한 견적과 일정을 회신드립니다.">
