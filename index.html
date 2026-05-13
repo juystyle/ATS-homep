@@ -217,7 +217,7 @@ section { padding: 100px 0; }
   color: var(--navy);
   letter-spacing: -0.02em;
   margin-bottom: 18px;
-  max-width: 720px;
+  max-width: 900px;
 }
 .section-title em { font-style: italic; color: var(--green); }
 .section-desc {
@@ -458,7 +458,7 @@ section { padding: 100px 0; }
   box-shadow: 0 30px 60px rgba(27, 58, 87, 0.12);
 }
 .company-logo-area {
-  padding: 64px 32px;
+  padding: 56px 32px;
   display: flex; align-items: center; justify-content: center;
   min-height: 280px;
   position: relative;
@@ -474,25 +474,17 @@ section { padding: 100px 0; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.6;
-}
-.company-logo-area::after {
-  content: '';
-  position: absolute;
-  width: 240px; height: 240px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%);
-  filter: blur(20px);
-  z-index: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  pointer-events: none;
 }
 .company-logo-area img {
-  max-height: 170px; max-width: 75%;
+  max-height: 180px; max-width: 70%;
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.10));
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .company-card:hover .company-logo-area img {
@@ -871,7 +863,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Services" data-ko="서비스">Services</div>
-      <h2 class="section-title" data-en="Four service lines.<br/><em>One operational team.</em>" data-ko="4개 서비스 라인,<br/><em>하나의 운영 팀.</em>">
+      <h2 class="section-title" data-en="Four service lines. <em>One operational team.</em>" data-ko="4개 서비스 라인, <em>하나의 운영 팀.</em>">
         Four service lines.<br/><em>One operational team.</em>
       </h2>
       <p class="section-desc" data-en="Each service is delivered in-house — never outsourced. The same standards, the same crews, the same direct accountability across every job." data-ko="모든 서비스는 외주 없이 자체 인력으로 직접 수행합니다. 동일한 기준, 동일한 팀, 모든 작업에 일관된 책임감을 보장합니다.">
@@ -948,7 +940,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Process" data-ko="이용 절차">Process</div>
-      <h2 class="section-title" data-en="From enquiry to handover<br/><em>in three steps.</em>" data-ko="문의에서 인수까지<br/><em>3단계로 완료.</em>">
+      <h2 class="section-title" data-en="From enquiry to handover <em>in three steps.</em>" data-ko="문의에서 인수까지 <em>3단계로 완료.</em>">
         From enquiry to handover<br/><em>in three steps.</em>
       </h2>
       <p class="section-desc" data-en="A simple, transparent process designed for property managers and busy owners who need things done right the first time." data-ko="부동산 관리자와 바쁜 건물주를 위해 처음부터 정확하게 처리되도록 설계된 명확하고 투명한 프로세스입니다.">
@@ -987,7 +979,7 @@ footer {
   <div class="container">
     <div class="reveal">
       <div class="section-eyebrow" data-en="Why Choose ATS" data-ko="ATS를 선택하는 이유">Why Choose ATS</div>
-      <h2 class="section-title" data-en="Reliability isn&apos;t a slogan.<br/><em>It&apos;s how we operate.</em>" data-ko="신뢰는 구호가 아니라<br/><em>운영 방식입니다.</em>">
+      <h2 class="section-title" data-en="Reliability isn&apos;t a slogan. <em>It&apos;s how we operate.</em>" data-ko="신뢰는 구호가 아니라 <em>운영 방식입니다.</em>">
         Reliability isn't a slogan.<br/><em>It's how we operate.</em>
       </h2>
     </div>
