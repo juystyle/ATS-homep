@@ -133,6 +133,22 @@ section { padding: clamp(70px, 10vh, 120px) var(--pad); position: relative; }
 /* ABOUT */
 .about { background: var(--white); }
 .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+
+/* Target audience list */
+.about-targets { display: flex; flex-direction: column; gap: 4px; margin-top: 36px; }
+.target-item { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.target-item:last-child { border-bottom: none; }
+.target-item svg { color: var(--green); flex-shrink: 0; margin-top: 2px; }
+.target-item strong { display: block; font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 4px; }
+.target-item span { display: block; font-size: 13.5px; color: var(--muted); }
+
+/* About photo */
+.about-photo { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/3; position: sticky; top: 100px; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(180deg, transparent, rgba(14,27,38,.75)); color: var(--white); }
+.about-photo-caption span { font-family: var(--display); font-size: 16px; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+
+/* Legacy stat support (kept but unused now) */
 .about-numbers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 40px; }
 .stat { border-top: 1px solid var(--line); padding-top: 18px; }
 .stat-num { font-family: var(--display); font-size: clamp(38px, 4.5vw, 56px); font-weight: 500; color: var(--navy); letter-spacing: -0.03em; line-height: 1; }
@@ -140,7 +156,7 @@ section { padding: clamp(70px, 10vh, 120px) var(--pad); position: relative; }
 .stat-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
 .about-text p { font-size: 17px; color: var(--ink); margin-bottom: 20px; }
 .about-text p:last-child { color: var(--muted); }
-@media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
+@media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } .about-photo { position: static; max-width: 100%; } }
 
 /* SERVICES */
 .services { background: var(--cream); }
@@ -345,13 +361,13 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
 <section class="hero" id="top">
   <div class="hero-grid">
     <div>
-      <div class="hero-eyebrow" data-en="Sydney NSW · Property Maintenance" data-ko="시드니 NSW · 종합 부동산 관리">Sydney NSW · Property Maintenance</div>
+      <div class="hero-eyebrow" data-en="Sydney NSW · Property Maintenance Partner" data-ko="시드니 NSW · 부동산 유지관리 파트너">Sydney NSW · Property Maintenance Partner</div>
       <h1>
-        <span data-en="One trusted partner for" data-ko="시드니의">One trusted partner for</span><br/>
-        <em data-en="total property care." data-ko="모든 부동산 관리를<br/>한 곳에서.">total property care.</em>
+        <span data-en="Property maintenance," data-ko="부동산 유지관리,">Property maintenance,</span><br/>
+        <em data-en="handled on-site." data-ko="현장에서 직접.">handled on-site.</em>
       </h1>
-      <p class="lead" data-en="ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney." data-ko="ATS Total Service는 시드니 전역의 주거·상업·관리 부동산에 청소, 정원관리, 쓰레기 수거, 페인팅까지 신뢰할 수 있는 통합 관리 서비스를 제공합니다.">
-        ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney.
+      <p class="lead" data-en="A Sydney-based team delivering cleaning, gardening, waste collection and painting across residential blocks, managed properties and end-of-lease handovers. One contact. One accountable team." data-ko="시드니 기반 전문팀이 주거 단지, 관리 부동산, 임대 종료 인수 현장에서 청소·정원관리·쓰레기 수거·페인팅을 직접 수행합니다. 단일 연락처, 단일 책임 운영팀.">
+        A Sydney-based team delivering cleaning, gardening, waste collection and painting across residential blocks, managed properties and end-of-lease handovers. One contact. One accountable team.
       </p>
       <div class="hero-ctas">
         <a href="tel:+61416492358" class="btn-primary">
@@ -366,19 +382,19 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
     </div>
     <div class="hero-visual">
       <div class="hero-photo-frame">
-        <img src="./images/truck.jpg" alt="ATS Total Service Isuzu NLR truck — Sydney NSW" loading="eager" />
+        <img src="./images/hero-action.jpg" alt="ATS Total Service team member trimming grass at a Sydney apartment block" loading="eager" />
         <div class="hero-tag">
           <span class="dot"></span>
-          <span data-en="Operating in Sydney" data-ko="시드니 현장 운영">Operating in Sydney</span>
+          <span data-en="On-site in Sydney" data-ko="시드니 현장 작업">On-site in Sydney</span>
         </div>
       </div>
       <div class="hero-badge">
         <div class="hero-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>
         </div>
         <div class="hero-badge-text">
-          <strong data-en="Fully owned fleet" data-ko="100% 자체 차량">Fully owned fleet</strong>
-          <span data-en="No subcontractors" data-ko="하도급 없음">No subcontractors</span>
+          <strong data-en="In-house crew" data-ko="자체 작업팀">In-house crew</strong>
+          <span data-en="Hi-vis · trained · accountable" data-ko="안전장비 · 교육 · 책임">Hi-vis · trained · accountable</span>
         </div>
       </div>
     </div>
@@ -386,20 +402,20 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
 
   <div class="trust-strip">
     <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>
-      <span data-en="Fully Owned Fleet & Equipment" data-ko="장비·차량 100% 자체 보유">Fully Owned Fleet &amp; Equipment</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span data-en="Fully Insured · Registered Pty. Ltd." data-ko="보험 가입 · 정식 등록 법인">Fully Insured · Registered Pty. Ltd.</span>
     </div>
     <div class="trust-item">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       <span data-en="Sydney-Based · NSW Coverage" data-ko="시드니 기반 · NSW 전역">Sydney-Based · NSW Coverage</span>
     </div>
     <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      <span data-en="Long-Term Contracts Welcome" data-ko="장기 계약 환영">Long-Term Contracts Welcome</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span data-en="24-Hour Quote Response" data-ko="24시간 내 견적 회신">24-Hour Quote Response</span>
     </div>
     <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-      <span data-en="Registered Pty. Ltd. Company" data-ko="정식 등록 법인 (Pty. Ltd.)">Registered Pty. Ltd. Company</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <span data-en="Own Fleet · Truck, Vans & Machinery" data-ko="자체 차량 · 트럭·밴·장비">Own Fleet · Truck, Vans &amp; Machinery</span>
     </div>
   </div>
 </section>
@@ -409,37 +425,51 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
   <div class="section-inner">
     <div class="about-grid">
       <div>
-        <div class="section-label" data-en="Company Overview" data-ko="회사 소개">Company Overview</div>
+        <div class="section-label" data-en="Who We Work With" data-ko="고객사 영역">Who We Work With</div>
         <h2 class="section-title">
-          <span data-en="Built for principal contractors who need" data-ko="원도급자가 필요로 하는">Built for principal contractors who need</span>
-          <em data-en="one accountable partner." data-ko="단 하나의 책임 파트너.">one accountable partner.</em>
+          <span data-en="Built for the people who" data-ko="부동산 관리에">Built for the people who</span>
+          <em data-en="run properties." data-ko="책임지는 분들을 위해.">run properties.</em>
         </h2>
-      </div>
-      <div class="about-text">
-        <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company delivering reliable, efficient, and fully managed services across residential, commercial, and managed properties." data-ko="ATS Total Service Pty. Ltd.는 시드니에 기반을 둔 부동산 관리 회사로, 주거·상업·관리 부동산 전반에 걸쳐 신뢰성 있고 효율적인 통합 관리 서비스를 제공합니다.">
-          ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company delivering reliable, efficient, and fully managed services across residential, commercial, and managed properties.
-        </p>
-        <p data-en="Our integrated service model allows principal contractors to streamline operations through a single, trusted service partner — reducing coordination overhead while maintaining consistent quality across every job." data-ko="자체 통합 운영 모델을 통해 원도급자는 단일 신뢰 파트너로 모든 업무를 일원화할 수 있으며, 업무 조율 부담을 줄이면서도 모든 현장에서 일관된 품질을 유지할 수 있습니다.">
-          Our integrated service model allows principal contractors to streamline operations through a single, trusted service partner — reducing coordination overhead while maintaining consistent quality across every job.
+        <p style="font-size: 17px; color: var(--muted); margin-top: 20px; max-width: 480px;" data-en="ATS Total Service is built for property managers, real estate operators, principal contractors and facility operators who need a maintenance partner that shows up — and does the work in-house." data-ko="ATS Total Service는 부동산 관리자, 부동산 운영사, 원도급사, 시설 운영팀을 위해 만들어졌습니다. 약속한 대로 나타나고, 자체 인력으로 직접 작업하는 유지관리 파트너가 필요한 분들을 위해.">
+          ATS Total Service is built for property managers, real estate operators, principal contractors and facility operators who need a maintenance partner that shows up — and does the work in-house.
         </p>
 
-        <div class="about-numbers">
-          <div class="stat">
-            <div class="stat-num">4 <em>+</em></div>
-            <div class="stat-label" data-en="Service Categories" data-ko="서비스 카테고리">Service Categories</div>
+        <div class="about-targets">
+          <div class="target-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+            <div>
+              <strong data-en="Residential blocks & strata" data-ko="주거 단지·스트라타">Residential blocks &amp; strata</strong>
+              <span data-en="Common areas, lawns, gardens, waste" data-ko="공용 구역, 잔디, 정원, 폐기물">Common areas, lawns, gardens, waste</span>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-num">100<em>%</em></div>
-            <div class="stat-label" data-en="In-House Operations" data-ko="자체 인력 운영">In-House Operations</div>
+          <div class="target-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            <div>
+              <strong data-en="Real estate & property managers" data-ko="부동산 회사·매니저">Real estate &amp; property managers</strong>
+              <span data-en="End-of-lease cleans, turnovers, painting" data-ko="임대 종료 청소, 이사 인수, 페인팅">End-of-lease cleans, turnovers, painting</span>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-num">2.5<em>t</em></div>
-            <div class="stat-label" data-en="Waste Truck Capacity" data-ko="쓰레기 트럭 적재량">Waste Truck Capacity</div>
+          <div class="target-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <div>
+              <strong data-en="Principal contractors" data-ko="원도급 시공사">Principal contractors</strong>
+              <span data-en="Site clean-ups, green waste removal" data-ko="현장 청소, 정원 폐기물 처리">Site clean-ups, green waste removal</span>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-num">NSW</div>
-            <div class="stat-label" data-en="Operating Region" data-ko="운영 지역">Operating Region</div>
+          <div class="target-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H7a4 4 0 0 1-4-4V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6m6 0h2a4 4 0 0 0 4-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v6m-6 0h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4v-6z"/></svg>
+            <div>
+              <strong data-en="Facility operators" data-ko="시설 운영팀">Facility operators</strong>
+              <span data-en="Recurring upkeep, scheduled rounds" data-ko="정기 유지관리, 정기 라운드">Recurring upkeep, scheduled rounds</span>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="about-photo">
+        <img src="./images/site-premium.jpg" alt="Sydney residential waterfront property managed by ATS Total Service" loading="lazy" />
+        <div class="about-photo-caption">
+          <span data-en="Properties we maintain across Sydney" data-ko="시드니 전역에서 관리 중인 부동산들">Properties we maintain across Sydney</span>
         </div>
       </div>
     </div>
@@ -451,17 +481,17 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
   <div class="section-inner">
     <div class="section-label" data-en="Our Services" data-ko="제공 서비스">Our Services</div>
     <h2 class="section-title">
-      <span data-en="Four core services," data-ko="4가지 핵심 서비스,">Four core services,</span>
+      <span data-en="Four trades," data-ko="4가지 분야,">Four trades,</span>
       <em data-en="one coordinated team." data-ko="하나의 통합 운영팀.">one coordinated team.</em>
     </h2>
-    <p class="section-desc" data-en="Every service is delivered by our own staff using our own vehicles and equipment — no subcontractor handoffs, no quality gaps." data-ko="모든 서비스는 자체 인력과 자체 차량·장비로 직접 수행됩니다. 하도급 없이, 품질 누락 없이.">
-      Every service is delivered by our own staff using our own vehicles and equipment — no subcontractor handoffs, no quality gaps.
+    <p class="section-desc" data-en="Stop juggling four contractors. ATS handles cleaning, gardening, waste and painting under one roof — quoted, scheduled and delivered by the same team." data-ko="4개 업체와 따로 일정 조율하지 마세요. 청소·정원관리·쓰레기 수거·페인팅을 한 팀이 견적부터 일정, 작업까지 일괄 진행합니다.">
+      Stop juggling four contractors. ATS handles cleaning, gardening, waste and painting under one roof — quoted, scheduled and delivered by the same team.
     </p>
 
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="service-photo no-photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6l9-9z"/><path d="M3 22h18"/></svg>
+        <div class="service-photo">
+          <img src="./images/pathway-after.jpg" alt="Cleaned residential pathway after ATS service" loading="lazy" />
         </div>
         <div class="service-body">
           <div class="service-num">01 / Cleaning</div>
@@ -475,7 +505,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
       </div>
       <div class="service-card reveal">
         <div class="service-photo">
-          <img src="./images/mower-result.jpg" alt="ATS lawn mowing — ride-on mower" loading="lazy" />
+          <img src="./images/grass-clean.jpg" alt="Freshly cut grass site maintained by ATS" loading="lazy" />
         </div>
         <div class="service-body">
           <div class="service-num">02 / Gardening</div>
@@ -502,8 +532,8 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
         </div>
       </div>
       <div class="service-card reveal">
-        <div class="service-photo no-photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 11h-1V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4H3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h1v3a2 2 0 0 0 2 2h4"/><path d="M14 17l3 3 5-5"/></svg>
+        <div class="service-photo">
+          <img src="./images/yard-after.jpg" alt="Residential yard after maintenance by ATS" loading="lazy" />
         </div>
         <div class="service-body">
           <div class="service-num">04 / Painting</div>
@@ -522,35 +552,35 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="section-inner">
-    <div class="section-label" data-en="How It Works" data-ko="진행 절차">How It Works</div>
+    <div class="section-label" data-en="Our Commitments" data-ko="고객 약속">Our Commitments</div>
     <h2 class="section-title">
-      <span data-en="A simple," data-ko="간단하고">A simple,</span>
-      <em data-en="three-step process." data-ko="명확한 3단계 진행.">three-step process.</em>
+      <span data-en="No chasing." data-ko="쫓아다닐 필요 없이.">No chasing.</span>
+      <em data-en="Just delivered work." data-ko="약속한 작업, 그대로.">Just delivered work.</em>
     </h2>
-    <p class="section-desc" data-en="From first contact to job completion, you'll deal with one coordinated team — and one clear point of accountability." data-ko="첫 문의부터 작업 완료까지, 단일 통합팀과 명확한 책임 라인으로 진행됩니다.">
-      From first contact to job completion, you'll deal with one coordinated team — and one clear point of accountability.
+    <p class="section-desc" data-en="Three commitments we make to every property manager, operator and contractor who works with us." data-ko="모든 부동산 매니저·운영사·시공사에게 드리는 세 가지 약속입니다.">
+      Three commitments we make to every property manager, operator and contractor who works with us.
     </p>
 
     <div class="process-grid">
       <div class="process-step reveal">
         <div class="process-num">01</div>
-        <h4 data-en="Get in Touch" data-ko="문의하기">Get in Touch</h4>
-        <p data-en="Share your property, scope and timeline. We'll respond within one business day with a clear, transparent quote." data-ko="현장 정보, 작업 범위, 일정만 알려주세요. 영업일 기준 1일 내 명확하고 투명한 견적으로 회신드립니다.">
-          Share your property, scope and timeline. We'll respond within one business day with a clear, transparent quote.
+        <h4 data-en="24-hour quote response" data-ko="24시간 내 견적 회신">24-hour quote response</h4>
+        <p data-en="Send us your property details and scope. You'll have a clear, itemised quote back within one business day — not a week later." data-ko="현장 정보와 작업 범위를 보내주시면, 영업일 1일 내 항목별로 정리된 명확한 견적을 받아보실 수 있습니다. 일주일 기다리실 필요 없습니다.">
+          Send us your property details and scope. You'll have a clear, itemised quote back within one business day — not a week later.
         </p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">02</div>
-        <h4 data-en="Schedule & Mobilise" data-ko="일정 확정 & 인력 배치">Schedule &amp; Mobilise</h4>
-        <p data-en="Once approved, we book your slot and mobilise our own vehicles, equipment and trained staff — fast and flexible." data-ko="견적 확정 후 일정을 잡고, 자체 차량·장비·교육받은 인력을 신속하게 현장에 배치합니다.">
-          Once approved, we book your slot and mobilise our own vehicles, equipment and trained staff — fast and flexible.
+        <h4 data-en="Single point of contact" data-ko="단일 책임 담당자">Single point of contact</h4>
+        <p data-en="One person manages your jobs from quote to handover. No bouncing between four contractors. No "that's not our team" excuses." data-ko="견적부터 인수까지 한 명의 담당자가 끝까지 책임집니다. 4개 업체 사이에서 핑퐁할 필요 없고, '저희 담당 아닙니다' 같은 변명도 없습니다.">
+          One person manages your jobs from quote to handover. No bouncing between four contractors. No "that's not our team" excuses.
         </p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">03</div>
-        <h4 data-en="Deliver & Handover" data-ko="작업 완료 & 인수">Deliver &amp; Handover</h4>
-        <p data-en="Work is completed to spec, the site is left clean, and you get a clear handover — including before/after records on request." data-ko="작업은 약속된 사양대로 완료되며, 현장은 깨끗하게 정리됩니다. 요청 시 작업 전·후 기록도 함께 제공합니다.">
-          Work is completed to spec, the site is left clean, and you get a clear handover — including before/after records on request.
+        <h4 data-en="Before & after records" data-ko="작업 전·후 기록 제공">Before &amp; after records</h4>
+        <p data-en="Every job comes with photo records — useful for owner reports, strata committees, end-of-lease evidence, or just your own audit trail." data-ko="모든 작업에 사진 기록을 제공합니다. 소유주 보고서, 스트라타 위원회 제출, 임대 종료 증빙, 내부 감사용으로 그대로 활용 가능합니다.">
+          Every job comes with photo records — useful for owner reports, strata committees, end-of-lease evidence, or just your own audit trail.
         </p>
       </div>
     </div>
@@ -562,8 +592,8 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
   <div class="section-inner">
     <div class="section-label" data-en="Why Choose ATS" data-ko="ATS를 선택하는 이유">Why Choose ATS</div>
     <h2 class="section-title">
-      <span data-en="Reliability isn't a slogan." data-ko="신뢰는 구호가 아닙니다.">Reliability isn't a slogan.</span>
-      <em data-en="It's how we operate." data-ko="우리의 운영 방식 그 자체입니다.">It's how we operate.</em>
+      <span data-en="The difference is in" data-ko="차이는 결국">The difference is in</span>
+      <em data-en="how the work gets done." data-ko="일하는 방식에 있습니다.">how the work gets done.</em>
     </h2>
 
     <div class="why-grid">
@@ -573,31 +603,31 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <div>
-            <h4 data-en="One-stop service provider" data-ko="원스톱 통합 서비스">One-stop service provider</h4>
-            <p data-en="Reduce contractor coordination — manage cleaning, gardening, waste and painting through a single point of contact." data-ko="청소·정원·쓰레기·페인팅을 단일 창구로 일원화. 다수 업체 조율 부담을 없앱니다.">
-              Reduce contractor coordination — manage cleaning, gardening, waste and painting through a single point of contact.
+            <h4 data-en="One team, four trades" data-ko="한 팀, 4개 분야">One team, four trades</h4>
+            <p data-en="Cleaning, gardening, waste and painting handled by people who already know your property. No re-briefing four different crews every time." data-ko="청소·정원·쓰레기·페인팅을 현장을 이미 아는 동일한 팀이 수행합니다. 매번 4개 업체에 처음부터 다시 설명할 필요 없습니다.">
+              Cleaning, gardening, waste and painting handled by people who already know your property. No re-briefing four different crews every time.
             </p>
           </div>
         </div>
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
-            <h4 data-en="Fully owned & operated in-house" data-ko="장비·차량 100% 자체 보유">Fully owned &amp; operated in-house</h4>
-            <p data-en="All vehicles, machinery and tools are owned by ATS — ensuring consistent quality, rapid mobilisation and full accountability." data-ko="모든 차량·장비·도구를 자체 보유하여 일관된 품질, 빠른 현장 투입, 완전한 책임 운영이 가능합니다.">
-              All vehicles, machinery and tools are owned by ATS — ensuring consistent quality, rapid mobilisation and full accountability.
+            <h4 data-en="Sydney-local, Sydney-fast" data-ko="시드니 로컬, 빠른 대응">Sydney-local, Sydney-fast</h4>
+            <p data-en="Based in NSW, working in NSW. We can be on site quickly across most Sydney suburbs — no long-haul travel surcharges, no excuses about traffic." data-ko="NSW에 기반을 두고 NSW에서 일합니다. 시드니 대부분의 지역에 빠르게 출동 가능하며, 장거리 출장비도 교통체증 핑계도 없습니다.">
+              Based in NSW, working in NSW. We can be on site quickly across most Sydney suburbs — no long-haul travel surcharges, no excuses about traffic.
             </p>
           </div>
         </div>
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           </div>
           <div>
-            <h4 data-en="Flexible scheduling, fast response" data-ko="유연한 일정과 신속 대응">Flexible scheduling, fast response</h4>
-            <p data-en="From routine maintenance to urgent site clean-ups, we adapt to your timeline — not the other way around." data-ko="정기 유지관리부터 긴급 현장 청소까지, 고객의 일정에 맞춰 유연하게 대응합니다.">
-              From routine maintenance to urgent site clean-ups, we adapt to your timeline — not the other way around.
+            <h4 data-en="Built for ongoing contracts" data-ko="장기 계약·반복 업무에 최적화">Built for ongoing contracts</h4>
+            <p data-en="Scheduled rounds, recurring upkeep, multi-property rotations — we're set up for the kind of work that needs to happen every week, every month, every year." data-ko="정기 라운드, 반복 유지관리, 다수 부동산 순환 작업. 매주·매월·매년 반복되어야 하는 업무에 최적화된 운영 구조입니다.">
+              Scheduled rounds, recurring upkeep, multi-property rotations — we're set up for the kind of work that needs to happen every week, every month, every year.
             </p>
           </div>
         </div>
@@ -606,9 +636,9 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
           </div>
           <div>
-            <h4 data-en="Built for ongoing contracts" data-ko="장기 계약·반복 업무에 최적화">Built for ongoing contracts</h4>
-            <p data-en="Ideal for long-term maintenance contracts, site upkeep across property portfolios, and end-of-tenancy handovers." data-ko="장기 유지관리 계약, 부동산 포트폴리오 관리, 임대 종료 인수 작업에 최적화되어 있습니다.">
-              Ideal for long-term maintenance contracts, site upkeep across property portfolios, and end-of-tenancy handovers.
+            <h4 data-en="Trained, hi-vis, on the job" data-ko="교육받은 자체 인력, 안전장비 착용">Trained, hi-vis, on the job</h4>
+            <p data-en="Our own crew — not a rotating list of subcontractors. Properly equipped, properly briefed, and visibly accountable on every site." data-ko="순환하는 하청 명단이 아니라 자체 직원이 직접 작업합니다. 적절한 장비, 명확한 브리핑, 현장에서 눈에 보이는 책임 운영.">
+              Our own crew — not a rotating list of subcontractors. Properly equipped, properly briefed, and visibly accountable on every site.
             </p>
           </div>
         </div>
@@ -619,14 +649,14 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
           <img src="./images/mower-work.jpg" alt="ATS crew in hi-vis safety gear operating Toro ride-on mower" loading="lazy" />
         </div>
         <div class="why-side-content">
-          <h3 data-en="Business Focus" data-ko="비즈니스 영역">Business Focus</h3>
-          <p data-en="ATS is structured to serve operators who need a maintenance partner they can rely on — not chase." data-ko="ATS는 '쫓아다닐 필요 없는 유지관리 파트너'를 필요로 하는 운영사들을 위해 설계되었습니다.">
-            ATS is structured to serve operators who need a maintenance partner they can rely on — not chase.
+          <h3 data-en="What we do best" data-ko="우리가 가장 잘하는 일">What we do best</h3>
+          <p data-en="ATS is built for operators who need a maintenance partner they can stop thinking about." data-ko="ATS는 '신경 안 써도 되는 유지관리 파트너'를 필요로 하는 운영사를 위해 만들어졌습니다.">
+            ATS is built for operators who need a maintenance partner they can stop thinking about.
           </p>
           <ul class="focus-list">
             <li data-en="Long-term maintenance contracts" data-ko="장기 유지관리 계약">Long-term maintenance contracts</li>
-            <li data-en="Site maintenance & turnaround" data-ko="현장 유지관리·인수 작업">Site maintenance &amp; turnaround</li>
-            <li data-en="Property handovers (end-of-lease)" data-ko="부동산 인수·임대 종료">Property handovers (end-of-lease)</li>
+            <li data-en="Multi-property recurring rounds" data-ko="다수 부동산 정기 라운드">Multi-property recurring rounds</li>
+            <li data-en="End-of-lease & tenancy turnovers" data-ko="임대 종료·인수 인계">End-of-lease &amp; tenancy turnovers</li>
             <li data-en="Principal contractor support" data-ko="원도급사 지원">Principal contractor support</li>
           </ul>
         </div>
@@ -638,49 +668,49 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
 <!-- GALLERY -->
 <section class="gallery" id="fleet">
   <div class="section-inner">
-    <div class="section-label" data-en="Fleet & Equipment" data-ko="보유 차량·장비">Fleet &amp; Equipment</div>
+    <div class="section-label" data-en="Our Fleet & Equipment" data-ko="보유 차량·장비">Our Fleet &amp; Equipment</div>
     <h2 class="section-title">
-      <span data-en="Owned, maintained, and ready" data-ko="자체 보유, 자체 관리,">Owned, maintained, and ready</span>
-      <em data-en="to mobilise." data-ko="언제든 출동 가능.">to mobilise.</em>
+      <span data-en="Owned, operated," data-ko="자체 보유, 자체 운영,">Owned, operated,</span>
+      <em data-en="ready to mobilise." data-ko="즉시 출동.">ready to mobilise.</em>
     </h2>
-    <p class="section-desc" data-en="No reliance on subcontractors. Every vehicle, every mower, every brush belongs to ATS — operated by our trained, hi-vis crew." data-ko="하도급 의존 없음. 모든 차량·장비는 ATS 소유이며, 안전 장비를 갖춘 교육받은 자체 인력이 운영합니다.">
-      No reliance on subcontractors. Every vehicle, every mower, every brush belongs to ATS — operated by our trained, hi-vis crew.
+    <p class="section-desc" data-en="We invest in our own fleet so we can show up when we say we will. Trucks, vans, ride-on mowers, trimmers, and the tools that get the job done — all owned and maintained by ATS." data-ko="약속한 대로 나타나기 위해 자체 장비에 투자합니다. 트럭, 밴, 라이드온 잔디깎이, 트리머, 작업에 필요한 모든 도구 — 전부 ATS 소유이며 자체 관리합니다.">
+      We invest in our own fleet so we can show up when we say we will. Trucks, vans, ride-on mowers, trimmers, and the tools that get the job done — all owned and maintained by ATS.
     </p>
 
     <div class="gallery-grid">
       <div class="gallery-item g1">
-        <img src="./images/truck.jpg" alt="Isuzu NLR 45-150 with cage body" loading="lazy" />
+        <img src="./images/truck.jpg" alt="Isuzu NLR 45-150 with cage body — ATS waste truck" loading="lazy" />
         <div class="gallery-caption">
-          <strong data-en="Isuzu NLR Truck" data-ko="이스즈 NLR 트럭">Isuzu NLR Truck</strong>
-          <span data-en="2.5T capacity · Cage body" data-ko="2.5톤 적재 · 케이지 바디">2.5T capacity · Cage body</span>
+          <strong data-en="Isuzu NLR Waste Truck" data-ko="이스즈 NLR 쓰레기 트럭">Isuzu NLR Waste Truck</strong>
+          <span data-en="2.5T capacity · Cage body · For waste, branches & site clean-outs" data-ko="2.5톤 적재 · 케이지 바디 · 폐기물·나뭇가지·현장 청소용">2.5T capacity · Cage body · For waste, branches &amp; site clean-outs</span>
         </div>
       </div>
       <div class="gallery-item g2">
-        <img src="./images/van-trailer.jpg" alt="Service van with trailer for waste collection" loading="lazy" />
+        <img src="./images/van-trailer.jpg" alt="Service van with trailer for mobile waste collection" loading="lazy" />
         <div class="gallery-caption">
-          <strong data-en="Van & Trailer" data-ko="밴 & 트레일러">Van &amp; Trailer</strong>
-          <span data-en="Mobile waste collection" data-ko="이동식 폐기물 수거">Mobile waste collection</span>
+          <strong data-en="Van + Trailer Combo" data-ko="밴 + 트레일러 조합">Van + Trailer Combo</strong>
+          <span data-en="Mobile pickups · Smaller sites · Same-day jobs" data-ko="이동식 픽업 · 소규모 현장 · 당일 작업">Mobile pickups · Smaller sites · Same-day jobs</span>
         </div>
       </div>
       <div class="gallery-item g3">
-        <img src="./images/mower-result.jpg" alt="Toro TimeCutter ride-on mower in operation" loading="lazy" />
+        <img src="./images/mower-result.jpg" alt="Toro TimeCutter ride-on mower in action" loading="lazy" />
         <div class="gallery-caption">
           <strong data-en="Toro TimeCutter" data-ko="토로 타임커터">Toro TimeCutter</strong>
-          <span data-en="Professional ride-on mower" data-ko="전문 라이드온 잔디깎이">Professional ride-on mower</span>
+          <span data-en="Residential lawns · Multi-property rounds" data-ko="주거 잔디 · 다수 부동산 라운드">Residential lawns · Multi-property rounds</span>
         </div>
       </div>
       <div class="gallery-item g4">
-        <img src="./images/mower-work.jpg" alt="Crew operating Toro 4000 ride-on mower" loading="lazy" />
+        <img src="./images/mower-work.jpg" alt="Toro 4000 commercial mower on site" loading="lazy" />
         <div class="gallery-caption">
           <strong data-en="Toro 4000 Series" data-ko="토로 4000 시리즈">Toro 4000 Series</strong>
-          <span data-en="Commercial-grade mower" data-ko="상업용 잔디깎이">Commercial-grade mower</span>
+          <span data-en="Commercial-grade · Larger sites · Faster turnaround" data-ko="상업용 · 대규모 현장 · 빠른 작업">Commercial-grade · Larger sites · Faster turnaround</span>
         </div>
       </div>
       <div class="gallery-item g5">
         <img src="./images/firstmaint-van.jpg" alt="Branded service van" loading="lazy" />
         <div class="gallery-caption">
-          <strong data-en="Service Van Fleet" data-ko="서비스 밴 차량">Service Van Fleet</strong>
-          <span data-en="Branded · Equipped · Ready" data-ko="브랜딩 · 장비 완비 · 즉시 출동">Branded · Equipped · Ready</span>
+          <strong data-en="Branded Service Vans" data-ko="브랜딩 서비스 밴">Branded Service Vans</strong>
+          <span data-en="Liveried · Equipped · Recognisable on-site" data-ko="브랜딩 적용 · 장비 완비 · 현장 인식 가능">Liveried · Equipped · Recognisable on-site</span>
         </div>
       </div>
     </div>
@@ -833,8 +863,8 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
           <img src="./logo.png" alt="ATS" />
           <strong>ATS Total Service Pty. Ltd.</strong>
         </div>
-        <p data-en="Sydney's trusted partner for cleaning, gardening, waste collection and painting — across residential, commercial and managed properties." data-ko="시드니의 신뢰받는 통합 부동산 관리 파트너. 주거·상업·관리 부동산 전반에 걸친 청소, 정원관리, 쓰레기 수거, 페인팅 서비스.">
-          Sydney's trusted partner for cleaning, gardening, waste collection and painting — across residential, commercial and managed properties.
+        <p data-en="Sydney's go-to maintenance partner for property managers, real estate operators and principal contractors — cleaning, gardening, waste and painting handled by one in-house team." data-ko="부동산 매니저·운영사·원도급사를 위한 시드니의 유지관리 파트너. 청소·정원·쓰레기·페인팅을 자체 인력 한 팀이 직접 수행합니다.">
+          Sydney's go-to maintenance partner for property managers, real estate operators and principal contractors — cleaning, gardening, waste and painting handled by one in-house team.
         </p>
       </div>
       <div class="footer-col">
