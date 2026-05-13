@@ -266,13 +266,15 @@ section { padding: 100px 0; }
 }
 .section-title {
   font-family: 'Fraunces', serif;
-  font-size: clamp(34px, 4vw, 50px);
-  line-height: 1.1;
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.15;
   font-weight: 500;
   color: var(--navy);
   letter-spacing: -0.02em;
   margin-bottom: 18px;
   max-width: 900px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .section-title em { font-style: italic; color: var(--green); }
 .section-desc {
@@ -801,7 +803,7 @@ footer {
 .reveal.in { opacity: 1; transform: translateY(0); }
 
 /* ============ RESPONSIVE ============ */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .hero-inner, .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-visual { aspect-ratio: 16/10; max-width: 600px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
@@ -1445,15 +1447,47 @@ function setLang(lang) {
 })();
 
 /* ============ REVEAL ON SCROLL ============ */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+(function() {
+  const revealEls = document.querySelectorAll('.reveal');
+
+  // Respect reduced motion preference: show everything immediately
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    revealEls.forEach(el => el.classList.add('in'));
+    return;
+  }
+
+  // If page loaded with a hash, scroll target may bypass observer — reveal them on next frame
+  function revealVisibleNow() {
+    revealEls.forEach(el => {
+      if (el.classList.contains('in')) return;
+      const rect = el.getBoundingClientRect();
+      const winH = window.innerHeight || document.documentElement.clientHeight;
+      // If element top is already in viewport (or partially in), mark as in
+      if (rect.top < winH * 0.95 && rect.bottom > 0) {
+        el.classList.add('in');
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Initial reveal for items already in viewport (handles hash navigation, fast scroll)
+  requestAnimationFrame(revealVisibleNow);
+  // Safety: if for any reason elements stay hidden after 1.5s, force them visible
+  setTimeout(function() {
+    revealEls.forEach(el => el.classList.add('in'));
+  }, 1500);
+})();
 
 /* ============ CONTACT FORM (Web3Forms - auto email send) ============ */
 (function() {
