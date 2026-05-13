@@ -7,336 +7,728 @@
 <meta name="description" content="ATS Total Service is a Sydney-based property maintenance company delivering cleaning, gardening, waste collection and painting services across residential, commercial and managed properties." />
 <meta property="og:title" content="ATS Total Service Pty. Ltd." />
 <meta property="og:description" content="One trusted partner for cleaning, gardening, waste collection and painting across Sydney." />
-<meta property="og:image" content="./images/truck.jpg" />
 <link rel="icon" type="image/png" href="./logo.png" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
 :root {
   --navy: #1B3A57;
-  --navy-deep: #122a40;
-  --navy-soft: #2a4d6e;
+  --navy-deep: #122842;
+  --navy-soft: #2A4A6B;
   --green: #2D6B3F;
-  --green-deep: #1f4c2c;
-  --green-soft: #3d8753;
-  --cream: #F7F4ED;
-  --bone: #EFEAE0;
-  --ink: #0E1B26;
-  --muted: #5b6b78;
-  --line: #d8d2c4;
-  --white: #ffffff;
-  --display: 'Fraunces', 'Times New Roman', serif;
-  --body: 'Manrope', system-ui, -apple-system, sans-serif;
-  --max: 1280px;
-  --pad: clamp(20px, 4vw, 56px);
-  --shadow-sm: 0 1px 2px rgba(14,27,38,.06), 0 2px 8px rgba(14,27,38,.04);
-  --shadow-md: 0 6px 16px rgba(14,27,38,.08), 0 2px 4px rgba(14,27,38,.04);
-  --shadow-lg: 0 20px 50px rgba(14,27,38,.12), 0 4px 10px rgba(14,27,38,.06);
-  --shadow-xl: 0 30px 80px rgba(14,27,38,.18), 0 6px 16px rgba(14,27,38,.08);
+  --green-bright: #3A8550;
+  --green-soft: #5BA572;
+  --cream: #F8F5EF;
+  --paper: #FBF9F4;
+  --ink: #1A1F2E;
+  --ink-soft: #4A5469;
+  --line: #E5E0D5;
+  --line-soft: #EFEAE0;
+  --gold: #C8A458;
+  --first-cleaning-blue: #2563EB;
+  --first-cleaning-bg: #DCE7FB;
+  --first-maint-green: #2D6B3F;
+  --first-maint-bg: #DCEAE0;
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--body);
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.55;
+  font-family: 'Manrope', -apple-system, sans-serif;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
+.serif { font-family: 'Fraunces', Georgia, serif; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-/* NAV */
-.nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,237,.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(27,58,87,.08); }
-.nav-inner { max-width: var(--max); margin: 0 auto; padding: 14px var(--pad); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.nav-logo { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; }
-.nav-logo img { height: 38px; width: auto; }
-.nav-logo span small { display: block; font-family: var(--body); font-size: 10px; font-weight: 500; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px;}
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); position: relative; padding: 4px 0; transition: color .2s; }
-.nav-links a:hover { color: var(--green); }
-.nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--green); transition: width .3s ease; }
-.nav-links a:hover::after { width: 100%; }
+/* ============ NAVBAR ============ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(251, 249, 244, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(229, 224, 213, 0.6);
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 18px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-brand img { height: 38px; width: auto; }
+.nav-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; }
+.nav-brand-tag { font-size: 11px; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  color: var(--ink-soft); text-decoration: none; font-size: 14px; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
 .nav-right { display: flex; align-items: center; gap: 14px; }
-.lang-toggle { display: inline-flex; background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 3px; font-size: 12px; font-weight: 600; }
-.lang-toggle button { padding: 6px 12px; border-radius: 999px; color: var(--muted); transition: all .2s; }
-.lang-toggle button.active { background: var(--navy); color: var(--white); }
-.cta-nav { padding: 10px 18px; background: var(--navy); color: var(--white); border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; transition: transform .2s, background .2s; display: inline-flex; align-items: center; gap: 6px; }
-.cta-nav:hover { background: var(--green); transform: translateY(-1px); }
-.menu-btn { display: none; }
-
-@media (max-width: 880px) {
-  .nav-links { display: none; }
-  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); padding: 20px var(--pad); gap: 18px; border-bottom: 1px solid var(--line); }
-  .menu-btn { display: block; padding: 8px; }
-  .menu-btn span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 4px 0; }
-  .cta-nav span { display: none; }
+.lang-toggle { display: flex; gap: 2px; padding: 3px; background: var(--line-soft); border-radius: 999px; }
+.lang-toggle button {
+  border: none; background: transparent; padding: 5px 11px;
+  font: inherit; font-size: 12px; font-weight: 600; color: var(--ink-soft);
+  cursor: pointer; border-radius: 999px; transition: all 0.2s;
+}
+.lang-toggle button.active { background: var(--navy); color: white; }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green); color: white; text-decoration: none;
+  padding: 9px 18px; border-radius: 999px;
+  font-size: 13px; font-weight: 600;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--green-bright); transform: translateY(-1px); }
+.menu-btn {
+  display: none; border: none; background: transparent; cursor: pointer;
+  padding: 6px; color: var(--navy);
 }
 
-/* HERO */
-.hero { position: relative; padding: clamp(50px, 8vh, 90px) var(--pad) clamp(70px, 10vh, 110px); overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 800px 600px at 90% 10%, rgba(45,107,63,.08), transparent 60%), radial-gradient(ellipse 1000px 700px at 0% 100%, rgba(27,58,87,.06), transparent 60%); pointer-events: none; }
-.hero-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 5vw, 70px); align-items: center; position: relative; }
-.hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 24px; animation: fadeUp .8s ease both; }
-.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--green); }
-.hero h1 { font-family: var(--display); font-weight: 500; font-size: clamp(38px, 5.6vw, 72px); line-height: 0.98; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 28px; animation: fadeUp .9s .1s ease both; }
-.hero h1 em { font-style: italic; font-weight: 400; color: var(--green); font-variation-settings: 'opsz' 144; }
-.hero p.lead { font-size: clamp(16px, 1.3vw, 18px); color: var(--muted); max-width: 520px; margin-bottom: 32px; animation: fadeUp 1s .2s ease both; }
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; animation: fadeUp 1.1s .3s ease both; }
-.btn-primary, .btn-secondary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; transition: all .25s; }
-.btn-primary { background: var(--navy); color: var(--white); }
-.btn-primary:hover { background: var(--green); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.btn-secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
-.btn-secondary:hover { background: var(--navy); color: var(--white); }
-.btn-arrow { width: 16px; height: 16px; transition: transform .2s; }
-.btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow { transform: translateX(3px); }
+/* ============ HERO ============ */
+.hero {
+  padding: 120px 0 0;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+  position: relative;
+}
+.hero-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px;
+  background: rgba(45, 107, 63, 0.1); color: var(--green);
+  border-radius: 999px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+  margin-bottom: 28px;
+}
+.hero-tag .dot {
+  width: 7px; height: 7px; background: var(--green); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(40px, 5.5vw, 68px);
+  line-height: 1.05;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic; color: var(--green); font-weight: 500;
+}
+.hero .lead {
+  font-size: 17px; color: var(--ink-soft);
+  margin-bottom: 36px; max-width: 540px;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--navy); color: white; text-decoration: none;
+  padding: 16px 28px; border-radius: 999px;
+  font-size: 15px; font-weight: 600;
+  transition: all 0.25s;
+}
+.btn-primary:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(27, 58, 87, 0.25); }
+.btn-arrow { width: 18px; height: 18px; transition: transform 0.25s; }
+.btn-primary:hover .btn-arrow { transform: translateX(4px); }
+.btn-secondary {
+  display: inline-flex; align-items: center;
+  background: transparent; color: var(--navy);
+  padding: 16px 28px;
+  border: 1.5px solid var(--navy);
+  border-radius: 999px;
+  font-size: 15px; font-weight: 600;
+  text-decoration: none; transition: all 0.25s;
+}
+.btn-secondary:hover { background: var(--navy); color: white; }
+.hero-visual {
+  position: relative;
+  border-radius: 16px; overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: 0 30px 80px rgba(27, 58, 87, 0.18);
+}
+.hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+.hero-badge {
+  position: absolute; bottom: 24px; left: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 14px 18px; border-radius: 14px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  max-width: 240px;
+}
+.hero-badge-icon {
+  width: 38px; height: 38px;
+  background: var(--green); color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-badge-text { display: flex; flex-direction: column; line-height: 1.3; }
+.hero-badge-text strong { font-size: 13px; color: var(--navy); font-weight: 700; }
+.hero-badge-text span { font-size: 11px; color: var(--ink-soft); }
 
-.hero-visual { position: relative; animation: fadeUp 1s .25s ease both; }
-.hero-photo-frame { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-xl); aspect-ratio: 4/3; background: var(--bone); }
-.hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 8s ease; }
-.hero-photo-frame:hover img { transform: scale(1.08); }
-.hero-photo-frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(27,58,87,.18) 100%); pointer-events: none; }
-.hero-badge { position: absolute; bottom: -24px; left: -24px; background: var(--white); padding: 18px 22px; border-radius: 16px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 14px; z-index: 2; }
-.hero-badge-icon { width: 44px; height: 44px; background: var(--green); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); flex-shrink: 0; }
-.hero-badge-text strong { display: block; font-family: var(--display); font-size: 18px; color: var(--navy); font-weight: 600; letter-spacing: -0.01em; line-height: 1; }
-.hero-badge-text span { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
-.hero-tag { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); padding: 8px 14px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); z-index: 2; }
-.hero-tag .dot { display: inline-block; width: 6px; height: 6px; background: var(--green); border-radius: 50%; margin-right: 6px; animation: pulse 2s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.3); } }
-
-.trust-strip { max-width: var(--max); margin: clamp(60px, 8vh, 90px) auto 0; padding: 32px var(--pad) 0; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; border-top: 1px solid rgba(27,58,87,.1); }
-.trust-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); font-weight: 500; }
+/* ============ TRUST STRIP ============ */
+.trust-strip {
+  margin-top: 80px;
+  background: white;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.trust-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 28px; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--ink-soft);
+  font-size: 13px; font-weight: 500;
+  flex: 1 1 auto;
+  min-width: 200px;
+}
 .trust-item svg { color: var(--green); flex-shrink: 0; }
 
-@media (max-width: 880px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { max-width: 100%; }
-  .hero-badge { left: 16px; bottom: -20px; padding: 14px 18px; }
+/* ============ SECTIONS ============ */
+section { padding: 100px 0; }
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.1;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  max-width: 720px;
+}
+.section-title em { font-style: italic; color: var(--green); }
+.section-desc {
+  font-size: 17px; color: var(--ink-soft);
+  max-width: 640px; margin-bottom: 56px;
 }
 
-/* SECTION FRAME */
-section { padding: clamp(70px, 10vh, 120px) var(--pad); position: relative; }
-.section-inner { max-width: var(--max); margin: 0 auto; }
-.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 18px; display: inline-flex; align-items: center; gap: 12px; }
-.section-label::before { content: '/'; font-family: var(--display); font-size: 16px; font-style: italic; color: var(--green); }
-.section-title { font-family: var(--display); font-weight: 500; font-size: clamp(34px, 4.5vw, 56px); line-height: 1.02; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 24px; max-width: 820px; }
-.section-title em { font-style: italic; color: var(--green); font-weight: 400; }
-.section-desc { font-size: clamp(16px, 1.3vw, 18px); color: var(--muted); max-width: 640px; margin-bottom: 60px; }
+/* ============ ABOUT ============ */
+.about { background: var(--paper); }
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px; align-items: start; }
+.about-text p {
+  font-size: 17px; color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+.about-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.about-stat {
+  background: white;
+  padding: 32px 24px;
+}
+.about-stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 42px; font-weight: 500;
+  color: var(--navy); line-height: 1; letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.about-stat-num em { font-style: italic; color: var(--green); }
+.about-stat-label {
+  font-size: 13px; color: var(--ink-soft); font-weight: 500;
+  letter-spacing: 0.02em;
+}
 
-/* ABOUT */
-.about { background: var(--white); }
-.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
-
-/* Target audience list */
-.about-targets { display: flex; flex-direction: column; gap: 4px; margin-top: 36px; }
-.target-item { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.target-item:last-child { border-bottom: none; }
-.target-item svg { color: var(--green); flex-shrink: 0; margin-top: 2px; }
-.target-item strong { display: block; font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 4px; }
-.target-item span { display: block; font-size: 13.5px; color: var(--muted); }
-
-/* About photo */
-.about-photo { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/3; position: sticky; top: 100px; }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
-.about-photo-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(180deg, transparent, rgba(14,27,38,.75)); color: var(--white); }
-.about-photo-caption span { font-family: var(--display); font-size: 16px; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
-
-/* Legacy stat support (kept but unused now) */
-.about-numbers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 40px; }
-.stat { border-top: 1px solid var(--line); padding-top: 18px; }
-.stat-num { font-family: var(--display); font-size: clamp(38px, 4.5vw, 56px); font-weight: 500; color: var(--navy); letter-spacing: -0.03em; line-height: 1; }
-.stat-num em { font-style: italic; color: var(--green); }
-.stat-label { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
-.about-text p { font-size: 17px; color: var(--ink); margin-bottom: 20px; }
-.about-text p:last-child { color: var(--muted); }
-@media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } .about-photo { position: static; max-width: 100%; } }
-
-/* SERVICES */
+/* ============ SERVICES ============ */
 .services { background: var(--cream); }
-.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.service-card { background: var(--white); border-radius: 20px; overflow: hidden; position: relative; transition: transform .35s ease, box-shadow .35s ease; border: 1px solid transparent; display: flex; flex-direction: column; }
-.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(45,107,63,.2); }
-.service-photo { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--navy); }
-.service-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.service-card:hover .service-photo img { transform: scale(1.05); }
-.service-photo.no-photo { background: linear-gradient(135deg, var(--navy) 0%, var(--green) 100%); display: flex; align-items: center; justify-content: center; }
-.service-photo.no-photo svg { width: 60px; height: 60px; color: rgba(255,255,255,.4); }
-.service-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(14,27,38,.4)); pointer-events: none; }
-.service-body { padding: 30px 32px 32px; flex: 1; }
-.service-num { font-family: var(--display); font-size: 13px; font-style: italic; color: var(--green); font-weight: 500; margin-bottom: 12px; }
-.service-card h3 { font-family: var(--display); font-weight: 500; font-size: 26px; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 14px; }
-.service-card ul { list-style: none; }
-.service-card ul li { font-size: 14.5px; color: var(--muted); padding: 6px 0; padding-left: 18px; position: relative; border-bottom: 1px dashed rgba(91,107,120,.15); }
-.service-card ul li:last-child { border-bottom: none; }
-.service-card ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 8px; height: 1.5px; background: var(--green); }
-@media (max-width: 720px) { .services-grid { grid-template-columns: 1fr; } }
+.services-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.service-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(27, 58, 87, 0.12);
+  border-color: var(--green-soft);
+}
+.service-photo {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+}
+.service-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+.service-card:hover .service-photo img { transform: scale(1.04); }
+.service-body { padding: 28px 28px 30px; }
+.service-num {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: 13px; font-weight: 400; color: var(--green);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  display: block;
+}
+.service-title {
+  font-family: 'Fraunces', serif;
+  font-size: 26px; font-weight: 500;
+  color: var(--navy); margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.service-list {
+  list-style: none;
+}
+.service-list li {
+  font-size: 14px; color: var(--ink-soft);
+  padding: 7px 0;
+  border-top: 1px solid var(--line-soft);
+  display: flex; align-items: center; gap: 10px;
+}
+.service-list li::before {
+  content: ''; width: 12px; height: 1px; background: var(--green);
+  flex-shrink: 0;
+}
 
-/* PROCESS */
-.process { background: var(--navy); color: var(--white); position: relative; overflow: hidden; }
-.process::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(45,107,63,.25), transparent 50%), radial-gradient(circle at 10% 90%, rgba(45,107,63,.15), transparent 50%); pointer-events: none; }
-.process .section-label, .process .section-label::before { color: var(--green-soft); }
-.process .section-title { color: var(--white); }
+/* ============ PROCESS ============ */
+.process {
+  background: var(--navy-deep);
+  color: white;
+}
+.process .section-eyebrow { color: var(--green-soft); }
+.process .section-title { color: white; }
 .process .section-title em { color: var(--green-soft); }
-.process .section-desc { color: rgba(255,255,255,.7); }
-.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; }
-.process-step { padding: 36px 28px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; backdrop-filter: blur(10px); position: relative; transition: transform .3s, background .3s; }
-.process-step:hover { transform: translateY(-4px); background: rgba(255,255,255,.07); }
-.process-num { font-family: var(--display); font-size: 64px; font-weight: 400; font-style: italic; color: var(--green-soft); line-height: 1; letter-spacing: -0.04em; margin-bottom: 20px; }
-.process-step h4 { font-family: var(--display); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; margin-bottom: 12px; color: var(--white); }
-.process-step p { font-size: 14.5px; color: rgba(255,255,255,.7); line-height: 1.65; }
-@media (max-width: 880px) { .process-grid { grid-template-columns: 1fr; } }
-
-/* WHY US */
-.why { background: var(--white); }
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
-.why-list { display: flex; flex-direction: column; gap: 4px; }
-.why-item { padding: 22px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
-.why-item:last-child { border-bottom: none; }
-.why-icon { width: 40px; height: 40px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--green); flex-shrink: 0; }
-.why-item h4 { font-family: var(--display); font-weight: 500; font-size: 20px; color: var(--navy); margin-bottom: 6px; letter-spacing: -0.01em; }
-.why-item p { font-size: 14.5px; color: var(--muted); }
-.why-side { position: sticky; top: 100px; padding: 0; background: var(--cream); border-radius: 20px; border: 1px solid var(--line); overflow: hidden; }
-.why-side-photo { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
-.why-side-photo img { width: 100%; height: 100%; object-fit: cover; }
-.why-side-content { padding: 30px 28px; }
-.why-side h3 { font-family: var(--display); font-weight: 500; font-size: 24px; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 14px; }
-.why-side p { font-size: 15px; color: var(--muted); margin-bottom: 24px; }
-.why-side .focus-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.why-side .focus-list li { font-size: 14px; font-weight: 500; color: var(--navy); padding-left: 22px; position: relative; }
-.why-side .focus-list li::before { content: '→'; position: absolute; left: 0; color: var(--green); font-weight: 600; }
-@media (max-width: 880px) { .why-grid { grid-template-columns: 1fr; } .why-side { position: static; } }
-
-/* GALLERY */
-.gallery { background: var(--cream); }
-.gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; grid-auto-rows: minmax(180px, auto); }
-.gallery-item { border-radius: 16px; overflow: hidden; position: relative; transition: transform .35s ease; background: var(--bone); }
-.gallery-item:hover { transform: scale(1.012); }
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.gallery-item:hover img { transform: scale(1.06); }
-.gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(14,27,38,.65)); opacity: .85; transition: opacity .3s; pointer-events: none; }
-.gallery-item:hover::after { opacity: 1; }
-.gallery-caption { position: absolute; bottom: 18px; left: 20px; right: 20px; color: var(--white); z-index: 2; }
-.gallery-caption strong { display: block; font-family: var(--display); font-size: 18px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 4px; }
-.gallery-caption span { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,.7); }
-
-.g1 { grid-column: span 7; grid-row: span 2; }
-.g2 { grid-column: span 5; }
-.g3 { grid-column: span 5; }
-.g4 { grid-column: span 6; }
-.g5 { grid-column: span 6; }
-
-@media (max-width: 880px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
-  .g1, .g2, .g3, .g4, .g5 { grid-column: span 1; grid-row: auto; }
-  .g1 { grid-column: span 2; }
+.process .section-desc { color: rgba(255,255,255,0.7); }
+.process-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+.process-step {
+  position: relative; padding: 36px 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+.process-num {
+  font-family: 'Fraunces', serif;
+  font-size: 64px; font-weight: 400;
+  color: var(--green-soft); line-height: 1;
+  font-style: italic; letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.process-step h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px; font-weight: 500;
+  color: white; margin-bottom: 12px;
+}
+.process-step p {
+  font-size: 14px; color: rgba(255,255,255,0.65);
+  line-height: 1.6;
 }
 
-/* COMPANIES */
-.companies { background: var(--white); }
-.companies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.company-card { border-radius: 20px; background: var(--cream); border: 1px solid var(--line); transition: transform .3s, border-color .3s, box-shadow .3s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
-.company-card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: var(--shadow-lg); }
-.company-photo { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: linear-gradient(135deg, var(--navy), var(--green)); position: relative; }
-.company-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.company-card:hover .company-photo img { transform: scale(1.05); }
-.company-photo.no-photo { display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); }
-.company-photo.no-photo svg { width: 80px; height: 80px; }
+/* ============ WHY US ============ */
+.why-us { background: var(--paper); }
+.why-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; }
+.why-items { display: grid; gap: 24px; }
+.why-item {
+  display: grid; grid-template-columns: 48px 1fr; gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+  transition: all 0.25s;
+}
+.why-item:hover { border-color: var(--green-soft); transform: translateX(4px); }
+.why-icon {
+  width: 48px; height: 48px;
+  background: rgba(45, 107, 63, 0.1);
+  color: var(--green);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.why-item h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--navy); margin-bottom: 6px;
+}
+.why-item p {
+  font-size: 14px; color: var(--ink-soft); line-height: 1.55;
+}
+.why-side {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 0; overflow: hidden;
+  color: white;
+  position: sticky; top: 100px;
+}
+.why-side-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.why-side-img img { width: 100%; height: 100%; object-fit: cover; }
+.why-side-body { padding: 28px; }
+.why-side-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--green-soft); margin-bottom: 14px;
+}
+.why-side h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 26px; font-weight: 500;
+  margin-bottom: 14px; line-height: 1.2;
+}
+.why-side p {
+  font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6;
+}
 
-/* Logo wrapper for sister company cards */
-.company-logo-wrap { width: 100%; aspect-ratio: 16/10; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; padding: 30px; transition: transform .3s ease; }
-.company-logo-wrap img { max-width: 75%; max-height: 80%; width: auto; height: auto; object-fit: contain; transition: transform .4s ease; }
-.company-card:hover .company-logo-wrap img { transform: scale(1.06); }
-.company-body { padding: 32px 32px 36px; flex: 1; display: flex; flex-direction: column; }
-.company-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); background: rgba(45,107,63,.1); padding: 6px 12px; border-radius: 999px; margin-bottom: 18px; align-self: flex-start; }
-.company-card h3 { font-family: var(--display); font-weight: 500; font-size: 28px; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 10px; }
-.company-card p { font-size: 14.5px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; flex: 1; }
-.company-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--navy); padding-bottom: 4px; border-bottom: 1.5px solid var(--navy); transition: color .2s, border-color .2s; align-self: flex-start; }
-.company-link:hover { color: var(--green); border-color: var(--green); }
-@media (max-width: 720px) { .companies-grid { grid-template-columns: 1fr; } }
+/* ============ FLEET GALLERY ============ */
+.fleet { background: var(--cream); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 14px;
+}
+.gallery-item {
+  position: relative; overflow: hidden;
+  border-radius: 12px;
+  background: var(--navy);
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-caption {
+  position: absolute; left: 16px; right: 16px; bottom: 16px;
+  background: rgba(255,255,255,0.96);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  color: var(--navy);
+  opacity: 0; transform: translateY(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.gallery-item:hover .gallery-caption {
+  opacity: 1; transform: translateY(0);
+}
+.gallery-item.g1 { grid-column: span 2; grid-row: span 2; }
+.gallery-item.g2 { grid-column: span 1; grid-row: span 1; }
+.gallery-item.g3 { grid-column: span 1; grid-row: span 1; }
+.gallery-item.g4 { grid-column: span 1; grid-row: span 1; }
+.gallery-item.g5 { grid-column: span 1; grid-row: span 1; }
 
-/* CONTACT */
-.contact { background: var(--navy); color: var(--white); }
-.contact .section-label, .contact .section-label::before { color: var(--green-soft); }
-.contact .section-title { color: var(--white); }
-.contact .section-title em { color: var(--green-soft); }
-.contact .section-desc { color: rgba(255,255,255,.7); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(40px, 6vw, 80px); }
-.contact-info { display: flex; flex-direction: column; gap: 14px; }
-.contact-quick { background: linear-gradient(135deg, var(--green), var(--green-deep)); padding: 28px; border-radius: 16px; margin-bottom: 14px; }
-.contact-quick-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,.75); margin-bottom: 10px; }
-.contact-quick a.phone-link { display: flex; align-items: center; gap: 14px; font-family: var(--display); font-weight: 600; font-size: 32px; color: var(--white); letter-spacing: -0.01em; transition: opacity .2s; }
-.contact-quick a.phone-link:hover { opacity: .85; }
-.contact-quick a.phone-link svg { flex-shrink: 0; }
-.contact-quick small { display: block; font-size: 12px; color: rgba(255,255,255,.75); margin-top: 10px; }
-.contact-block { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+/* ============ COMPANIES (계열사) ============ */
+.companies { background: var(--paper); }
+.companies-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.company-card {
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid var(--line);
+  background: white;
+  display: flex; flex-direction: column;
+}
+.company-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(27, 58, 87, 0.12);
+}
+.company-logo-area {
+  padding: 56px 32px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 280px;
+  position: relative;
+}
+.company-card.cleaning .company-logo-area {
+  background: linear-gradient(135deg, #DCE7FB 0%, #C5D6F5 100%);
+}
+.company-card.maint .company-logo-area {
+  background: linear-gradient(135deg, #DCEAE0 0%, #C2DBC9 100%);
+}
+.company-logo-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+}
+.company-logo-area img {
+  max-height: 160px; max-width: 80%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
+}
+.company-body {
+  padding: 28px 32px 32px;
+  background: white;
+  flex-grow: 1;
+  display: flex; flex-direction: column;
+}
+.company-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--line-soft);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+.company-name {
+  font-family: 'Fraunces', serif;
+  font-size: 26px; font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.company-desc {
+  font-size: 14px; color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.company-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--navy); text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 3px;
+  align-self: flex-start;
+  transition: gap 0.25s;
+}
+.company-link:hover { gap: 12px; }
+
+/* ============ CONTACT ============ */
+.contact { background: var(--cream); }
+.call-card {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-bright) 100%);
+  border-radius: 18px;
+  padding: 36px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 48px;
+  box-shadow: 0 20px 50px rgba(45, 107, 63, 0.25);
+  flex-wrap: wrap;
+}
+.call-card-text { color: white; }
+.call-card-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 10px;
+}
+.call-card-number {
+  font-family: 'Fraunces', serif;
+  font-size: 32px; font-weight: 600;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: block;
+  line-height: 1.1;
+}
+.call-card-number:hover { opacity: 0.9; }
+.call-card-sub {
+  font-size: 13px; color: rgba(255,255,255,0.85);
+  margin-top: 8px;
+}
+.call-card-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: white; color: var(--green);
+  padding: 16px 28px; border-radius: 999px;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.call-card-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px;
+}
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.contact-block {
+  padding: 18px 0; border-bottom: 1px solid var(--line);
+}
 .contact-block:last-child { border-bottom: none; }
-.contact-label { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-soft); margin-bottom: 8px; }
-.contact-value { font-family: var(--display); font-weight: 500; font-size: 20px; color: var(--white); letter-spacing: -0.01em; }
-.contact-value a:hover { color: var(--green-soft); }
-
-.contact-form { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 36px; backdrop-filter: blur(10px); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-.form-field { display: flex; flex-direction: column; }
-.form-field.full { grid-column: 1 / -1; }
-.form-field label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 8px; }
-.form-field input, .form-field select, .form-field textarea { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15); border-radius: 10px; padding: 14px 16px; color: var(--white); font-family: var(--body); font-size: 15px; transition: border-color .2s, background .2s; }
-.form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--green-soft); background: rgba(255,255,255,.1); }
-.form-field textarea { resize: vertical; min-height: 110px; }
-.form-field select { color: var(--white); }
-.form-field select option { background: var(--navy); color: var(--white); }
-.form-submit { margin-top: 8px; width: 100%; padding: 16px; background: var(--green); color: var(--white); border-radius: 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; transition: background .2s, transform .2s; }
-.form-submit:hover { background: var(--green-soft); transform: translateY(-1px); }
-.form-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,.5); text-align: center; }
-@media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
-
-/* FLOATING MOBILE CALL */
-.mobile-call { display: none; position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--green); color: var(--white); border-radius: 50%; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); z-index: 90; animation: callPulse 2.4s infinite; }
-@keyframes callPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(45,107,63,.5), var(--shadow-lg); }
-  50% { box-shadow: 0 0 0 16px rgba(45,107,63,0), var(--shadow-lg); }
+.contact-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 6px;
 }
-@media (max-width: 880px) { .mobile-call { display: flex; } }
+.contact-value { font-size: 16px; color: var(--navy); font-weight: 600; }
+.contact-value a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--green); }
+.contact-form {
+  background: white; border-radius: 14px;
+  padding: 36px;
+  border: 1px solid var(--line);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-row:has(.form-field.full) { grid-template-columns: 1fr; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label { font-size: 12px; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.06em; text-transform: uppercase; }
+.form-field input, .form-field select, .form-field textarea {
+  font: inherit; font-size: 15px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: all 0.2s;
+}
+.form-field textarea { min-height: 120px; resize: vertical; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  outline: none; border-color: var(--green);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(45, 107, 63, 0.1);
+}
+.form-submit {
+  width: 100%;
+  padding: 16px 28px;
+  background: var(--navy); color: white;
+  border: none; border-radius: 999px;
+  font: inherit; font-size: 15px; font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--navy-deep); transform: translateY(-1px); }
+.form-note {
+  font-size: 12px; color: var(--ink-soft);
+  margin-top: 12px; line-height: 1.5;
+}
 
-/* FOOTER */
-footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60px var(--pad) 30px; }
-.footer-inner { max-width: var(--max); margin: 0 auto; }
-.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); }
-.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-.footer-brand img { height: 44px; }
-.footer-brand strong { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--white); letter-spacing: -0.01em; }
-.footer-top p { font-size: 14px; color: rgba(255,255,255,.6); max-width: 320px; }
-.footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-soft); margin-bottom: 18px; }
-.footer-col a, .footer-col span { display: block; font-size: 14px; color: rgba(255,255,255,.7); margin-bottom: 10px; transition: color .2s; }
-.footer-col a:hover { color: var(--green-soft); }
-.footer-bottom { padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; color: rgba(255,255,255,.4); }
-@media (max-width: 720px) { .footer-top { grid-template-columns: 1fr; } }
+/* ============ FOOTER ============ */
+footer {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.7);
+  padding: 60px 0 32px;
+}
+.footer-main {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-brand img { height: 36px; filter: brightness(0) invert(1); }
+.footer-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: white; }
+.footer-tagline { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 360px; }
+.footer-col h4 {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: white; margin-bottom: 14px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
 
-/* ANIMATIONS */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+/* ============ FLOATING CALL BUTTON ============ */
+.float-call {
+  display: none;
+  position: fixed; bottom: 20px; right: 20px;
+  background: var(--green);
+  color: white;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(45, 107, 63, 0.4);
+  z-index: 50;
+  animation: floatPulse 2.5s infinite;
+}
+@keyframes floatPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(45, 107, 63, 0.4); }
+  50% { box-shadow: 0 8px 32px rgba(45, 107, 63, 0.7), 0 0 0 8px rgba(45, 107, 63, 0.15); }
+}
+
+/* ============ REVEAL ============ */
+.reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
-::selection { background: var(--green); color: var(--white); }
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .hero-inner, .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { aspect-ratio: 16/10; max-width: 600px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+  .gallery-item.g1 { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
+  .gallery-item.g2, .gallery-item.g3, .gallery-item.g4, .gallery-item.g5 {
+    grid-column: span 1; aspect-ratio: 4/3;
+  }
+  .process-grid { grid-template-columns: 1fr; gap: 16px; }
+  .why-side { position: relative; top: 0; }
+  .services-grid, .companies-grid { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 768px) {
+  .container, .nav-inner, .hero-inner, .trust-inner { padding-left: 20px; padding-right: 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column; gap: 14px;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--paper);
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  }
+  .nav-cta span { display: none; }
+  .nav-cta { padding: 9px 12px; }
+  .menu-btn { display: block; }
+  .nav-brand-tag { display: none; }
+  section { padding: 70px 0; }
+  .hero { padding: 100px 0 0; }
+  .trust-strip { margin-top: 50px; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .call-card { flex-direction: column; align-items: flex-start; padding: 28px; }
+  .call-card-number { font-size: 26px; }
+  .float-call { display: flex; }
+  .contact-form { padding: 24px; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-logo">
+    <a href="#" class="nav-brand">
       <img src="./logo.png" alt="ATS Total Service" />
-      <span>
-        ATS Total Service
-        <small data-en="PTY. LTD." data-ko="법인회사">PTY. LTD.</small>
-      </span>
+      <div>
+        <div class="nav-brand-name">ATS Total Service</div>
+        <div class="nav-brand-tag">Sydney · Pty. Ltd.</div>
+      </div>
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#about" data-en="About" data-ko="회사소개">About</a>
@@ -351,202 +743,185 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
         <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
         <button id="btnKO" onclick="setLang('ko')">한</button>
       </div>
-      <a href="tel:+61416492358" class="cta-nav">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:+61416492358" class="nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>0416 492 358</span>
       </a>
       <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">
-        <span></span><span></span><span></span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-eyebrow" data-en="Sydney NSW · Property Maintenance Partner" data-ko="시드니 NSW · 부동산 유지관리 파트너">Sydney NSW · Property Maintenance Partner</div>
-      <h1>
-        <span data-en="Property maintenance," data-ko="부동산 유지관리,">Property maintenance,</span><br/>
-        <em data-en="handled on-site." data-ko="현장에서 직접.">handled on-site.</em>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        <span data-en="Operating in Sydney" data-ko="시드니 현장 운영">Operating in Sydney</span>
+      </div>
+      <h1 data-en='One trusted partner for<br/><em>total property care.</em>' data-ko='모든 부동산 관리를<br/><em>한 곳에서.</em>'>
+        One trusted partner for<br/><em>total property care.</em>
       </h1>
-      <p class="lead" data-en="A Sydney-based team delivering cleaning, gardening, waste collection and painting across residential blocks, managed properties and end-of-lease handovers. One contact. One accountable team." data-ko="시드니 기반 전문팀이 주거 단지, 관리 부동산, 임대 종료 인수 현장에서 청소·정원관리·쓰레기 수거·페인팅을 직접 수행합니다. 단일 연락처, 단일 책임 운영팀.">
-        A Sydney-based team delivering cleaning, gardening, waste collection and painting across residential blocks, managed properties and end-of-lease handovers. One contact. One accountable team.
+      <p class="lead" data-en="ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney." data-ko="ATS Total Service는 시드니 전역의 주거·상업·관리 부동산에 청소, 정원관리, 쓰레기 수거, 페인팅까지 신뢰할 수 있는 통합 관리 서비스를 제공합니다.">
+        ATS Total Service Pty. Ltd. delivers reliable, efficient and fully managed cleaning, gardening, waste collection and painting across residential, commercial and managed properties in Sydney.
       </p>
       <div class="hero-ctas">
-        <a href="tel:+61416492358" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span data-en="Call 0416 492 358" data-ko="0416 492 358 전화">Call 0416 492 358</span>
-        </a>
-        <a href="#contact" class="btn-secondary">
-          <span data-en="Request a Quote" data-ko="견적 요청">Request a Quote</span>
+        <a href="#contact" class="btn-primary">
+          <span data-en="Request a Quote" data-ko="견적 요청하기">Request a Quote</span>
           <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#services" class="btn-secondary">
+          <span data-en="Explore Services" data-ko="서비스 보기">Explore Services</span>
         </a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-photo-frame">
-        <img src="./images/hero-action.jpg" alt="ATS Total Service team member trimming grass at a Sydney apartment block" loading="eager" />
-        <div class="hero-tag">
-          <span class="dot"></span>
-          <span data-en="On-site in Sydney" data-ko="시드니 현장 작업">On-site in Sydney</span>
-        </div>
-      </div>
+      <img src="./images/truck.jpg" alt="ATS Isuzu service truck on site in Sydney" />
       <div class="hero-badge">
         <div class="hero-badge-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
         </div>
         <div class="hero-badge-text">
-          <strong data-en="In-house crew" data-ko="자체 작업팀">In-house crew</strong>
-          <span data-en="Hi-vis · trained · accountable" data-ko="안전장비 · 교육 · 책임">Hi-vis · trained · accountable</span>
+          <strong data-en="Fully owned fleet" data-ko="100% 자체 차량">Fully owned fleet</strong>
+          <span data-en="No subcontractors" data-ko="하도급 없음">No subcontractors</span>
         </div>
       </div>
     </div>
   </div>
 
   <div class="trust-strip">
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <span data-en="Fully Insured · Registered Pty. Ltd." data-ko="보험 가입 · 정식 등록 법인">Fully Insured · Registered Pty. Ltd.</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span data-en="Sydney-Based · NSW Coverage" data-ko="시드니 기반 · NSW 전역">Sydney-Based · NSW Coverage</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span data-en="24-Hour Quote Response" data-ko="24시간 내 견적 회신">24-Hour Quote Response</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      <span data-en="Own Fleet · Truck, Vans & Machinery" data-ko="자체 차량 · 트럭·밴·장비">Own Fleet · Truck, Vans &amp; Machinery</span>
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-en="Fully Insured · Registered Pty. Ltd." data-ko="보험 가입 · 정식 등록 법인">Fully Insured · Registered Pty. Ltd.</span>
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span data-en="Sydney-Based · NSW Coverage" data-ko="시드니 기반 · NSW 전역">Sydney-Based · NSW Coverage</span>
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span data-en="24-Hour Quote Response" data-ko="24시간 내 견적 회신">24-Hour Quote Response</span>
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span data-en="Own Fleet · Truck, Vans & Machinery" data-ko="자체 차량 · 트럭·밴·장비">Own Fleet · Truck, Vans &amp; Machinery</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="section-inner">
+<!-- ============ ABOUT ============ -->
+<section id="about" class="about">
+  <div class="container">
     <div class="about-grid">
-      <div>
-        <div class="section-label" data-en="Who We Work With" data-ko="고객사 영역">Who We Work With</div>
-        <h2 class="section-title">
-          <span data-en="Built for the people who" data-ko="부동산 관리에">Built for the people who</span>
-          <em data-en="run properties." data-ko="책임지는 분들을 위해.">run properties.</em>
+      <div class="about-text reveal">
+        <div class="section-eyebrow" data-en="About Us" data-ko="회사 소개">About Us</div>
+        <h2 class="section-title" data-en='Built for owners who need <em>one number to call.</em>' data-ko='건물주가 <em>전화 한 통</em>으로 끝낼 수 있는 파트너.'>
+          Built for owners who need <em>one number to call.</em>
         </h2>
-        <p style="font-size: 17px; color: var(--muted); margin-top: 20px; max-width: 480px;" data-en="ATS Total Service is built for property managers, real estate operators, principal contractors and facility operators who need a maintenance partner that shows up — and does the work in-house." data-ko="ATS Total Service는 부동산 관리자, 부동산 운영사, 원도급사, 시설 운영팀을 위해 만들어졌습니다. 약속한 대로 나타나고, 자체 인력으로 직접 작업하는 유지관리 파트너가 필요한 분들을 위해.">
-          ATS Total Service is built for property managers, real estate operators, principal contractors and facility operators who need a maintenance partner that shows up — and does the work in-house.
+        <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company built to consolidate the everyday operations of owning and managing property. Cleaning, gardening, waste collection and painting — delivered by one team, on one invoice, with one accountable contact." data-ko="ATS Total Service Pty. Ltd.는 부동산 운영에 필요한 모든 일상 업무를 한 팀에서 처리하기 위해 설립된 시드니 기반 부동산 관리 회사입니다. 청소, 정원관리, 쓰레기 수거, 페인팅을 하나의 팀, 하나의 인보이스, 하나의 책임자로 통합 제공합니다.">
+          ATS Total Service Pty. Ltd. is a Sydney-based property maintenance company built to consolidate the everyday operations of owning and managing property. Cleaning, gardening, waste collection and painting — delivered by one team, on one invoice, with one accountable contact.
         </p>
-
-        <div class="about-targets">
-          <div class="target-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-            <div>
-              <strong data-en="Residential blocks & strata" data-ko="주거 단지·스트라타">Residential blocks &amp; strata</strong>
-              <span data-en="Common areas, lawns, gardens, waste" data-ko="공용 구역, 잔디, 정원, 폐기물">Common areas, lawns, gardens, waste</span>
-            </div>
-          </div>
-          <div class="target-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
-            <div>
-              <strong data-en="Real estate & property managers" data-ko="부동산 회사·매니저">Real estate &amp; property managers</strong>
-              <span data-en="End-of-lease cleans, turnovers, painting" data-ko="임대 종료 청소, 이사 인수, 페인팅">End-of-lease cleans, turnovers, painting</span>
-            </div>
-          </div>
-          <div class="target-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            <div>
-              <strong data-en="Principal contractors" data-ko="원도급 시공사">Principal contractors</strong>
-              <span data-en="Site clean-ups, green waste removal" data-ko="현장 청소, 정원 폐기물 처리">Site clean-ups, green waste removal</span>
-            </div>
-          </div>
-          <div class="target-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H7a4 4 0 0 1-4-4V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6m6 0h2a4 4 0 0 0 4-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v6m-6 0h12v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4v-6z"/></svg>
-            <div>
-              <strong data-en="Facility operators" data-ko="시설 운영팀">Facility operators</strong>
-              <span data-en="Recurring upkeep, scheduled rounds" data-ko="정기 유지관리, 정기 라운드">Recurring upkeep, scheduled rounds</span>
-            </div>
-          </div>
-        </div>
+        <p data-en="With our own fleet of trucks, vans and commercial-grade machinery, we operate without subcontractors. That means consistent quality, predictable scheduling, and direct accountability — the operating standard that property managers, strata committees and commercial landlords expect." data-ko="자체 보유한 트럭·밴·상업용 장비를 통해 하도급 없이 모든 작업을 직접 수행합니다. 일관된 품질, 예측 가능한 스케줄, 직접적인 책임 — 부동산 관리자, 스트라타 위원회, 상업용 임대인이 요구하는 기준입니다.">
+          With our own fleet of trucks, vans and commercial-grade machinery, we operate without subcontractors. That means consistent quality, predictable scheduling, and direct accountability — the operating standard that property managers, strata committees and commercial landlords expect.
+        </p>
       </div>
-
-      <div class="about-photo">
-        <img src="./images/site-premium.jpg" alt="Sydney residential waterfront property managed by ATS Total Service" loading="lazy" />
-        <div class="about-photo-caption">
-          <span data-en="Properties we maintain across Sydney" data-ko="시드니 전역에서 관리 중인 부동산들">Properties we maintain across Sydney</span>
+      <div class="about-stats reveal">
+        <div class="about-stat">
+          <div class="about-stat-num">4<em>+</em></div>
+          <div class="about-stat-label" data-en="Service Categories" data-ko="서비스 카테고리">Service Categories</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">100<em>%</em></div>
+          <div class="about-stat-label" data-en="In-House Operations" data-ko="자체 운영 비율">In-House Operations</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">2.5<em>t</em></div>
+          <div class="about-stat-label" data-en="Truck Payload Capacity" data-ko="트럭 적재량">Truck Payload Capacity</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">NSW</div>
+          <div class="about-stat-label" data-en="Service Region" data-ko="운영 지역">Service Region</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-inner">
-    <div class="section-label" data-en="Our Services" data-ko="제공 서비스">Our Services</div>
-    <h2 class="section-title">
-      <span data-en="Four trades," data-ko="4가지 분야,">Four trades,</span>
-      <em data-en="one coordinated team." data-ko="하나의 통합 운영팀.">one coordinated team.</em>
-    </h2>
-    <p class="section-desc" data-en="Stop juggling four contractors. ATS handles cleaning, gardening, waste and painting under one roof — quoted, scheduled and delivered by the same team." data-ko="4개 업체와 따로 일정 조율하지 마세요. 청소·정원관리·쓰레기 수거·페인팅을 한 팀이 견적부터 일정, 작업까지 일괄 진행합니다.">
-      Stop juggling four contractors. ATS handles cleaning, gardening, waste and painting under one roof — quoted, scheduled and delivered by the same team.
-    </p>
+<!-- ============ SERVICES ============ -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Services" data-ko="서비스">Services</div>
+      <h2 class="section-title" data-en='Four service lines.<br/><em>One operational team.</em>' data-ko='4개 서비스 라인,<br/><em>하나의 운영 팀.</em>'>
+        Four service lines.<br/><em>One operational team.</em>
+      </h2>
+      <p class="section-desc" data-en="Each service is delivered in-house — never outsourced. The same standards, the same crews, the same direct accountability across every job." data-ko="모든 서비스는 외주 없이 자체 인력으로 직접 수행합니다. 동일한 기준, 동일한 팀, 모든 작업에 일관된 책임감을 보장합니다.">
+        Each service is delivered in-house — never outsourced. The same standards, the same crews, the same direct accountability across every job.
+      </p>
+    </div>
 
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-photo">
-          <img src="./images/pathway-after.jpg" alt="Cleaned residential pathway after ATS service" loading="lazy" />
+          <img src="./images/cleaning-city.jpg" alt="Sydney urban property cleaning" loading="lazy" />
         </div>
         <div class="service-body">
-          <div class="service-num">01 / Cleaning</div>
-          <h3 data-en="Cleaning" data-ko="청소">Cleaning</h3>
-          <ul>
-            <li data-en="Home cleaning" data-ko="가정집 청소">Home cleaning</li>
-            <li data-en="End-of-lease cleaning" data-ko="이사·임대 종료 청소">End-of-lease cleaning</li>
-            <li data-en="Office & commercial cleaning" data-ko="사무실·상업시설 청소">Office &amp; commercial cleaning</li>
+          <span class="service-num">01 / Cleaning</span>
+          <h3 class="service-title" data-en="Cleaning" data-ko="청소">Cleaning</h3>
+          <ul class="service-list">
+            <li data-en="Residential Cleaning" data-ko="가정집 청소">Residential Cleaning</li>
+            <li data-en="End-of-Lease & Bond Cleaning" data-ko="이사·임대 종료 청소">End-of-Lease &amp; Bond Cleaning</li>
+            <li data-en="Office & Commercial Cleaning" data-ko="사무실·상업시설 청소">Office &amp; Commercial Cleaning</li>
           </ul>
         </div>
       </div>
+
       <div class="service-card reveal">
         <div class="service-photo">
-          <img src="./images/grass-clean.jpg" alt="Freshly cut grass site maintained by ATS" loading="lazy" />
+          <img src="./images/gardening-lawn.jpg" alt="Lawn and garden maintenance on a managed property" loading="lazy" />
         </div>
         <div class="service-body">
-          <div class="service-num">02 / Gardening</div>
-          <h3 data-en="Gardening" data-ko="정원 관리">Gardening</h3>
-          <ul>
-            <li data-en="Lawn mowing" data-ko="잔디 깎기">Lawn mowing</li>
-            <li data-en="Lawn installation" data-ko="잔디 시공">Lawn installation</li>
-            <li data-en="Yard & grounds maintenance" data-ko="마당·부지 관리">Yard &amp; grounds maintenance</li>
+          <span class="service-num">02 / Gardening</span>
+          <h3 class="service-title" data-en="Gardening" data-ko="정원 관리">Gardening</h3>
+          <ul class="service-list">
+            <li data-en="Lawn Mowing" data-ko="잔디 깎기">Lawn Mowing</li>
+            <li data-en="Turf Installation" data-ko="잔디 시공">Turf Installation</li>
+            <li data-en="Site & Grounds Maintenance" data-ko="대형 부지 관리">Site &amp; Grounds Maintenance</li>
           </ul>
         </div>
       </div>
+
       <div class="service-card reveal">
         <div class="service-photo">
-          <img src="./images/van-trailer.jpg" alt="ATS waste collection van and trailer" loading="lazy" />
+          <img src="./images/waste-truck.jpg" alt="ATS waste collection truck loaded for removal" loading="lazy" />
         </div>
         <div class="service-body">
-          <div class="service-num">03 / Waste</div>
-          <h3 data-en="Waste Collection" data-ko="쓰레기 수거">Waste Collection</h3>
-          <ul>
-            <li data-en="General waste" data-ko="일반 폐기물">General waste</li>
-            <li data-en="Green waste" data-ko="정원 폐기물 (그린 웨이스트)">Green waste</li>
-            <li data-en="Tree branches & site clean-ups" data-ko="나뭇가지·현장 청소">Tree branches &amp; site clean-ups</li>
+          <span class="service-num">03 / Waste</span>
+          <h3 class="service-title" data-en="Waste Collection" data-ko="쓰레기 수거">Waste Collection</h3>
+          <ul class="service-list">
+            <li data-en="General Rubbish Removal" data-ko="일반 폐기물">General Rubbish Removal</li>
+            <li data-en="Green Waste (Green Waste)" data-ko="정원 폐기물 (그린 웨이스트)">Green Waste</li>
+            <li data-en="Leaf & Debris Clearance" data-ko="나뭇잎·현장 청소">Leaf &amp; Debris Clearance</li>
           </ul>
         </div>
       </div>
+
       <div class="service-card reveal">
         <div class="service-photo">
-          <img src="./images/yard-after.jpg" alt="Residential yard after maintenance by ATS" loading="lazy" />
+          <img src="./images/painting-room.jpg" alt="Interior painting and refresh of a managed rental property" loading="lazy" />
         </div>
         <div class="service-body">
-          <div class="service-num">04 / Painting</div>
-          <h3 data-en="Painting" data-ko="페인팅">Painting</h3>
-          <ul>
-            <li data-en="Interior painting" data-ko="실내 페인팅">Interior painting</li>
-            <li data-en="Touch-ups" data-ko="부분 보수 도장">Touch-ups</li>
-            <li data-en="Maintenance & end-of-lease refresh works" data-ko="유지보수·임대 종료 리프레시">Maintenance &amp; end-of-lease refresh works</li>
+          <span class="service-num">04 / Painting</span>
+          <h3 class="service-title" data-en="Painting" data-ko="페인팅">Painting</h3>
+          <ul class="service-list">
+            <li data-en="Interior Painting" data-ko="실내 페인팅">Interior Painting</li>
+            <li data-en="Touch-Up & Spot Repairs" data-ko="부분 보수 도장">Touch-Up &amp; Spot Repairs</li>
+            <li data-en="Pre-Lease & End-of-Lease Refresh" data-ko="입주 전·임대 종료 리프레시">Pre-Lease &amp; End-of-Lease Refresh</li>
           </ul>
         </div>
       </div>
@@ -554,217 +929,201 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="section-inner">
-    <div class="section-label" data-en="Our Commitments" data-ko="고객 약속">Our Commitments</div>
-    <h2 class="section-title">
-      <span data-en="No chasing." data-ko="쫓아다닐 필요 없이.">No chasing.</span>
-      <em data-en="Just delivered work." data-ko="약속한 작업, 그대로.">Just delivered work.</em>
-    </h2>
-    <p class="section-desc" data-en="Three commitments we make to every property manager, operator and contractor who works with us." data-ko="모든 부동산 매니저·운영사·시공사에게 드리는 세 가지 약속입니다.">
-      Three commitments we make to every property manager, operator and contractor who works with us.
-    </p>
+<!-- ============ PROCESS ============ -->
+<section id="process" class="process">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Process" data-ko="이용 절차">Process</div>
+      <h2 class="section-title" data-en='From enquiry to handover<br/><em>in three steps.</em>' data-ko='문의에서 인수까지<br/><em>3단계로 완료.</em>'>
+        From enquiry to handover<br/><em>in three steps.</em>
+      </h2>
+      <p class="section-desc" data-en="A simple, transparent process designed for property managers and busy owners who need things done right the first time." data-ko="부동산 관리자와 바쁜 건물주를 위해 처음부터 정확하게 처리되도록 설계된 명확하고 투명한 프로세스입니다.">
+        A simple, transparent process designed for property managers and busy owners who need things done right the first time.
+      </p>
+    </div>
 
     <div class="process-grid">
       <div class="process-step reveal">
         <div class="process-num">01</div>
-        <h4 data-en="24-hour quote response" data-ko="24시간 내 견적 회신">24-hour quote response</h4>
-        <p data-en="Send us your property details and scope. You'll have a clear, itemised quote back within one business day — not a week later." data-ko="현장 정보와 작업 범위를 보내주시면, 영업일 1일 내 항목별로 정리된 명확한 견적을 받아보실 수 있습니다. 일주일 기다리실 필요 없습니다.">
-          Send us your property details and scope. You'll have a clear, itemised quote back within one business day — not a week later.
+        <h3 data-en="Enquiry & Site Review" data-ko="문의 및 현장 검토">Enquiry &amp; Site Review</h3>
+        <p data-en="Tell us about your property and what needs attention. We respond within one business day with clarifying questions and arrange a site visit if needed." data-ko="부동산 정보와 필요한 작업을 알려주세요. 영업일 1일 이내에 확인 질문과 함께 회신드리며 필요 시 현장 방문 일정을 잡습니다.">
+          Tell us about your property and what needs attention. We respond within one business day with clarifying questions and arrange a site visit if needed.
         </p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">02</div>
-        <h4 data-en="Single point of contact" data-ko="단일 책임 담당자">Single point of contact</h4>
-        <p data-en="One person manages your jobs from quote to handover. No bouncing between four contractors. No "that's not our team" excuses." data-ko="견적부터 인수까지 한 명의 담당자가 끝까지 책임집니다. 4개 업체 사이에서 핑퐁할 필요 없고, '저희 담당 아닙니다' 같은 변명도 없습니다.">
-          One person manages your jobs from quote to handover. No bouncing between four contractors. No "that's not our team" excuses.
+        <h3 data-en="Quote & Schedule" data-ko="견적 및 일정 확정">Quote &amp; Schedule</h3>
+        <p data-en="You receive a clear, itemized quote with no hidden fees and a confirmed schedule. For ongoing contracts, we propose a maintenance plan tailored to your property." data-ko="명확하고 항목별로 정리된 견적과 확정 일정을 받으십시오. 정기 계약은 부동산에 맞춘 유지관리 계획을 제안드립니다.">
+          You receive a clear, itemized quote with no hidden fees and a confirmed schedule. For ongoing contracts, we propose a maintenance plan tailored to your property.
         </p>
       </div>
       <div class="process-step reveal">
         <div class="process-num">03</div>
-        <h4 data-en="Before & after records" data-ko="작업 전·후 기록 제공">Before &amp; after records</h4>
-        <p data-en="Every job comes with photo records — useful for owner reports, strata committees, end-of-lease evidence, or just your own audit trail." data-ko="모든 작업에 사진 기록을 제공합니다. 소유주 보고서, 스트라타 위원회 제출, 임대 종료 증빙, 내부 감사용으로 그대로 활용 가능합니다.">
-          Every job comes with photo records — useful for owner reports, strata committees, end-of-lease evidence, or just your own audit trail.
+        <h3 data-en="Delivery & Handover" data-ko="작업 수행 및 인수">Delivery &amp; Handover</h3>
+        <p data-en="Our own crew arrives in our own vehicles with our own equipment. Work is completed to spec, the site is left tidy, and you receive a handover with before/after photos on request." data-ko="자체 차량과 자체 장비로 자체 인력이 출동합니다. 사양대로 작업을 완료하고 현장을 정리한 후, 요청 시 작업 전후 사진을 포함한 인수 보고를 드립니다.">
+          Our own crew arrives in our own vehicles with our own equipment. Work is completed to spec, the site is left tidy, and you receive a handover with before/after photos on request.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
-<section class="why" id="why">
-  <div class="section-inner">
-    <div class="section-label" data-en="Why Choose ATS" data-ko="ATS를 선택하는 이유">Why Choose ATS</div>
-    <h2 class="section-title">
-      <span data-en="The difference is in" data-ko="차이는 결국">The difference is in</span>
-      <em data-en="how the work gets done." data-ko="일하는 방식에 있습니다.">how the work gets done.</em>
-    </h2>
+<!-- ============ WHY US ============ -->
+<section id="why" class="why-us">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Why Choose ATS" data-ko="ATS를 선택하는 이유">Why Choose ATS</div>
+      <h2 class="section-title" data-en='Reliability isn't a slogan.<br/><em>It's how we operate.</em>' data-ko='신뢰는 구호가 아니라<br/><em>운영 방식입니다.</em>'>
+        Reliability isn't a slogan.<br/><em>It's how we operate.</em>
+      </h2>
+    </div>
 
     <div class="why-grid">
-      <div class="why-list">
+      <div class="why-items">
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
           <div>
-            <h4 data-en="One team, four trades" data-ko="한 팀, 4개 분야">One team, four trades</h4>
-            <p data-en="Cleaning, gardening, waste and painting handled by people who already know your property. No re-briefing four different crews every time." data-ko="청소·정원·쓰레기·페인팅을 현장을 이미 아는 동일한 팀이 수행합니다. 매번 4개 업체에 처음부터 다시 설명할 필요 없습니다.">
-              Cleaning, gardening, waste and painting handled by people who already know your property. No re-briefing four different crews every time.
+            <h3 data-en="Fully Owned Fleet & Equipment" data-ko="장비·차량 100% 자체 보유">Fully Owned Fleet &amp; Equipment</h3>
+            <p data-en="Isuzu 2.5t waste truck, service vans, ride-on mowers, brush cutters. No rental dependencies, no subcontractor scheduling conflicts." data-ko="이스즈 2.5톤 트럭, 서비스 밴, 라이드온 잔디깎이, 예초기까지 모두 자체 보유. 렌탈 의존도 없음, 하도급 스케줄 충돌 없음.">
+              Isuzu 2.5t waste truck, service vans, ride-on mowers, brush cutters. No rental dependencies, no subcontractor scheduling conflicts.
             </p>
           </div>
         </div>
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div>
-            <h4 data-en="Sydney-local, Sydney-fast" data-ko="시드니 로컬, 빠른 대응">Sydney-local, Sydney-fast</h4>
-            <p data-en="Based in NSW, working in NSW. We can be on site quickly across most Sydney suburbs — no long-haul travel surcharges, no excuses about traffic." data-ko="NSW에 기반을 두고 NSW에서 일합니다. 시드니 대부분의 지역에 빠르게 출동 가능하며, 장거리 출장비도 교통체증 핑계도 없습니다.">
-              Based in NSW, working in NSW. We can be on site quickly across most Sydney suburbs — no long-haul travel surcharges, no excuses about traffic.
+            <h3 data-en="One Vendor for Multiple Services" data-ko="복수 서비스를 한 업체로">One Vendor for Multiple Services</h3>
+            <p data-en="Stop coordinating multiple contractors. One invoice, one point of contact, one company accountable for the entire property." data-ko="여러 업체를 조율할 필요 없습니다. 하나의 인보이스, 하나의 담당자, 부동산 전체를 책임지는 하나의 회사.">
+              Stop coordinating multiple contractors. One invoice, one point of contact, one company accountable for the entire property.
             </p>
           </div>
         </div>
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div>
-            <h4 data-en="Built for ongoing contracts" data-ko="장기 계약·반복 업무에 최적화">Built for ongoing contracts</h4>
-            <p data-en="Scheduled rounds, recurring upkeep, multi-property rotations — we're set up for the kind of work that needs to happen every week, every month, every year." data-ko="정기 라운드, 반복 유지관리, 다수 부동산 순환 작업. 매주·매월·매년 반복되어야 하는 업무에 최적화된 운영 구조입니다.">
-              Scheduled rounds, recurring upkeep, multi-property rotations — we're set up for the kind of work that needs to happen every week, every month, every year.
+            <h3 data-en="Built for Long-Term Contracts" data-ko="장기 계약에 최적화">Built for Long-Term Contracts</h3>
+            <p data-en="Property managers, strata committees and commercial landlords work with us on ongoing maintenance programs — not one-off jobs." data-ko="부동산 관리자, 스트라타 위원회, 상업용 임대인과 단발 작업이 아닌 정기 유지관리 프로그램으로 함께합니다.">
+              Property managers, strata committees and commercial landlords work with us on ongoing maintenance programs — not one-off jobs.
             </p>
           </div>
         </div>
         <div class="why-item reveal">
           <div class="why-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
           </div>
           <div>
-            <h4 data-en="Trained, hi-vis, on the job" data-ko="교육받은 자체 인력, 안전장비 착용">Trained, hi-vis, on the job</h4>
-            <p data-en="Our own crew — not a rotating list of subcontractors. Properly equipped, properly briefed, and visibly accountable on every site." data-ko="순환하는 하청 명단이 아니라 자체 직원이 직접 작업합니다. 적절한 장비, 명확한 브리핑, 현장에서 눈에 보이는 책임 운영.">
-              Our own crew — not a rotating list of subcontractors. Properly equipped, properly briefed, and visibly accountable on every site.
+            <h3 data-en="Registered Pty. Ltd. Company" data-ko="정식 등록 법인 (Pty. Ltd.)">Registered Pty. Ltd. Company</h3>
+            <p data-en="Operating as ATS Total Service Pty. Ltd. with proper insurance, tax invoicing and the operational structure expected for commercial contracts." data-ko="정식 등록 법인 ATS Total Service Pty. Ltd.로 운영하며, 적정 보험·세금계산서 발급·상업 계약에 필요한 운영 체계를 갖추고 있습니다.">
+              Operating as ATS Total Service Pty. Ltd. with proper insurance, tax invoicing and the operational structure expected for commercial contracts.
             </p>
           </div>
         </div>
       </div>
 
-      <aside class="why-side">
-        <div class="why-side-photo">
-          <img src="./images/mower-work.jpg" alt="ATS crew in hi-vis safety gear operating Toro ride-on mower" loading="lazy" />
+      <div class="why-side reveal">
+        <div class="why-side-img">
+          <img src="./images/mower-work.jpg" alt="ATS team operating commercial mower on site" />
         </div>
-        <div class="why-side-content">
-          <h3 data-en="What we do best" data-ko="우리가 가장 잘하는 일">What we do best</h3>
-          <p data-en="ATS is built for operators who need a maintenance partner they can stop thinking about." data-ko="ATS는 '신경 안 써도 되는 유지관리 파트너'를 필요로 하는 운영사를 위해 만들어졌습니다.">
-            ATS is built for operators who need a maintenance partner they can stop thinking about.
+        <div class="why-side-body">
+          <div class="why-side-eyebrow" data-en="Business Focus" data-ko="비즈니스 포커스">Business Focus</div>
+          <h3 data-en="We work with operators, not consumers." data-ko="우리는 운영자와 일합니다, 소비자가 아닌.">We work with operators, not consumers.</h3>
+          <p data-en="Real estate offices, strata committees, commercial landlords and large residential properties. If you manage property as a business, we're built for you." data-ko="부동산 사무소, 스트라타 위원회, 상업용 임대인, 대형 주거 단지 — 부동산을 비즈니스로 운영하시는 분들을 위해 설계되었습니다.">
+            Real estate offices, strata committees, commercial landlords and large residential properties. If you manage property as a business, we're built for you.
           </p>
-          <ul class="focus-list">
-            <li data-en="Long-term maintenance contracts" data-ko="장기 유지관리 계약">Long-term maintenance contracts</li>
-            <li data-en="Multi-property recurring rounds" data-ko="다수 부동산 정기 라운드">Multi-property recurring rounds</li>
-            <li data-en="End-of-lease & tenancy turnovers" data-ko="임대 종료·인수 인계">End-of-lease &amp; tenancy turnovers</li>
-            <li data-en="Principal contractor support" data-ko="원도급사 지원">Principal contractor support</li>
-          </ul>
         </div>
-      </aside>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery" id="fleet">
-  <div class="section-inner">
-    <div class="section-label" data-en="Our Fleet & Equipment" data-ko="보유 차량·장비">Our Fleet &amp; Equipment</div>
-    <h2 class="section-title">
-      <span data-en="Owned, operated," data-ko="자체 보유, 자체 운영,">Owned, operated,</span>
-      <em data-en="ready to mobilise." data-ko="즉시 출동.">ready to mobilise.</em>
-    </h2>
-    <p class="section-desc" data-en="We invest in our own fleet so we can show up when we say we will. Trucks, vans, ride-on mowers, trimmers, and the tools that get the job done — all owned and maintained by ATS." data-ko="약속한 대로 나타나기 위해 자체 장비에 투자합니다. 트럭, 밴, 라이드온 잔디깎이, 트리머, 작업에 필요한 모든 도구 — 전부 ATS 소유이며 자체 관리합니다.">
-      We invest in our own fleet so we can show up when we say we will. Trucks, vans, ride-on mowers, trimmers, and the tools that get the job done — all owned and maintained by ATS.
-    </p>
+<!-- ============ FLEET GALLERY ============ -->
+<section class="fleet">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Fleet & Equipment" data-ko="자체 장비">Fleet &amp; Equipment</div>
+      <h2 class="section-title" data-en='Every job is delivered with <em>our own gear.</em>' data-ko='모든 작업은 <em>자체 장비</em>로 수행됩니다.'>
+        Every job is delivered with <em>our own gear.</em>
+      </h2>
+      <p class="section-desc" data-en="Trucks, vans and commercial-grade machinery — owned, maintained and operated by ATS." data-ko="트럭, 밴, 상업용 장비 — 모두 ATS가 직접 보유·관리·운영합니다.">
+        Trucks, vans and commercial-grade machinery — owned, maintained and operated by ATS.
+      </p>
+    </div>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid reveal">
       <div class="gallery-item g1">
-        <img src="./images/truck.jpg" alt="Isuzu NLR 45-150 with cage body — ATS waste truck" loading="lazy" />
-        <div class="gallery-caption">
-          <strong data-en="Isuzu NLR Waste Truck" data-ko="이스즈 NLR 쓰레기 트럭">Isuzu NLR Waste Truck</strong>
-          <span data-en="2.5T capacity · Cage body · For waste, branches & site clean-outs" data-ko="2.5톤 적재 · 케이지 바디 · 폐기물·나뭇가지·현장 청소용">2.5T capacity · Cage body · For waste, branches &amp; site clean-outs</span>
-        </div>
+        <img src="./images/truck.jpg" alt="Isuzu NLR 2.5t Waste Truck" loading="lazy" />
+        <div class="gallery-caption" data-en="Isuzu NLR 2.5t Waste Truck" data-ko="Isuzu NLR 2.5톤 트럭">Isuzu NLR 2.5t Waste Truck</div>
       </div>
       <div class="gallery-item g2">
-        <img src="./images/van-trailer.jpg" alt="Service van with trailer for mobile waste collection" loading="lazy" />
-        <div class="gallery-caption">
-          <strong data-en="Van + Trailer Combo" data-ko="밴 + 트레일러 조합">Van + Trailer Combo</strong>
-          <span data-en="Mobile pickups · Smaller sites · Same-day jobs" data-ko="이동식 픽업 · 소규모 현장 · 당일 작업">Mobile pickups · Smaller sites · Same-day jobs</span>
-        </div>
+        <img src="./images/van-trailer.jpg" alt="Hiace Service Van with Trailer" loading="lazy" />
+        <div class="gallery-caption" data-en="Service Van + Trailer" data-ko="서비스 밴 + 트레일러">Service Van + Trailer</div>
       </div>
       <div class="gallery-item g3">
-        <img src="./images/mower-result.jpg" alt="Toro TimeCutter ride-on mower in action" loading="lazy" />
-        <div class="gallery-caption">
-          <strong data-en="Toro TimeCutter" data-ko="토로 타임커터">Toro TimeCutter</strong>
-          <span data-en="Residential lawns · Multi-property rounds" data-ko="주거 잔디 · 다수 부동산 라운드">Residential lawns · Multi-property rounds</span>
-        </div>
+        <img src="./images/mower-work.jpg" alt="Toro TimeCutter on managed site" loading="lazy" />
+        <div class="gallery-caption" data-en="Toro TimeCutter Ride-On" data-ko="토로 라이드온 잔디깎이">Toro TimeCutter</div>
       </div>
       <div class="gallery-item g4">
-        <img src="./images/mower-work.jpg" alt="Toro 4000 commercial mower on site" loading="lazy" />
-        <div class="gallery-caption">
-          <strong data-en="Toro 4000 Series" data-ko="토로 4000 시리즈">Toro 4000 Series</strong>
-          <span data-en="Commercial-grade · Larger sites · Faster turnaround" data-ko="상업용 · 대규모 현장 · 빠른 작업">Commercial-grade · Larger sites · Faster turnaround</span>
-        </div>
+        <img src="./images/mower-result.jpg" alt="Completed turf maintenance" loading="lazy" />
+        <div class="gallery-caption" data-en="Toro 4000 Series" data-ko="Toro 4000 시리즈">Toro 4000 Series</div>
       </div>
       <div class="gallery-item g5">
-        <img src="./images/fleet-row.jpg" alt="ATS Total Service fleet — van, trailer and truck lined up on site" loading="lazy" />
-        <div class="gallery-caption">
-          <strong data-en="Fleet on standby" data-ko="대기 중인 자체 차량">Fleet on standby</strong>
-          <span data-en="Vans, trailers, trucks · All ours · Ready for the next site" data-ko="밴·트레일러·트럭 모두 자체 보유 · 다음 현장 즉시 출동">Vans, trailers, trucks · All ours · Ready for the next site</span>
-        </div>
+        <img src="./images/fleet-row.jpg" alt="ATS service fleet lineup" loading="lazy" />
+        <div class="gallery-caption" data-en="Service Fleet Lineup" data-ko="서비스 차량 풀세트">Service Fleet Lineup</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPANIES -->
-<section class="companies" id="companies">
-  <div class="section-inner">
-    <div class="section-label" data-en="Our Group" data-ko="계열사">Our Group</div>
-    <h2 class="section-title">
-      <span data-en="Three companies," data-ko="세 개의 회사,">Three companies,</span>
-      <em data-en="one operating standard." data-ko="하나의 운영 기준.">one operating standard.</em>
-    </h2>
-    <p class="section-desc" data-en="ATS Total Service operates alongside two specialist sister companies — giving clients deeper expertise where it matters most." data-ko="ATS Total Service는 두 곳의 전문 계열사와 함께 운영되어, 각 분야에서 더 깊이 있는 전문성을 제공합니다.">
-      ATS Total Service operates alongside two specialist sister companies — giving clients deeper expertise where it matters most.
-    </p>
+<!-- ============ COMPANIES (계열사) ============ -->
+<section id="companies" class="companies">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Our Group" data-ko="계열사">Our Group</div>
+      <h2 class="section-title" data-en='Specialised partners <em>under one roof.</em>' data-ko='하나의 그룹 안에 <em>전문 파트너들.</em>'>
+        Specialised partners <em>under one roof.</em>
+      </h2>
+      <p class="section-desc" data-en="For deeper specialization, ATS works alongside two dedicated companies — each with their own focus, fleet and team." data-ko="더 깊은 전문성을 위해 ATS는 각자의 분야·차량·팀을 갖춘 두 개의 전문 회사와 함께 운영됩니다.">
+        For deeper specialization, ATS works alongside two dedicated companies — each with their own focus, fleet and team.
+      </p>
+    </div>
 
     <div class="companies-grid">
-      <div class="company-card reveal">
-        <div class="company-logo-wrap" style="background: linear-gradient(135deg, #f0f7ff 0%, #dceaff 100%);">
-          <img src="./images/logo-firstcleaning.png" alt="First Cleaning Sydney logo" loading="lazy" />
+      <div class="company-card cleaning reveal">
+        <div class="company-logo-area">
+          <img src="./images/logo-firstcleaning.png" alt="First Cleaning Sydney" />
         </div>
         <div class="company-body">
-          <div class="company-tag" data-en="Cleaning Specialist" data-ko="청소 전문">Cleaning Specialist</div>
-          <h3>First Cleaning Sydney</h3>
-          <p data-en="Professional residential and commercial cleaning services across Sydney — bond cleans, regular maintenance and post-construction work." data-ko="시드니 전역의 주거·상업 청소 전문. 본드 클리닝, 정기 청소, 건축 후 청소까지 폭넓게 수행합니다.">
-            Professional residential and commercial cleaning services across Sydney — bond cleans, regular maintenance and post-construction work.
+          <span class="company-tag" data-en="Cleaning Specialist" data-ko="청소 전문">Cleaning Specialist</span>
+          <h3 class="company-name">First Cleaning Sydney</h3>
+          <p class="company-desc" data-en="Sydney's residential and commercial cleaning specialist. Bond cleaning, regular service contracts, and post-construction cleaning across the metro area." data-ko="시드니 전역의 주거·상업 청소 전문. 본드 클리닝, 정기 청소, 건축 후 청소까지 폭넓게 수행합니다.">
+            Sydney's residential and commercial cleaning specialist. Bond cleaning, regular service contracts, and post-construction cleaning across the metro area.
           </p>
-          <a href="https://firstcleaningsyd.com.au/" target="_blank" rel="noopener" class="company-link">
+          <a href="https://firstcleaningsyd.com.au" target="_blank" rel="noopener" class="company-link">
             <span data-en="Visit firstcleaningsyd.com.au" data-ko="firstcleaningsyd.com.au 방문">Visit firstcleaningsyd.com.au</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10"/><path d="M7 7h10v10"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
         </div>
       </div>
 
-      <div class="company-card reveal">
-        <div class="company-logo-wrap" style="background: linear-gradient(135deg, #f1f8ed 0%, #d8ecd0 100%);">
-          <img src="./images/logo-firstmaint.png" alt="FirstMaint logo" loading="lazy" />
+      <div class="company-card maint reveal">
+        <div class="company-logo-area">
+          <img src="./images/logo-firstmaint.png" alt="First Maintenance" />
         </div>
         <div class="company-body">
-          <div class="company-tag" data-en="Maintenance Specialist" data-ko="유지관리 전문">Maintenance Specialist</div>
-          <h3>First Maintenance</h3>
-          <p data-en="Complete property maintenance — gardening, waste removal, lawn care and repair works for residential and managed properties." data-ko="종합 부동산 유지관리 전문. 정원관리, 폐기물 처리, 잔디 관리, 보수 작업까지 일괄 수행합니다.">
-            Complete property maintenance — gardening, waste removal, lawn care and repair works for residential and managed properties.
+          <span class="company-tag" data-en="Maintenance Specialist" data-ko="유지관리 전문">Maintenance Specialist</span>
+          <h3 class="company-name">First Maintenance</h3>
+          <p class="company-desc" data-en="Comprehensive property maintenance: gardening, waste removal, turf care, and minor repairs — delivered as a single ongoing program." data-ko="종합 부동산 유지관리 전문. 정원관리, 폐기물 처리, 잔디 관리, 보수 작업까지 일괄 수행합니다.">
+            Comprehensive property maintenance: gardening, waste removal, turf care, and minor repairs — delivered as a single ongoing program.
           </p>
-          <a href="https://firstmaint.com.au/" target="_blank" rel="noopener" class="company-link">
+          <a href="https://firstmaint.com.au" target="_blank" rel="noopener" class="company-link">
             <span data-en="Visit firstmaint.com.au" data-ko="firstmaint.com.au 방문">Visit firstmaint.com.au</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l10-10"/><path d="M7 7h10v10"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
         </div>
       </div>
@@ -772,28 +1131,33 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="section-inner">
-    <div class="section-label" data-en="Get in Touch" data-ko="문의하기">Get in Touch</div>
-    <h2 class="section-title">
-      <span data-en="Let's talk about" data-ko="고객사의 부동산에 대해">Let's talk about</span>
-      <em data-en="your property." data-ko="이야기 나누세요.">your property.</em>
-    </h2>
-    <p class="section-desc" data-en="Tell us about your project. We'll respond within one business day with a clear quote and timeline." data-ko="프로젝트 내용을 알려주세요. 영업일 1일 내 명확한 견적과 일정을 회신드립니다.">
-      Tell us about your project. We'll respond within one business day with a clear quote and timeline.
-    </p>
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Get in Touch" data-ko="연락하기">Get in Touch</div>
+      <h2 class="section-title" data-en='Let's talk about <em>your property.</em>' data-ko='<em>당신의 부동산</em>에 대해 이야기합시다.'>
+        Let's talk about <em>your property.</em>
+      </h2>
+      <p class="section-desc" data-en="Tell us about your project. We'll respond within one business day with a clear quote and timeline." data-ko="프로젝트 내용을 알려주세요. 영업일 1일 내 명확한 견적과 일정을 회신드립니다.">
+        Tell us about your project. We'll respond within one business day with a clear quote and timeline.
+      </p>
+    </div>
+
+    <div class="call-card reveal">
+      <div class="call-card-text">
+        <div class="call-card-label" data-en="Call us directly" data-ko="바로 전화하기">Call us directly</div>
+        <a href="tel:+61416492358" class="call-card-number">0416 492 358</a>
+        <div class="call-card-sub" data-en="Sydney, NSW · Mon–Sat" data-ko="시드니 NSW · 월–토">Sydney, NSW · Mon–Sat</div>
+      </div>
+      <a href="tel:+61416492358" class="call-card-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span data-en="Tap to Call" data-ko="탭하여 전화">Tap to Call</span>
+      </a>
+    </div>
 
     <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-quick">
-          <div class="contact-quick-label" data-en="Call Us Directly" data-ko="바로 전화하기">Call Us Directly</div>
-          <a href="tel:+61416492358" class="phone-link">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>0416 492 358</span>
-          </a>
-          <small data-en="Tap to call · Mon–Sat" data-ko="탭하여 전화 · 월–토">Tap to call · Mon–Sat</small>
-        </div>
+      <div class="contact-info reveal">
         <div class="contact-block">
           <div class="contact-label" data-en="Company" data-ko="회사명">Company</div>
           <div class="contact-value">ATS Total Service Pty. Ltd.</div>
@@ -804,7 +1168,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
         </div>
         <div class="contact-block">
           <div class="contact-label" data-en="Email" data-ko="이메일">Email</div>
-          <div class="contact-value"><a href="mailto:info@atstotal.com.au">info@atstotal.com.au</a></div>
+          <div class="contact-value"><a href="mailto:admin@atstotal.com.au">admin@atstotal.com.au</a></div>
         </div>
         <div class="contact-block">
           <div class="contact-label" data-en="Response Time" data-ko="회신 시간">Response Time</div>
@@ -812,7 +1176,7 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-field">
             <label data-en="Full Name" data-ko="이름">Full Name</label>
@@ -846,62 +1210,68 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
           </div>
         </div>
         <button type="submit" class="form-submit" data-en="Send Enquiry" data-ko="문의 보내기">Send Enquiry</button>
-        <p class="form-note" data-en="This form opens your email client with the message prefilled. You can also email us directly at info@atstotal.com.au" data-ko="전송 시 메일 클라이언트가 열리며 내용이 자동 입력됩니다. info@atstotal.com.au 로 직접 메일을 보내셔도 됩니다.">
-          This form opens your email client with the message prefilled. You can also email us directly at info@atstotal.com.au
+        <p class="form-note" data-en="This form opens your email client with the message prefilled. You can also email us directly at admin@atstotal.com.au" data-ko="전송 시 메일 클라이언트가 열리며 내용이 자동 입력됩니다. admin@atstotal.com.au 로 직접 메일을 보내셔도 됩니다.">
+          This form opens your email client with the message prefilled. You can also email us directly at admin@atstotal.com.au
         </p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FLOATING MOBILE CALL -->
-<a href="tel:+61416492358" class="mobile-call" aria-label="Call ATS Total Service">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-</a>
-
-<!-- FOOTER -->
+<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
+  <div class="container">
+    <div class="footer-main">
       <div>
         <div class="footer-brand">
           <img src="./logo.png" alt="ATS" />
-          <strong>ATS Total Service Pty. Ltd.</strong>
+          <div class="footer-brand-name">ATS Total Service</div>
         </div>
-        <p data-en="Sydney's go-to maintenance partner for property managers, real estate operators and principal contractors — cleaning, gardening, waste and painting handled by one in-house team." data-ko="부동산 매니저·운영사·원도급사를 위한 시드니의 유지관리 파트너. 청소·정원·쓰레기·페인팅을 자체 인력 한 팀이 직접 수행합니다.">
-          Sydney's go-to maintenance partner for property managers, real estate operators and principal contractors — cleaning, gardening, waste and painting handled by one in-house team.
+        <p class="footer-tagline" data-en="Sydney's total property maintenance partner. Cleaning, gardening, waste collection, painting — one team, fully accountable." data-ko="시드니의 종합 부동산 관리 파트너. 청소·정원관리·쓰레기 수거·페인팅을 책임지는 하나의 팀.">
+          Sydney's total property maintenance partner. Cleaning, gardening, waste collection, painting — one team, fully accountable.
         </p>
       </div>
       <div class="footer-col">
-        <h5 data-en="Services" data-ko="서비스">Services</h5>
-        <a href="#services" data-en="Cleaning" data-ko="청소">Cleaning</a>
-        <a href="#services" data-en="Gardening" data-ko="정원 관리">Gardening</a>
-        <a href="#services" data-en="Waste Collection" data-ko="쓰레기 수거">Waste Collection</a>
-        <a href="#services" data-en="Painting" data-ko="페인팅">Painting</a>
+        <h4 data-en="Services" data-ko="서비스">Services</h4>
+        <ul>
+          <li><a href="#services" data-en="Cleaning" data-ko="청소">Cleaning</a></li>
+          <li><a href="#services" data-en="Gardening" data-ko="정원 관리">Gardening</a></li>
+          <li><a href="#services" data-en="Waste Collection" data-ko="쓰레기 수거">Waste Collection</a></li>
+          <li><a href="#services" data-en="Painting" data-ko="페인팅">Painting</a></li>
+        </ul>
       </div>
       <div class="footer-col">
-        <h5 data-en="Contact & Group" data-ko="연락처 & 계열사">Contact &amp; Group</h5>
-        <a href="tel:+61416492358">📞 0416 492 358</a>
-        <a href="mailto:info@atstotal.com.au">info@atstotal.com.au</a>
-        <a href="https://firstcleaningsyd.com.au/" target="_blank" rel="noopener">First Cleaning Sydney</a>
-        <a href="https://firstmaint.com.au/" target="_blank" rel="noopener">First Maintenance</a>
+        <h4 data-en="Contact" data-ko="연락처">Contact</h4>
+        <ul>
+          <li><a href="tel:+61416492358">0416 492 358</a></li>
+          <li><a href="mailto:admin@atstotal.com.au">admin@atstotal.com.au</a></li>
+          <li><span data-en="Sydney, NSW" data-ko="시드니 NSW">Sydney, NSW</span></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span data-en="© 2026 ATS Total Service Pty. Ltd. All rights reserved." data-ko="© 2026 ATS Total Service Pty. Ltd. 무단 전재 및 복제 금지.">© 2026 ATS Total Service Pty. Ltd. All rights reserved.</span>
-      <span>Sydney, NSW · atstotal.com.au</span>
+      <span><a href="mailto:admin@atstotal.com.au">admin@atstotal.com.au</a> · atstotal.com.au</span>
     </div>
   </div>
 </footer>
 
+<a href="tel:+61416492358" class="float-call" aria-label="Call ATS">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+
 <script>
+/* ============ LANGUAGE TOGGLE ============ */
 function setLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-en], [data-ko]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (text !== null) {
-      if (text.includes('<br')) { el.innerHTML = text; }
-      else { el.textContent = text; }
+      if (text.includes('<br') || text.includes('<em')) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
     }
   });
   document.getElementById('btnEN').classList.toggle('active', lang === 'en');
@@ -914,6 +1284,7 @@ function setLang(lang) {
   if (saved === 'ko') setLang('ko');
 })();
 
+/* ============ REVEAL ON SCROLL ============ */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -924,6 +1295,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+/* ============ CONTACT FORM (mailto) ============ */
 function handleSubmit(e) {
   e.preventDefault();
   const f = e.target;
@@ -932,24 +1304,21 @@ function handleSubmit(e) {
   const phone = f.phone.value.trim();
   const service = f.service.value;
   const message = f.message.value.trim();
-  const subject = encodeURIComponent(`[ATS Enquiry] ${service} — ${name}`);
+
+  const subject = encodeURIComponent('[ATS Enquiry] ' + service + ' — ' + name);
   const body = encodeURIComponent(
-`Hello ATS Total Service,
-
-Name: ${name}
-Email: ${email}
-Phone: ${phone || '-'}
-Service of Interest: ${service}
-
-Message:
-${message}
-
-—
-Sent via atstotal.com.au`
+    'Hello ATS Total Service,\n\n' +
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Phone: ' + (phone || '-') + '\n' +
+    'Service of Interest: ' + service + '\n\n' +
+    'Message:\n' + message + '\n\n' +
+    '—\nSent via atstotal.com.au'
   );
-  window.location.href = `mailto:info@atstotal.com.au?subject=${subject}&body=${body}`;
+  window.location.href = 'mailto:admin@atstotal.com.au?subject=' + subject + '&body=' + body;
 }
 
+/* ============ MOBILE NAV CLOSE ON LINK CLICK ============ */
 document.querySelectorAll('#navLinks a').forEach(a => {
   a.addEventListener('click', () => {
     document.getElementById('navLinks').classList.remove('open');
