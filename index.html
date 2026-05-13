@@ -248,6 +248,11 @@ section { padding: clamp(70px, 10vh, 120px) var(--pad); position: relative; }
 .company-card:hover .company-photo img { transform: scale(1.05); }
 .company-photo.no-photo { display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); }
 .company-photo.no-photo svg { width: 80px; height: 80px; }
+
+/* Logo wrapper for sister company cards */
+.company-logo-wrap { width: 100%; aspect-ratio: 16/10; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; padding: 30px; transition: transform .3s ease; }
+.company-logo-wrap img { max-width: 75%; max-height: 80%; width: auto; height: auto; object-fit: contain; transition: transform .4s ease; }
+.company-card:hover .company-logo-wrap img { transform: scale(1.06); }
 .company-body { padding: 32px 32px 36px; flex: 1; display: flex; flex-direction: column; }
 .company-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); background: rgba(45,107,63,.1); padding: 6px 12px; border-radius: 999px; margin-bottom: 18px; align-self: flex-start; }
 .company-card h3 { font-family: var(--display); font-weight: 500; font-size: 28px; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 10px; }
@@ -707,10 +712,10 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
         </div>
       </div>
       <div class="gallery-item g5">
-        <img src="./images/firstmaint-van.jpg" alt="Branded service van" loading="lazy" />
+        <img src="./images/fleet-row.jpg" alt="ATS Total Service fleet — van, trailer and truck lined up on site" loading="lazy" />
         <div class="gallery-caption">
-          <strong data-en="Branded Service Vans" data-ko="브랜딩 서비스 밴">Branded Service Vans</strong>
-          <span data-en="Liveried · Equipped · Recognisable on-site" data-ko="브랜딩 적용 · 장비 완비 · 현장 인식 가능">Liveried · Equipped · Recognisable on-site</span>
+          <strong data-en="Fleet on standby" data-ko="대기 중인 자체 차량">Fleet on standby</strong>
+          <span data-en="Vans, trailers, trucks · All ours · Ready for the next site" data-ko="밴·트레일러·트럭 모두 자체 보유 · 다음 현장 즉시 출동">Vans, trailers, trucks · All ours · Ready for the next site</span>
         </div>
       </div>
     </div>
@@ -731,8 +736,8 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
 
     <div class="companies-grid">
       <div class="company-card reveal">
-        <div class="company-photo no-photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6l9-9z"/><path d="M3 22h18"/></svg>
+        <div class="company-logo-wrap" style="background: linear-gradient(135deg, #f0f7ff 0%, #dceaff 100%);">
+          <img src="./images/logo-firstcleaning.png" alt="First Cleaning Sydney logo" loading="lazy" />
         </div>
         <div class="company-body">
           <div class="company-tag" data-en="Cleaning Specialist" data-ko="청소 전문">Cleaning Specialist</div>
@@ -748,8 +753,8 @@ footer { background: var(--navy-deep); color: rgba(255,255,255,.7); padding: 60p
       </div>
 
       <div class="company-card reveal">
-        <div class="company-photo">
-          <img src="./images/firstmaint-van.jpg" alt="First Maintenance branded service van" loading="lazy" />
+        <div class="company-logo-wrap" style="background: linear-gradient(135deg, #f1f8ed 0%, #d8ecd0 100%);">
+          <img src="./images/logo-firstmaint.png" alt="FirstMaint logo" loading="lazy" />
         </div>
         <div class="company-body">
           <div class="company-tag" data-en="Maintenance Specialist" data-ko="유지관리 전문">Maintenance Specialist</div>
