@@ -122,14 +122,14 @@ body {
   max-width: 1280px; margin: 0 auto; padding: 18px 32px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; white-space: nowrap; }
 .nav-brand img { height: 38px; width: auto; }
-.nav-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; }
-.nav-brand-tag { font-size: 11px; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; }
-.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; white-space: nowrap; }
+.nav-brand-tag { font-size: 11px; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 22px; }
 .nav-links a {
   color: var(--ink-soft); text-decoration: none; font-size: 14px; font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s; white-space: nowrap;
 }
 .nav-links a:hover { color: var(--navy); }
 .nav-right { display: flex; align-items: center; gap: 14px; }
@@ -146,6 +146,7 @@ body {
   padding: 9px 18px; border-radius: 999px;
   font-size: 13px; font-weight: 600;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 .nav-cta:hover { background: var(--green-bright); transform: translateY(-1px); }
 .menu-btn {
@@ -275,13 +276,13 @@ section { padding: 100px 0; }
 }
 .section-title {
   font-family: 'Fraunces', serif;
-  font-size: clamp(28px, 4vw, 50px);
+  font-size: clamp(26px, 3.5vw, 46px);
   line-height: 1.15;
   font-weight: 500;
   color: var(--navy);
   letter-spacing: -0.02em;
   margin-bottom: 18px;
-  max-width: 900px;
+  max-width: 1100px;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
