@@ -836,20 +836,59 @@ footer {
 }
 .footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
 
-/* ============ FLOATING CALL BUTTON ============ */
+/* ============ FLOATING BUTTONS (Scroll-Top + Call) ============ */
+.float-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  z-index: 50;
+}
+
+.float-top {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: var(--navy);
+  border: 1px solid rgba(27, 58, 87, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s, background 0.2s, border-color 0.2s;
+}
+.float-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.float-top:hover {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
 .float-call {
-  display: none;
-  position: fixed; bottom: 20px; right: 20px;
   background: var(--green);
   color: white;
   width: 56px; height: 56px;
   border-radius: 50%;
+  display: flex;
   align-items: center; justify-content: center;
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(45, 107, 63, 0.4);
-  z-index: 50;
+  transition: transform 0.2s;
   animation: floatPulse 2.5s infinite;
 }
+.float-call:hover { transform: scale(1.05); }
 @keyframes floatPulse {
   0%, 100% { box-shadow: 0 8px 24px rgba(45, 107, 63, 0.4); }
   50% { box-shadow: 0 8px 32px rgba(45, 107, 63, 0.7), 0 0 0 8px rgba(45, 107, 63, 0.15); }
@@ -897,7 +936,6 @@ footer {
   .form-row { grid-template-columns: 1fr; }
   .call-card { flex-direction: column; align-items: flex-start; padding: 28px; }
   .call-card-number { font-size: 26px; }
-  .float-call { display: flex; }
   .contact-form { padding: 24px; }
 }
 </style>
@@ -1545,9 +1583,14 @@ footer {
   </div>
 </footer>
 
-<a href="tel:+61416492358" class="float-call" aria-label="Call ATS">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-</a>
+<div class="float-actions">
+  <button type="button" class="float-top" id="floatTop" aria-label="Scroll to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+  <a href="tel:+61416492358" class="float-call" aria-label="Call ATS">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
 
 <script>
 /* ============ LANGUAGE TOGGLE ============ */
@@ -1614,6 +1657,29 @@ function setLang(lang) {
   setTimeout(function() {
     revealEls.forEach(el => el.classList.add('in'));
   }, 1500);
+})();
+
+/* ============ SCROLL-TO-TOP BUTTON ============ */
+(function() {
+  const btn = document.getElementById('floatTop');
+  if (!btn) return;
+
+  // Show button after scrolling down 400px
+  function onScroll() {
+    if (window.pageYOffset > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Smooth scroll to top on click
+  btn.addEventListener('click', function() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
 })();
 
 /* ============ CONTACT FORM (Web3Forms - auto email send) ============ */
