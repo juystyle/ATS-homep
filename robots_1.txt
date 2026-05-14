@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atstotal.com.au/sitemap.xml
