@@ -7,10 +7,19 @@
 <meta name="description" content="ATS Total Service Pty. Ltd. operates 180+ ongoing maintenance sites across NSW. Cleaning, gardening, waste collection and painting — delivered for head contractors, asset managers and B2B clients. Sydney-based, fully insured, 5+ years experience. ABN 49 617 814 105." />
 <meta name="keywords" content="property maintenance Sydney, sub-contractor NSW, asset management contractor, head contractor sub, B2B grounds maintenance, commercial cleaning Sydney, lawn mowing contractor Sydney, strata maintenance" />
 <meta property="og:title" content="ATS Total Service — Trusted Maintenance Partner for Asset Managers & B2B Operators" />
-<meta property="og:description" content="180+ ongoing maintenance sites across NSW. In-house crew, own fleet, 5+ years of proven sub-contracting experience. Speak directly with Director Steven Shim." />
+<meta property="og:description" content="180+ ongoing maintenance sites across NSW. Strata, government housing, schools, healthcare, commercial buildings. In-house crew, own fleet. Speak directly with Director Steven Shim." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://atstotal.com.au/" />
-<meta property="og:image" content="https://atstotal.com.au/images/truck.jpg" />
+<meta property="og:image" content="https://atstotal.com.au/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="ATS Total Service hi-vis crew performing grounds maintenance at a Sydney residential complex" />
+<meta property="og:site_name" content="ATS Total Service" />
+<meta property="og:locale" content="en_AU" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ATS Total Service — Sydney's Trusted Maintenance Partner" />
+<meta name="twitter:description" content="180+ ongoing maintenance sites across NSW. Strata, government housing, schools, healthcare, commercial buildings." />
+<meta name="twitter:image" content="https://atstotal.com.au/images/og-image.jpg" />
 <link rel="canonical" href="https://atstotal.com.au/" />
 <link rel="icon" type="image/png" href="./logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +33,7 @@
   "alternateName": "ATS Total Service",
   "url": "https://atstotal.com.au/",
   "logo": "https://atstotal.com.au/logo.png",
-  "image": "https://atstotal.com.au/images/truck.jpg",
+  "image": "https://atstotal.com.au/images/og-image.jpg",
   "description": "Sydney-based property maintenance company operating 180+ ongoing sites across NSW. Cleaning, gardening, waste collection and painting — delivered for head contractors, asset managers and B2B clients.",
   "telephone": "+61416492358",
   "email": "admin@atstotal.com.au",
@@ -496,6 +505,53 @@ section { padding: 100px 0; }
   font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6;
 }
 
+/* ============ INDUSTRIES WE SERVE ============ */
+.industries { background: var(--paper); }
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+.industry-item {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: all 0.25s;
+}
+.industry-item:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(45, 107, 63, 0.08);
+}
+.industry-item--wide { grid-column: span 2; }
+.industry-icon {
+  width: 44px; height: 44px;
+  background: rgba(45, 107, 63, 0.1);
+  color: var(--green);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.industry-body h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+.industry-body p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* ============ FLEET GALLERY ============ */
 .fleet { background: var(--cream); }
 .gallery-grid {
@@ -814,6 +870,8 @@ footer {
   .process-grid { grid-template-columns: 1fr; gap: 16px; }
   .why-side { position: relative; top: 0; }
   .services-grid, .companies-grid { grid-template-columns: 1fr; }
+  .industries-grid { grid-template-columns: 1fr; }
+  .industry-item--wide { grid-column: span 1; }
   .footer-main { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
@@ -856,6 +914,7 @@ footer {
       </div>
     </a>
     <div class="nav-links" id="navLinks">
+      <a href="#industries" data-en="Industries" data-ko="시설 유형">Industries</a>
       <a href="#about" data-en="About" data-ko="회사소개">About</a>
       <a href="#services" data-en="Services" data-ko="서비스">Services</a>
       <a href="#process" data-en="Process" data-ko="이용절차">Process</a>
@@ -939,6 +998,73 @@ footer {
   </div>
 </section>
 
+<!-- ============ INDUSTRIES WE SERVE ============ -->
+<section id="industries" class="industries">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" data-en="Industries We Serve" data-ko="서비스 대상 시설">Industries We Serve</div>
+      <h2 class="section-title" data-en="Specialised maintenance for <em>every site type.</em>" data-ko="모든 시설 유형에 맞춘 <em>전문 유지관리.</em>">
+        Specialised maintenance for <em>every site type.</em>
+      </h2>
+      <p class="section-desc" data-en="From government housing portfolios to strata complexes, schools to hospitals — we've delivered cleaning, gardening, waste collection and painting across all of them. One accountable contractor, regardless of site type." data-ko="정부 주택 포트폴리오부터 strata 단지, 학교에서 병원까지 — 청소·정원관리·쓰레기 수거·페인팅을 모든 시설에 맞춰 수행해왔습니다. 시설 유형과 관계없이 하나의 책임 있는 시공사로 운영됩니다.">
+        From government housing portfolios to strata complexes, schools to hospitals — we've delivered cleaning, gardening, waste collection and painting across all of them. One accountable contractor, regardless of site type.
+      </p>
+    </div>
+
+    <div class="industries-grid reveal">
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>
+        </div>
+        <div class="industry-body">
+          <h3 data-en="Strata &amp; Apartments" data-ko="Strata · 아파트 단지">Strata &amp; Apartments</h3>
+          <p data-en="Body corporates, residential complexes, large unit blocks" data-ko="Body corporate, 주거 단지, 대형 아파트">Body corporates, residential complexes, large unit blocks</p>
+        </div>
+      </div>
+
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="industry-body">
+          <h3 data-en="Government Housing" data-ko="정부 주택">Government Housing</h3>
+          <p data-en="Public housing portfolios, via head contractors" data-ko="공공 주택 포트폴리오, 원청을 통해">Public housing portfolios, via head contractors</p>
+        </div>
+      </div>
+
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="industry-body">
+          <h3 data-en="Schools &amp; Childcare" data-ko="학교 · 유치원">Schools &amp; Childcare</h3>
+          <p data-en="Primary, high schools, childcare, early learning centres" data-ko="초등학교, 중·고등학교, 유치원, 어린이집">Primary, high schools, childcare, early learning centres</p>
+        </div>
+      </div>
+
+      <div class="industry-item">
+        <div class="industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M12 8v6M9 11h6"/></svg>
+        </div>
+        <div class="industry-body">
+          <h3 data-en="Healthcare &amp; Aged Care" data-ko="병원 · 의료 · 양로원">Healthcare &amp; Aged Care</h3>
+          <p data-en="Hospitals, medical clinics, aged care facilities, nursing homes" data-ko="병원, 의료 클리닉, 양로원, 요양시설">Hospitals, medical clinics, aged care facilities, nursing homes</p>
+        </div>
+      </div>
+
+      <div class="industry-item industry-item--wide">
+        <div class="industry-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>
+        </div>
+        <div class="industry-body">
+          <h3 data-en="Commercial Buildings &amp; Offices" data-ko="상업용 빌딩 · 오피스">Commercial Buildings &amp; Offices</h3>
+          <p data-en="Office buildings, retail spaces, mixed-use commercial properties" data-ko="오피스 빌딩, 리테일, 복합 상업 부동산">Office buildings, retail spaces, mixed-use commercial properties</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ABOUT ============ -->
 <section id="about" class="about">
   <div class="container">
@@ -948,8 +1074,8 @@ footer {
         <h2 class="section-title" data-en="A sub-contractor head contractors <em>actually trust.</em>" data-ko="원청이 <em>실제로 신뢰하는</em> 하청 파트너.">
           A sub-contractor head contractors <em>actually trust.</em>
         </h2>
-        <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based maintenance company operating 180+ ongoing sites across NSW and 20+ B2B properties. We work as a sub-contractor for established head contractors in asset and facility management — quietly delivering at the standard their clients expect." data-ko="ATS Total Service Pty. Ltd.는 NSW 전역에서 180여 개의 정기 유지관리 사이트와 20여 개의 B2B 부동산을 운영하는 시드니 기반 종합 유지관리 회사입니다. 자산·시설 관리 분야의 검증된 원청들과 하청 파트너로 협력하며, 클라이언트가 요구하는 수준을 변함없이 충족시킵니다.">
-          ATS Total Service Pty. Ltd. is a Sydney-based maintenance company operating 180+ ongoing sites across NSW and 20+ B2B properties. We work as a sub-contractor for established head contractors in asset and facility management — quietly delivering at the standard their clients expect.
+        <p data-en="ATS Total Service Pty. Ltd. is a Sydney-based maintenance company operating 180+ ongoing sites across NSW — strata complexes, government housing, schools, healthcare facilities and commercial buildings. We work as a sub-contractor for established head contractors in asset and facility management, delivering at the standard their clients expect." data-ko="ATS Total Service Pty. Ltd.는 NSW 전역에서 180여 개의 정기 유지관리 사이트를 운영하는 시드니 기반 종합 유지관리 회사입니다 — strata 단지, 정부 주택, 학교, 의료시설, 상업 빌딩 등 다양한 시설을 관리합니다. 자산·시설 관리 분야의 검증된 원청들과 하청 파트너로 협력하며, 클라이언트가 요구하는 수준을 변함없이 충족시킵니다.">
+          ATS Total Service Pty. Ltd. is a Sydney-based maintenance company operating 180+ ongoing sites across NSW — strata complexes, government housing, schools, healthcare facilities and commercial buildings. We work as a sub-contractor for established head contractors in asset and facility management, delivering at the standard their clients expect.
         </p>
         <p data-en="Five years of operational experience. Our own crew. Our own vehicles. Our own commercial-grade equipment. No outsourcing, no scheduling conflicts, no surprises — just consistent delivery, day after day, site after site." data-ko="5년 이상의 현장 운영 경험. 자체 인력, 자체 차량, 자체 상업용 장비를 보유하고 있습니다. 하도급 없음, 스케줄 충돌 없음, 변수 없음 — 매일, 모든 사이트에서 일관된 수행을 보장합니다.">
           Five years of operational experience. Our own crew. Our own vehicles. Our own commercial-grade equipment. No outsourcing, no scheduling conflicts, no surprises — just consistent delivery, day after day, site after site.
@@ -1164,8 +1290,8 @@ footer {
         <div class="why-side-body">
           <div class="why-side-eyebrow" data-en="Who We Work With" data-ko="협업 대상">Who We Work With</div>
           <h3 data-en="Head contractors. Asset managers. B2B operators." data-ko="원청. 자산 관리사. B2B 운영사.">Head contractors. Asset managers. B2B operators.</h3>
-          <p data-en="We work behind the scenes for established head contractors managing government housing, strata portfolios and commercial properties. Now expanding to direct B2B clients who need the same reliability." data-ko="정부 주택, 스트라타 포트폴리오, 상업 부동산을 운영하는 검증된 원청들의 현장 파트너로 일해왔습니다. 동일한 수준의 안정성을 필요로 하는 B2B 클라이언트로 협업 영역을 확장 중입니다.">
-            We work behind the scenes for established head contractors managing government housing, strata portfolios and commercial properties. Now expanding to direct B2B clients who need the same reliability.
+          <p data-en="From strata complexes to schools, hospitals to government housing portfolios — we work behind the scenes for established head contractors managing diverse facility types. Now expanding to direct B2B clients who need the same reliability." data-ko="strata 단지부터 학교, 병원, 정부 주택 포트폴리오까지 — 다양한 시설을 운영하는 검증된 원청들의 현장 파트너로 일해왔습니다. 동일한 수준의 안정성을 필요로 하는 B2B 클라이언트로 협업 영역을 확장 중입니다.">
+            From strata complexes to schools, hospitals to government housing portfolios — we work behind the scenes for established head contractors managing diverse facility types. Now expanding to direct B2B clients who need the same reliability.
           </p>
         </div>
       </div>
