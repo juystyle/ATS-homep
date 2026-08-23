@@ -836,6 +836,25 @@ footer {
 }
 .footer-bottom a { color: rgba(255,255,255,0.7); text-decoration: none; }
 
+/* ============ SITE CREDIT (Studio attribution — footer very bottom) ============ */
+.site-credit {
+  clear: both;
+  margin: 0;
+  padding: 16px 12px 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.45);
+}
+.site-credit a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: color 0.2s;
+}
+.site-credit a:hover { color: rgba(255,255,255,0.85); }
+
 /* ============ FLOATING BUTTONS (Scroll-Top + Call) ============ */
 .float-actions {
   position: fixed;
@@ -916,6 +935,7 @@ footer {
 }
 @media (max-width: 768px) {
   .container, .nav-inner, .hero-inner, .trust-inner { padding-left: 20px; padding-right: 20px; }
+  .site-credit { padding-bottom: 60px; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column; gap: 14px;
@@ -1579,6 +1599,9 @@ footer {
     <div class="footer-bottom">
       <span data-en="© 2026 ATS Total Service Pty. Ltd. All rights reserved." data-ko="© 2026 ATS Total Service Pty. Ltd. 무단 전재 및 복제 금지.">© 2026 ATS Total Service Pty. Ltd. All rights reserved.</span>
       <span><a href="mailto:admin@atstotal.com.au">admin@atstotal.com.au</a> · atstotal.com.au</span>
+    </div>
+    <div class="site-credit">
+      <span data-en="Website by " data-ko="제작 · ">Website by </span><a href="https://studio.playmodak.com/" target="_blank" rel="noopener">모닥 스튜디오</a>
     </div>
   </div>
 </footer>
