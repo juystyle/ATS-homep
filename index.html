@@ -24,7 +24,7 @@
 <link rel="icon" type="image/png" href="./logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,18 +77,18 @@
 </script>
 <style>
 :root {
-  --navy: #1B3A57;
-  --navy-deep: #122842;
-  --navy-soft: #2A4A6B;
-  --green: #2D6B3F;
-  --green-bright: #3A8550;
-  --green-soft: #5BA572;
-  --cream: #EFE9D9;
-  --paper: #FBF9F4;
-  --ink: #1A1F2E;
-  --ink-soft: #4A5469;
-  --line: #E5E0D5;
-  --line-soft: #EFEAE0;
+  --navy: #0F2C46;
+  --navy-deep: #0B2238;
+  --navy-soft: #24476A;
+  --green: #2E7D3A;
+  --green-bright: #22602C;
+  --green-soft: #8CC097;
+  --cream: #F4F6F8;
+  --paper: #FFFFFF;
+  --ink: #13212E;
+  --ink-soft: #3B4B5A;
+  --line: #DDE3E9;
+  --line-soft: #EEF2F5;
   --gold: #C8A458;
   --first-cleaning-blue: #2563EB;
   --first-cleaning-bg: #DCE7FB;
@@ -98,7 +98,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Manrope', -apple-system, sans-serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--ink);
@@ -106,7 +106,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-.serif { font-family: 'Fraunces', Georgia, serif; }
+.serif { font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
 /* ============ NAVBAR ============ */
@@ -124,7 +124,7 @@ body {
 }
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; white-space: nowrap; }
 .nav-brand img { height: 38px; width: auto; }
-.nav-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; white-space: nowrap; }
+.nav-brand-name { font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif; font-weight: 600; font-size: 18px; color: var(--navy); letter-spacing: -0.01em; white-space: nowrap; }
 .nav-brand-tag { font-size: 11px; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
 .nav-links { display: flex; align-items: center; gap: 22px; }
 .nav-links a {
@@ -181,7 +181,7 @@ body {
   50% { opacity: 0.5; transform: scale(1.3); }
 }
 .hero h1 {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: clamp(40px, 5.5vw, 68px);
   line-height: 1.05;
   font-weight: 500;
@@ -275,7 +275,7 @@ section { padding: 100px 0; }
   margin-bottom: 14px;
 }
 .section-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: clamp(26px, 3.5vw, 46px);
   line-height: 1.15;
   font-weight: 500;
@@ -310,14 +310,14 @@ section { padding: 100px 0; }
   padding: 32px 24px;
 }
 .about-stat-num {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 42px; font-weight: 500;
   color: var(--navy); line-height: 1; letter-spacing: -0.02em;
   margin-bottom: 8px;
 }
 .about-stat-num em { font-style: italic; color: var(--green); }
 .about-stat-num .stat-suffix {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-style: italic;
   color: var(--green);
   font-size: 0.65em;
@@ -359,14 +359,14 @@ section { padding: 100px 0; }
 .service-card:hover .service-photo img { transform: scale(1.04); }
 .service-body { padding: 28px 28px 30px; }
 .service-num {
-  font-family: 'Fraunces', serif; font-style: italic;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif; font-style: italic;
   font-size: 13px; font-weight: 400; color: var(--green);
   letter-spacing: 0.08em;
   margin-bottom: 12px;
   display: block;
 }
 .service-title {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 26px; font-weight: 500;
   color: var(--navy); margin-bottom: 16px;
   letter-spacing: -0.01em;
@@ -435,14 +435,14 @@ section { padding: 100px 0; }
   margin-bottom: 14px;
 }
 .process-num {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 64px; font-weight: 400;
   color: var(--green-soft); line-height: 1;
   font-style: italic; letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 .process-step h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 22px; font-weight: 500;
   color: white; margin-bottom: 12px;
 }
@@ -472,7 +472,7 @@ section { padding: 100px 0; }
   display: flex; align-items: center; justify-content: center;
 }
 .why-item h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 18px; font-weight: 600;
   color: var(--navy); margin-bottom: 6px;
 }
@@ -498,7 +498,7 @@ section { padding: 100px 0; }
   color: var(--green-soft); margin-bottom: 14px;
 }
 .why-side h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 26px; font-weight: 500;
   margin-bottom: 14px; line-height: 1.2;
 }
@@ -539,7 +539,7 @@ section { padding: 100px 0; }
   flex-shrink: 0;
 }
 .industry-body h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: var(--navy);
@@ -659,7 +659,7 @@ section { padding: 100px 0; }
   align-self: flex-start;
 }
 .company-name {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 26px; font-weight: 600;
   color: var(--navy);
   margin-bottom: 12px;
@@ -702,7 +702,7 @@ section { padding: 100px 0; }
   margin-bottom: 10px;
 }
 .call-card-number {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif;
   font-size: 32px; font-weight: 600;
   color: white;
   text-decoration: none;
@@ -818,7 +818,7 @@ footer {
 }
 .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .footer-brand img { height: 36px; }
-.footer-brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; color: white; }
+.footer-brand-name { font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif; font-weight: 600; font-size: 18px; color: white; }
 .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; max-width: 360px; }
 .footer-meta { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 14px; letter-spacing: 0.02em; }
 .footer-col h4 {
@@ -958,6 +958,42 @@ footer {
   .call-card-number { font-size: 26px; }
   .contact-form { padding: 24px; }
 }
+
+/* ===== 2026-11 restyle (Modak Studio): plain sans, no italic accents, square corners ===== */
+body { font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', -apple-system, 'Helvetica Neue', Arial, sans-serif; word-break: keep-all; overflow-wrap: break-word; }
+.serif, .nav-brand-name, .footer-brand-name, .hero h1, .section-title, .about-stat-num, .about-stat-num .stat-suffix,
+.service-title, [style*="Fraunces"] { font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif !important; }
+h1, h2, h3, h4, .company-name, .call-card-number, .why-side-eyebrow, .process-num { font-family: 'IBM Plex Sans', 'IBM Plex Sans KR', Arial, sans-serif !important; }
+.hero h1 em, .section-title em { font-weight: inherit !important; }
+.nav { background: rgba(255,255,255,0.96) !important; border-bottom-color: var(--line) !important; }
+em, .hero h1 em, .section-title em, .about-stat-num em, .about-stat-num .stat-suffix, .service-num { font-style: normal !important; }
+.hero h1 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(38px, 5vw, 60px); }
+.hero h1 em, .section-title em { color: var(--navy); }
+.section-title { font-weight: 700; letter-spacing: -0.02em; }
+.section-eyebrow { letter-spacing: 0.06em; font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-weight: 500; }
+.nav-brand-tag, .about-stat-label { font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; letter-spacing: 0.04em; }
+.hero-tag { border-radius: 3px; background: var(--cream); color: var(--navy); font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-weight: 500; }
+.hero-tag .dot { display: none; }
+.hero-visual { border-radius: 4px; box-shadow: none; }
+.hero-badge { border-radius: 4px; box-shadow: none; }
+.hero-badge-icon { border-radius: 3px; }
+.about-stat-num { font-weight: 600; color: var(--navy); }
+.about-stat-num .stat-suffix, .about-stat-num em { color: var(--navy); font-size: 1em; margin-left: 0; }
+.btn-primary, .btn-secondary, .nav-cta, .call-card-btn, .lang-toggle, .lang-toggle button { border-radius: 4px !important; }
+.btn-primary:hover, .nav-cta:hover, .call-card-btn:hover { transform: none !important; box-shadow: none !important; }
+.service-card, .industry-item, .why-item, .why-side, .why-side-img, .gallery-item, .company-card, .company-logo-area,
+.call-card, .contact-form, .process-step, .process-photo, .form-result, .why-icon, .industry-icon { border-radius: 4px !important; }
+.service-card:hover, .industry-item:hover, .why-item:hover, .company-card:hover { transform: none !important; box-shadow: none !important; }
+.service-card:hover .service-photo img, .gallery-item:hover img, .company-card:hover .company-logo-area img { transform: none !important; }
+.industry-item:hover { box-shadow: none !important; }
+.call-card { box-shadow: none !important; }
+.service-num, .process-num { font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace !important; font-style: normal !important; font-size: 12px; letter-spacing: 0.04em; }
+.company-tag { border-radius: 3px !important; }
+.form-field label { font-family: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace; font-weight: 500; }
+.form-submit { border-radius: 4px !important; }
+.form-submit:hover { transform: none !important; }
+[class*="float-"] { animation: none !important; }
+input, select, textarea, button[type="submit"] { border-radius: 4px !important; }
 </style>
 </head>
 <body>
